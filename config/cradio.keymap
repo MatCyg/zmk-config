@@ -8,6 +8,7 @@
    // tapping_term_ms = <200>;
 };
 
+
 / { 
 
     combos {
@@ -36,7 +37,8 @@
                 
         default_layer {
 		bindings = <
-		&kp Q &kp W      &kp F &kp P &kp B        &kp J &kp L &kp U    &kp Y        &kp SCLN
+//		&kp Q &kp W      &kp F &kp P &kp B        &kp J &kp L &kp U    &kp Y        &kp SCLN
+		&kp Q &kp W      &kp F &kp P &kp B        &kp J &kp L &kp U    &kp Y        &bootloader
 		&kp A &kp R      &kp S &kp T &kp G        &kp M &kp N &kp E    &kp I        &kp O
 		&kp Z &mt LSFT X &kp C &kp D &kp V        &kp K &kp H &kp CMMA &mt LSFT DOT &kp FSLH
           				 &mt RGUI SPC &kp LGUI    &mt LCTL RET &mt LALT BSPC
