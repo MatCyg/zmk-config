@@ -3,6 +3,11 @@
 #include <dt-bindings/zmk/bt.h>
 
 
+#define _UNDO     LG(Z)
+#define _CUT      LG(X)
+#define _COPY     LG(C)
+#define _PASTE    LG(V)
+
 #define HYPER(key) LS(LC(LA(LG(key))))
 #define MEH(key)   LS(LC(LA(key)))
 #define HEM(key)   LG(LC(LA(key)))
@@ -23,50 +28,8 @@
 
 
 / { 
-
     combos {
-        compatible = "zmk,combos";
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <1 2>;
-            bindings = <&kp ESC>;
-        };
-
-        combo_tab {
-            timeout-ms = <50>;
-            key-positions = <7 8>;
-            bindings = <&kp TAB>;
-        };
-        
-        combo_lower_layer {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp F24>;
-        };
-
-        combo_bootloader {
-            timeout-ms = <50>;
-            key-positions = <0 9 20 29>;
-            bindings = <&bootloader>;
-        };
-
-        combo_word {
-            timeout-ms = <50>;
-            key-positions = <0 9>;
-            bindings = <&caps_word>;
-        };
-
-        combo_default {
-            timeout-ms = <50>;
-            key-positions = <4 24>;
-            bindings = <&to DEFAULT>;
-        };
-
-        combo_standalone {
-            timeout-ms = <50>;
-            key-positions = <5 25>;
-            bindings = <&to STANDALONE>;
-        };
+        #include "combos.dtsi"
     };
 
     behaviors {
