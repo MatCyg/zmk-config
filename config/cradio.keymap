@@ -4,7 +4,12 @@
 
 #define DEFAULT    0
 #define STANDALONE 1
-#define RAISE      2
+#define NAV        2
+#define SYMBOL     3
+#define NUM_APP    4
+#define LOWER      5
+#define FUNCTION   6
+#define APPS       7
 
 &mt {
   //  flavor = "tap-preferred";
@@ -40,6 +45,12 @@
             bindings = <&bootloader>;
         };
 
+        combo_word {
+            timeout-ms = <50>;
+            key-positions = <0 9>;
+            bindings = <&caps_word>;
+        };
+
         combo_default {
             timeout-ms = <50>;
             key-positions = <4 24>;
@@ -53,6 +64,39 @@
         };
     };
 
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+
+        kp_to: kp_to {
+            compatible = "zmk,behavior-hold-tap";
+            label = "KP_TO";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&to>;
+        };
+
+        mo_to: mo_to {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MO_TO";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&to>;
+        };
+    };
+
+
     keymap {
         compatible = "zmk,keymap";
 //&mt LS(LC(LA(LGUI))) ESC
@@ -60,16 +104,40 @@
             bindings = <
             &kp Q &kp W      &kp F &kp P &kp B        &kp J &kp L &kp U    &kp Y        &kp SCLN
             &kp A &kp R      &kp S &kp T &kp G        &kp M &kp N &kp E    &kp I        &kp O
-            &kp Z &mt LSFT X &kp C &kp D &kp V        &kp K &kp H &kp CMMA &mt LSFT DOT &kp FSLH
+            &kp Z &hm LSFT X &kp C &kp D &kp V        &kp K &kp H &kp CMMA &hm LSFT DOT &kp FSLH
                              &mt RGUI SPC &kp LGUI    &mt LCTL RET &mt LALT BSPC
 		>;};
 
 		standalone {
             bindings = <
-            &kp Q &kp W      &kp E &kp P &kp B        &kp J &kp L &kp U    &kp Y        &kp SCLN
-            &kp A &kp R      &kp S &kp T &kp G        &kp M &kp N &kp E    &kp I        &kp O
-            &kp Z &mt LSFT X &kp C &kp D &kp V        &kp K &kp H &kp CMMA &mt LSFT DOT &kp FSLH
-                             &mt RGUI SPC &kp LGUI    &mt LCTL RET &mt LALT BSPC
+            &kp Q &kp W      &kp E &kp P &kp B         &kp J &kp L &kp U    &kp Y        &kp SCLN
+            &kp A &kp R      &kp S &kp T &kp G         &kp M &kp N &kp E    &kp I        &kp O
+            &kp Z &mt LSFT X &kp C &kp D &kp V         &kp K &kp H &kp CMMA &mt LSFT DOT &kp FSLH
+                             &lt NAV SPC &kp_to LGUI NAV &mt LCTL RET &mt LALT BSPC
        >;};
+
+        navigation {
+            bindings = <
+            &kp Q &kp W      &kp E &kp P &kp B        &kp J &kp L &kp UP    &kp Y        &kp SCLN
+            &kp A &kp R      &kp S &kp T &kp G        &kp M &kp LEFT &kp DOWN    &kp RIGHT        &kp O
+            &kp Z &mt LSFT X &kp C &kp D &kp V        &kp K &kp H &kp CMMA &mt LSFT DOT &kp FSLH
+                             &mo_to NUM_APP STANDALONE &kp LGUI    &mt LCTL RET &mt LALT BSPC
+       >;};
+
+      symbol {
+           bindings = <
+           &kp GRAVE &kp LBRC      &kp RBRC &kp MINUS &kp DLLR        &kp PIPE &kp N7 &kp N8 &kp N9 &kp EXCL
+           &kp SQT   &kp LPAR      &kp RPAR &kp DQT   &kp UNDER       &kp PLUS &kp N4 &kp N5 &kp N6 &kp N0
+           &kp AT    &hm LSFT LBKT &kp RBKT &kp EQUAL &kp BSLH        &kp AMPS &kp N1 &kp N2 &kp N3 &kp TILDE
+                                         &mt RGUI SPC &kp LGUI        &mt LCTL RET &mt LALT BSPC
+      >;};
+
+      num_app {
+           bindings = <
+           &kp A &kp LBRC &kp RBRC &kp MINUS &kp DLLR        &kp PIPE &kp N7 &kp N8 &kp N9 &kp EXCL
+           &kp SQT   &kp LPAR      &kp RPAR &kp DQT   &kp UNDER       &kp PLUS &kp N4 &kp N5 &kp N6 &kp N0
+           &kp AT    &hm LSFT LBKT &kp RBKT &kp EQUAL &kp BSLH        &kp AMPS &kp N1 &kp N2 &kp N3 &kp TILDE
+                                         &mt RGUI SPC &kp LGUI        &mt LCTL RET &mt LALT BSPC
+      >;};
 	};
 };
