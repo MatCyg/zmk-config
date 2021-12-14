@@ -2,6 +2,11 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+
+#define HYPER(key) LS(LC(LA(LG(key))))
+#define MEH(key)   LS(LC(LA(key)))
+#define HEM(key)   LG(LC(LA(key)))
+
 #define DEFAULT    0
 #define STANDALONE 1
 #define NAV        2
@@ -75,6 +80,16 @@
             bindings = <&kp>, <&kp>;
         };
 
+        hm_to: homerow_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_LAYER";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&kp>;
+        };
+
         kp_to: kp_to {
             compatible = "zmk,behavior-hold-tap";
             label = "KP_TO";
@@ -99,7 +114,6 @@
 
     keymap {
         compatible = "zmk,keymap";
-//&mt LS(LC(LA(LGUI))) ESC
         default_layer {
             bindings = <
             &kp Q &kp W      &kp F &kp P &kp B        &kp J &kp L &kp U    &kp Y        &kp SCLN
@@ -113,7 +127,7 @@
             &kp Q &kp W      &kp E &kp P &kp B         &kp J &kp L &kp U    &kp Y        &kp SCLN
             &kp A &kp R      &kp S &kp T &kp G         &kp M &kp N &kp E    &kp I        &kp O
             &kp Z &mt LSFT X &kp C &kp D &kp V         &kp K &kp H &kp CMMA &mt LSFT DOT &kp FSLH
-                             &lt NAV SPC &kp_to LGUI NAV &mt LCTL RET &mt LALT BSPC
+                             &hm_to NUM_APP SPC &kp_to LGUI NAV &mt LCTL RET &mt LALT BSPC
        >;};
 
         navigation {
@@ -134,9 +148,9 @@
 
       num_app {
            bindings = <
-           &kp A &kp LBRC &kp RBRC &kp MINUS &kp DLLR        &kp PIPE &kp N7 &kp N8 &kp N9 &kp EXCL
-           &kp SQT   &kp LPAR      &kp RPAR &kp DQT   &kp UNDER       &kp PLUS &kp N4 &kp N5 &kp N6 &kp N0
-           &kp AT    &hm LSFT LBKT &kp RBKT &kp EQUAL &kp BSLH        &kp AMPS &kp N1 &kp N2 &kp N3 &kp TILDE
+           &kp Q &kp W      &kp E &kp P &kp B         &kp PIPE &kp N7 &kp N8 &kp N9 &kp EXCL
+           &kp A &kp R      &kp S &kp T &kp G          &kp PLUS &kp N4 &kp N5 &kp N6 &kp N0
+           &kp Z &mt LSFT X &kp C &kp D &kp V       &kp AMPS &kp N1 &kp N2 &kp N3 &kp TILDE
                                          &mt RGUI SPC &kp LGUI        &mt LCTL RET &mt LALT BSPC
       >;};
 	};
