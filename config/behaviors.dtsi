@@ -1,0 +1,39 @@
+hm: homerow_mods {
+    compatible = "zmk,behavior-hold-tap";
+    label = "HOMEROW_MODS";
+    #binding-cells = <2>;
+    tapping-term-ms = <135>;
+    quick_tap_ms = <0>;
+    flavor = "tap-preferred";
+    bindings = <&kp>, <&kp>;
+};
+
+hm_to: homerow_layer {
+    compatible = "zmk,behavior-hold-tap";
+    label = "HOMEROW_LAYER";
+    #binding-cells = <2>;
+    tapping-term-ms = <135>;
+    quick_tap_ms = <0>;
+    flavor = "tap-preferred";
+    bindings = <&mo>, <&kp>;
+};
+
+kp_to: kp_to {
+    compatible = "zmk,behavior-hold-tap";
+    label = "KP_TO";
+    #binding-cells = <2>;
+    tapping-term-ms = <135>;
+    quick_tap_ms = <0>;
+    flavor = "tap-preferred";
+    bindings = <&kp>, <&to>;
+};
+
+mo_to: mo_to {
+    compatible = "zmk,behavior-hold-tap";
+    label = "MO_TO";
+    #binding-cells = <2>;
+    tapping-term-ms = <135>;
+    quick_tap_ms = <0>;
+    flavor = "tap-preferred";
+    bindings = <&mo>, <&to>;
+};

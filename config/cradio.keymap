@@ -1,16 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-
-
-#define _UNDO     LG(Z)
-#define _CUT      LG(X)
-#define _COPY     LG(C)
-#define _PASTE    LG(V)
-
-#define HYPER(key) LS(LC(LA(LG(key))))
-#define MEH(key)   LS(LC(LA(key)))
-#define HEM(key)   LG(LC(LA(key)))
+#include "keys.h"
 
 #define DEFAULT    0
 #define STANDALONE 1
@@ -33,45 +24,7 @@
     };
 
     behaviors {
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <135>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-
-        hm_to: homerow_layer {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_LAYER";
-            #binding-cells = <2>;
-            tapping-term-ms = <135>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&kp>;
-        };
-
-        kp_to: kp_to {
-            compatible = "zmk,behavior-hold-tap";
-            label = "KP_TO";
-            #binding-cells = <2>;
-            tapping-term-ms = <135>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&to>;
-        };
-
-        mo_to: mo_to {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MO_TO";
-            #binding-cells = <2>;
-            tapping-term-ms = <135>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&to>;
-        };
+        #include "behaviors.dtsi"
     };
 
 
