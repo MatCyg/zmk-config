@@ -2,6 +2,9 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define DEFAULT    0
+#define STANDALONE 1
+#define RAISE      2
 
 &mt {
   //  flavor = "tap-preferred";
@@ -18,10 +21,10 @@
             key-positions = <1 2>;
             bindings = <&kp ESC>;
         };
-        
-         combo_tab {
+
+        combo_tab {
             timeout-ms = <50>;
-            key-positions = <18 19>;
+            key-positions = <7 8>;
             bindings = <&kp TAB>;
         };
         
@@ -30,19 +33,43 @@
             key-positions = <0 1>;
             bindings = <&kp F24>;
         };
+
+        combo_bootloader {
+            timeout-ms = <50>;
+            key-positions = <0 9 20 29>;
+            bindings = <&bootloader>;
+        };
+
+        combo_default {
+            timeout-ms = <50>;
+            key-positions = <4 24>;
+            bindings = <&to DEFAULT>;
+        };
+
+        combo_standalone {
+            timeout-ms = <50>;
+            key-positions = <5 25>;
+            bindings = <&to STANDALONE>;
+        };
     };
 
     keymap {
         compatible = "zmk,keymap";
-                
+//&mt LS(LC(LA(LGUI))) ESC
         default_layer {
-		bindings = <
-//		&kp Q &kp W      &kp F &kp P &kp B        &kp J &kp L &kp U    &kp Y        &kp SCLN
-		&kp Q &kp W      &kp F &kp P &kp B        &kp J &kp L &kp U    &kp Y        &bootloader
-		&kp A &kp R      &kp S &kp T &kp G        &kp M &kp N &kp E    &kp I        &kp O
-		&kp Z &mt LSFT X &kp C &kp D &kp V        &kp K &kp H &kp CMMA &mt LSFT DOT &kp FSLH
-          				 &mt RGUI SPC &kp LGUI    &mt LCTL RET &mt LALT BSPC
-		>;
-		};
+            bindings = <
+            &kp Q &kp W      &kp F &kp P &kp B        &kp J &kp L &kp U    &kp Y        &kp SCLN
+            &kp A &kp R      &kp S &kp T &kp G        &kp M &kp N &kp E    &kp I        &kp O
+            &kp Z &mt LSFT X &kp C &kp D &kp V        &kp K &kp H &kp CMMA &mt LSFT DOT &kp FSLH
+                             &mt RGUI SPC &kp LGUI    &mt LCTL RET &mt LALT BSPC
+		>;};
+
+		standalone {
+            bindings = <
+            &kp Q &kp W      &kp E &kp P &kp B        &kp J &kp L &kp U    &kp Y        &kp SCLN
+            &kp A &kp R      &kp S &kp T &kp G        &kp M &kp N &kp E    &kp I        &kp O
+            &kp Z &mt LSFT X &kp C &kp D &kp V        &kp K &kp H &kp CMMA &mt LSFT DOT &kp FSLH
+                             &mt RGUI SPC &kp LGUI    &mt LCTL RET &mt LALT BSPC
+       >;};
 	};
 };
