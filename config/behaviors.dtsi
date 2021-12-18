@@ -3,7 +3,17 @@ hm: homerow_mods {
     label = "HOMEROW_MODS";
     #binding-cells = <2>;
     tapping-term-ms = <135>;
-    quick_tap_ms = <0>;
+    quick_tap_ms = <400>;
+    flavor = "tap-preferred";
+    bindings = <&kp>, <&kp>;
+};
+
+hm_spc: hm_spc {
+    compatible = "zmk,behavior-hold-tap";
+    label = "hm_spc";
+    #binding-cells = <2>;
+    tapping-term-ms = <200>;
+    quick_tap_ms = <400>;
     flavor = "tap-preferred";
     bindings = <&kp>, <&kp>;
 };
@@ -18,14 +28,14 @@ hm_to: homerow_layer {
     bindings = <&mo>, <&kp>;
 };
 
-kp_to: kp_to {
+kp_tog: kp_tog {
     compatible = "zmk,behavior-hold-tap";
-    label = "KP_TO";
+    label = "KP_TOG";
     #binding-cells = <2>;
     tapping-term-ms = <135>;
     quick_tap_ms = <0>;
     flavor = "tap-preferred";
-    bindings = <&kp>, <&to>;
+    bindings = <&kp>, <&tog>;
 };
 
 mo_to: mo_to {

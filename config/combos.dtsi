@@ -19,7 +19,7 @@ compatible = "zmk,combos";
 COMBO(esc,         1 2, &kp ESC)
 COMBO(tab,         7 8, &kp TAB)
 COMBO(lower_layer, 0 1, &kp F24)
-COMBO(bootloader,  0 9 20 29, &bootloader)
+COMBO(bootloader,  0 9 20 29, &to ADJUST)
 COMBO(word,        0 9, &caps_word)
 COMBO(default,     4 24, &to DEFAULT)
 COMBO(standalone,  5 25, &to STANDALONE)
