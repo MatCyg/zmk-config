@@ -19,6 +19,7 @@ compatible = "zmk,combos";
 COMBO(esc,          1 2, &kp ESC)
 COMBO(tab,          7 8, &kp TAB)
 COMBO(lower_layer,  0 1, &kp F24)
+COMBO(lower_layer_standalone,  0 4, &to LOWER)
 COMBO(adjust_layer, 0 9 20 29, &to ADJUST)
 COMBO(word,         0 9, &caps_word)
 COMBO(default,      4 24, &to DEFAULT)

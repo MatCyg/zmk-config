@@ -52,28 +52,36 @@
             &mo_to NUM_APP STANDALONE &kp LGUI        &mt LCTL RET &mt LALT BSPC
        >;};
 
-      symbol {
+        symbol {
            bindings = <
            &kp GRAVE &kp LBRC      &kp RBRC &kp MINUS &kp DLLR        &kp PIPE &kp N7 &kp N8 &kp N9 &kp EXCL
            &kp SQT   &kp LPAR      &kp RPAR &kp DQT   &kp UNDER       &kp PLUS &kp N4 &kp N5 &kp N6 &kp N0
            &kp AT    &hm LSFT LBKT &kp RBKT &kp EQUAL &kp BSLH        &kp AMPS &kp N1 &kp N2 &kp N3 &kp TILDE
                                          &mt RGUI SPC &kp LGUI        &mt LCTL RET &mt LALT BSPC
-      >;};
+        >;};
 
-      num_app {
+        num_app {
            bindings = <
            &kp Q &kp W      &kp E &kp P &kp B         &kp PIPE &kp N7 &kp N8 &kp N9 &kp EXCL
            &kp A &kp R      &kp S &kp T &kp G         &kp PLUS &kp N4 &kp N5 &kp N6 &kp N0
            &kp Z &mt LSFT X &kp C &kp D &kp V         &kp AMPS &kp N1 &kp N2 &kp N3 &kp TILDE
                         &mt RGUI SPC &kp LGUI         &mt LCTL RET &mt LALT BSPC
-      >;};
+        >;};
 
-      adjust {
+        lower {
+            bindings = <
+            &kp Q &kp W      &kp E &kp P &kp B         &kp J &kp L &kp U    &kp Y        &kp SCLN
+            &kp A &kp R      &kp S &kp T &kp G         &kp M &kp N &kp E    &kp I        &kp O
+            &kp Z &mt LSFT X &kp C &kp D &kp V         &kp K &kp H &kp CMMA &mt LSFT DOT &kp FSLH
+           &hm_to NUM_APP SPC &kp_tog LGUI NAV         &mt LCTL RET &mt LALT BSPC
+        >;};
+
+        adjust {
           bindings = <
           &none &none &none &none &bootloader         &none &none        &none        &none        &none
           &none &none &none &none &none               &none &none        &none        &none        &bt BT_SEL 0
           &none &none &none &none &none               &none &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR
                 &to DEFAULT &to DEFAULT               &none &none
-      >;};
+        >;};
 	};
 };
