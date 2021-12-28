@@ -24,9 +24,9 @@ compatible = "zmk,combos";
     timeout-ms = <50>; \
   };
 
-COMBO(esc,          1 2, &kp ESC)
-COMBO(tab,          7 8, &kp TAB)
-COMBO(word,         0 9, &caps_word)
+COMBO(esc,        1 2, &kp ESC)
+COMBO(tab,        7 8, &kp TAB)
+COMBO(word,       0 9, &caps_word)
 
 //layers
 COMBO(lower,      0 4, &kp F24)
@@ -34,10 +34,10 @@ COMBO(function,   0 1, &to FUNCTION)
 COMBO(apps,       0 2, &to APPS)
 COMBO(adjust,     0 9 20 29, &to ADJUST)
 COMBO(default,    4 24, &to DEFAULT)
-COMBO(assisted, 5 25, &to ASSISTED)
+COMBO(assisted,   5 25, &to ASSISTED)
 
 
-LAYER_COMBO(FUNCTION, mute, 2 3, &kp K_MUTE)
+LAYER_COMBO(FUNCTION, mute,     2 3, &kp K_MUTE)
 LAYER_COMBO(FUNCTION, previous, 4 14, &kp C_PREV)
 
 
