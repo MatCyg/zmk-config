@@ -8,10 +8,10 @@
 #define NAV        2
 #define SYMBOL     3
 #define NUM_APP    4
-#define LOWER      5
-#define FUNCTION   6
+#define FUNCTION   5
+#define ADJUST     6
 #define APPS       7
-#define ADJUST     5
+#define EMOJI      8
 
 &caps_word {
   continue-list = <UNDERSCORE MINUS BACKSPACE>;
@@ -28,60 +28,70 @@
 
     keymap {
         compatible = "zmk,keymap";
-        default_layer {
-            bindings = <
+        default_layer { bindings = <
             &kp Q &kp W      &kp F &kp P &kp B        &kp J &kp L &kp U    &kp Y        &kp SCLN
             &kp A &kp R      &kp S &kp T &kp G        &kp M &kp N &kp E    &kp I        &kp O
             &kp Z &hm LSFT X &kp C &kp D &kp V        &kp K &kp H &kp CMMA &hm LSFT DOT &kp FSLH
                      &hm_spc RGUI SPC &kp LGUI        &hm_spc LCTL RET &hm_spc LALT BSPC
 		>;};
 
-		standalone {
-            bindings = <
-            &kp Q &kp W      &kp E &kp P &kp B         &kp J &kp L &kp U    &kp Y        &kp SCLN
-            &kp A &kp R      &kp S &kp T &kp G         &kp M &kp N &kp E    &kp I        &kp O
-            &kp Z &mt LSFT X &kp C &kp D &kp V         &kp K &kp H &kp CMMA &mt LSFT DOT &kp FSLH
-           &hm_to NUM_APP SPC &kp_tog LGUI NAV         &mt LCTL RET &mt LALT BSPC
-       >;};
+		standalone { bindings = <
+            &kp Q &kp W      &kp F &kp P &kp B        &kp J &kp L &kp U    &kp Y        &kp SCLN
+            &kp A &kp R      &kp S &kp T &kp G        &kp M &kp N &kp E    &kp I        &kp O
+            &kp Z &hm LSFT X &kp C &kp D &kp V        &kp K &kp H &kp CMMA &hm LSFT DOT &kp FSLH
+                   &hm_to NUM_APP SPC &kp LGUI        &mt LCTL RET &mt LALT BSPC
+        >;};
 
-        navigation {
-            bindings = <
-            &kp Q &kp W      &kp E &kp P &kp B        &kp J &kp L &kp UP    &kp Y        &kp SCLN
-            &kp A &kp R      &kp S &kp T &kp G        &kp M &kp LEFT &kp DOWN    &kp RIGHT        &kp O
-            &kp Z &mt LSFT X &kp C &kp D &kp V        &kp K &kp H &kp CMMA &mt LSFT DOT &kp FSLH
+        navigation { bindings = <
+            &kp Q &kp W      &kp F &kp P &kp B        &kp J &kp L    &kp UP   &kp Y        &kp SCLN
+            &kp A &kp R      &kp S &kp T &kp G        &kp M &kp LEFT &kp DOWN &kp RIGHT    &kp O
+            &kp Z &mt LSFT X &kp C &kp D &kp V        &kp K &kp H    &kp CMMA &mt LSFT DOT &kp FSLH
             &mo_to NUM_APP STANDALONE &kp LGUI        &mt LCTL RET &mt LALT BSPC
-       >;};
+        >;};
 
-        symbol {
-           bindings = <
+        symbol { bindings = <
            &kp GRAVE &kp LBRC      &kp RBRC &kp MINUS &kp DLLR        &kp PIPE &kp N7 &kp N8 &kp N9 &kp EXCL
            &kp SQT   &kp LPAR      &kp RPAR &kp DQT   &kp UNDER       &kp PLUS &kp N4 &kp N5 &kp N6 &kp N0
            &kp AT    &hm LSFT LBKT &kp RBKT &kp EQUAL &kp BSLH        &kp AMPS &kp N1 &kp N2 &kp N3 &kp TILDE
                                          &mt RGUI SPC &kp LGUI        &mt LCTL RET &mt LALT BSPC
         >;};
 
-        num_app {
-           bindings = <
-           &kp Q &kp W      &kp E &kp P &kp B         &kp PIPE &kp N7 &kp N8 &kp N9 &kp EXCL
-           &kp A &kp R      &kp S &kp T &kp G         &kp PLUS &kp N4 &kp N5 &kp N6 &kp N0
-           &kp Z &mt LSFT X &kp C &kp D &kp V         &kp AMPS &kp N1 &kp N2 &kp N3 &kp TILDE
-                        &mt RGUI SPC &kp LGUI         &mt LCTL RET &mt LALT BSPC
+        num_app { bindings = <
+           &kp LG(N4) &kp LG(N3)      &kp LG(N2) &kp LG(N1) &kp LG(N9)        &kp PIPE &kp N7 &kp N8 &kp N9 &kp EXCL
+           &kp GCS(A) &kp GCS(R)      &kp GCS(S) &kp GCS(T) &kp GCS(G)        &kp PLUS &kp N4 &kp N5 &kp N6 &kp N0
+           &kp GCS(Z) &mt LSFT GCS(X) &kp GCS(C) &kp GCS(D) &kp GCS(V)        &kp AMPS &kp N1 &kp N2 &kp N3 &kp TILDE
+                                                 &mt RGUI SPC &kp LGUI        &mt LCTL RET &mt LALT BSPC
         >;};
 
-        lower {
-            bindings = <
-            &kp Q &kp W      &kp E &kp P &kp B         &kp J &kp L &kp U    &kp Y        &kp SCLN
-            &kp A &kp R      &kp S &kp T &kp G         &kp M &kp N &kp E    &kp I        &kp O
-            &kp Z &mt LSFT X &kp C &kp D &kp V         &kp K &kp H &kp CMMA &mt LSFT DOT &kp FSLH
-           &hm_to NUM_APP SPC &kp_tog LGUI NAV         &mt LCTL RET &mt LALT BSPC
+        function { bindings = <
+            &kp _ZOOM_OUT &kp _ZOOM_IN  &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT                   &kp HOME   &kp F7 &kp F8 &kp F9 &kp F12
+            &none         &kp _TT_START &kp _TT_SHOW &kp _SS_CLIP &kp C_PLAY_PAUSE             &kp END    &kp F4 &kp F5 &kp F6 &kp F10
+            &kp _LOCK     &mt LSFT X    &kp K_PWR    &none        &none                        &to ADJUST &kp F1 &kp F2 &kp F3 &kp F11
+                                               &hm_to NUM_APP SPC &kp_to LGUI DEFAULT          &mt LCTL RET &mt LALT BSPC
         >;};
 
-        adjust {
-          bindings = <
-          &none &none &none &none &bootloader         &none &none        &none        &none        &none
-          &none &none &none &none &none               &none &none        &none        &none        &bt BT_SEL 0
-          &none &none &none &none &none               &none &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR
-                &to DEFAULT &to DEFAULT               &none &none
+        adjust { bindings = <
+          &none      &kp _LAY_BAR &kp _OS_DARK &kp _OS_LIGHT &bootloader           &kp TILDE &kp INS &kp LBKT  &kp RBKT  &kp BSLH
+          &none      &none        &kp C_BRI_DN &kp C_BRI_UP  &kp _TOG_DIACT        &kp CAPS  &none   &kp MINUS &kp EQUAL &kp SQT
+          &bt BT_CLR &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1  &bt BT_SEL 0          &none     &none   &none     &none     &none
+                                               &to DEFAULT   &to DEFAULT           &none &none
         >;};
+
+        apps { bindings = <
+          &kp HYPER(F1)  &kp HYPER(F2)  &kp HYPER(F3)  &kp HYPER(F4)  &kp HYPER(F5)         &kp HYPER(F16) &kp HYPER(F17) &kp HYPER(F18) &kp HYPER(F19) &kp HYPER(F20)
+          &kp HYPER(F6)  &kp HYPER(F7)  &kp HYPER(F8)  &kp HYPER(F9)  &kp HYPER(F10)        &kp HYPER(F21) &kp HYPER(F22) &kp HYPER(F23) &kp HYPER(F24) &kp MEH(F1)
+          &kp HYPER(F11) &kp HYPER(F12) &kp HYPER(F13) &kp HYPER(F14) &kp HYPER(F15)        &kp MEH(F2)    &kp MEH(F3)    &kp MEH(F4)    &kp MEH(F5)    &kp MEH(F6)
+                                                             &to DEFAULT &to DEFAULT        &none &none
+        >;};
+
+        emoji { bindings = <
+          &none &none &none &none &none        &none &none &none &none &none
+          &none &none &none &none &none        &none &none &none &none &none
+          &none &none &none &none &none        &none &none &none &none &none
+                &to DEFAULT &to DEFAULT        &none &none
+        >;};
+
 	};
 };
+
+

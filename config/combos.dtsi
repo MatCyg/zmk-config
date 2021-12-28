@@ -16,11 +16,28 @@ compatible = "zmk,combos";
     timeout-ms = <50>; \
   };
 
+#define LAYER_COMBO(LAYERS, NAME, KEY_POSITIONS, BINDINGS) \
+  combo_##NAME { \
+    layers = <LAYERS>; \
+    key-positions = <KEY_POSITIONS>; \
+    bindings = <BINDINGS>; \
+    timeout-ms = <50>; \
+  };
+
 COMBO(esc,          1 2, &kp ESC)
 COMBO(tab,          7 8, &kp TAB)
-COMBO(lower_layer,  0 1, &kp F24)
-COMBO(lower_layer_standalone,  0 4, &to LOWER)
-COMBO(adjust_layer, 0 9 20 29, &to ADJUST)
 COMBO(word,         0 9, &caps_word)
-COMBO(default,      4 24, &to DEFAULT)
-COMBO(standalone,   5 25, &to STANDALONE)
+
+//layers
+COMBO(lower,      0 4, &kp F24)
+COMBO(function,   0 1, &to FUNCTION)
+COMBO(apps,       0 2, &to APPS)
+COMBO(adjust,     0 9 20 29, &to ADJUST)
+COMBO(default,    4 24, &to DEFAULT)
+COMBO(standalone, 5 25, &to STANDALONE)
+
+
+LAYER_COMBO(FUNCTION, mute, 2 3, &kp K_MUTE)
+LAYER_COMBO(FUNCTION, previous, 4 14, &kp C_PREV)
+
+
