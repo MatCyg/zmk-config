@@ -4,14 +4,14 @@
 #include "keys.h"
 
 #define DEFAULT    0
-#define STANDALONE 1
-#define NAV        2
-#define SYMBOL     3
-#define NUM_APP    4
-#define FUNCTION   5
-#define ADJUST     6
-#define APPS       7
-#define EMOJI      8
+#define NAV        1
+#define SYMBOL     2
+#define NUM_APP    3
+#define FUNCTION   4
+#define ADJUST     5
+#define APPS       6
+#define EMOJI      7
+#define ASSISTED   8
 
 &caps_word {
   continue-list = <UNDERSCORE MINUS BACKSPACE>;
@@ -28,14 +28,8 @@
 
     keymap {
         compatible = "zmk,keymap";
-        default_layer { bindings = <
-            &kp Q &kp W      &kp F &kp P &kp B        &kp J &kp L &kp U    &kp Y        &kp SCLN
-            &kp A &kp R      &kp S &kp T &kp G        &kp M &kp N &kp E    &kp I        &kp O
-            &kp Z &hm LSFT X &kp C &kp D &kp V        &kp K &kp H &kp CMMA &hm LSFT DOT &kp FSLH
-                     &hm_spc RGUI SPC &kp LGUI        &hm_spc LCTL RET &hm_spc LALT BSPC
-		>;};
 
-		standalone { bindings = <
+		default { bindings = <
             &kp Q &kp W      &kp F &kp P &kp B        &kp J &kp L &kp U    &kp Y        &kp SCLN
             &kp A &kp R      &kp S &kp T &kp G        &kp M &kp N &kp E    &kp I        &kp O
             &kp Z &hm LSFT X &kp C &kp D &kp V        &kp K &kp H &kp CMMA &hm LSFT DOT &kp FSLH
@@ -46,7 +40,7 @@
             &kp Q &kp W      &kp F &kp P &kp B        &kp J &kp L    &kp UP   &kp Y        &kp SCLN
             &kp A &kp R      &kp S &kp T &kp G        &kp M &kp LEFT &kp DOWN &kp RIGHT    &kp O
             &kp Z &mt LSFT X &kp C &kp D &kp V        &kp K &kp H    &kp CMMA &mt LSFT DOT &kp FSLH
-            &mo_to NUM_APP STANDALONE &kp LGUI        &mt LCTL RET &mt LALT BSPC
+            &mo_to NUM_APP DEFAULT &kp LGUI        &mt LCTL RET &mt LALT BSPC
         >;};
 
         symbol { bindings = <
@@ -91,6 +85,12 @@
                 &to DEFAULT &to DEFAULT        &none &none
         >;};
 
+        assisted { bindings = <
+            &kp Q &kp W      &kp F &kp P &kp B        &kp J &kp L &kp U    &kp Y        &kp SCLN
+            &kp A &kp R      &kp S &kp T &kp G        &kp M &kp N &kp E    &kp I        &kp O
+            &kp Z &hm LSFT X &kp C &kp D &kp V        &kp K &kp H &kp CMMA &hm LSFT DOT &kp FSLH
+                     &hm_spc RGUI SPC &kp LGUI        &hm_spc LCTL RET &hm_spc LALT BSPC
+		>;};
 	};
 };
 

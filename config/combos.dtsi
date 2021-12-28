@@ -34,7 +34,7 @@ COMBO(function,   0 1, &to FUNCTION)
 COMBO(apps,       0 2, &to APPS)
 COMBO(adjust,     0 9 20 29, &to ADJUST)
 COMBO(default,    4 24, &to DEFAULT)
-COMBO(standalone, 5 25, &to STANDALONE)
+COMBO(assisted, 5 25, &to ASSISTED)
 
 
 LAYER_COMBO(FUNCTION, mute, 2 3, &kp K_MUTE)
