@@ -1,24 +1,30 @@
-macro_layer: macro_layer {
+to_wrt: to_wrt {
     compatible = "zmk,behavior-macro";
-    label = "macro_layer";
+    label = "to_wrt";
     #binding-cells = <0>;
-    bindings = <&to STANDALONE>, <&mo NUM_APP>;
+    bindings = <&kp HYPER(EQUAL)>;
 };
 
-macro_one: macro_one {
+to_nav: to_nav {
     compatible = "zmk,behavior-macro";
-    label = "macro_one";
+    label = "to_nav";
     #binding-cells = <0>;
-    //bindings = <&kp LT>, <&kp GT>, <&kp LEFT>;
-    bindings = <&tog NAV>, <&kp N1>;
+    bindings = <&kp HYPER(MINUS)>,
+    <&to DEFAULT>;
 };
 
-macro_two: macro_two {
+wrt_word: wrt_word {
     compatible = "zmk,behavior-macro";
-    label = "macro_two";
+    label = "wrt_word";
     #binding-cells = <0>;
-    //bindings = <&kp LT>, <&kp GT>, <&kp LEFT>;
-    bindings = <&tog NAV>, <&kp N2>;
+    bindings = <&to_wrt>, <&caps_word>;
+};
+
+ss_clip_nav: ss_clip_nav {
+    compatible = "zmk,behavior-macro";
+    label = "ss_clip_nav";
+    #binding-cells = <0>;
+    bindings = <&to_nav>, <&kp _SS_CLIP>;
 };
 
 test: test {
@@ -28,5 +34,6 @@ test: test {
     tapping-term-ms = <135>;
     quick_tap_ms = <0>;
     flavor = "tap-preferred";
-    bindings = <&macro_layer>, <&to>;
+    bindings = <&to_nav>, <&to>;
 };
+

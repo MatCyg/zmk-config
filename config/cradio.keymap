@@ -17,14 +17,18 @@
   continue-list = <UNDERSCORE MINUS BACKSPACE LALT>;
 };
 
-/ { 
+/ {
+
     combos {
         #include "combos.dtsi"
     };
 
     behaviors {
         #include "behaviors.dtsi"
+        #include "emoji_macros.dtsi"
+        #include "macros.dtsi"
     };
+
 
     keymap {
         compatible = "zmk,keymap";
@@ -59,9 +63,9 @@
 
         function { bindings = <
             &kp _ZOOM_OUT &kp _ZOOM_IN  &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT                   &kp HOME   &kp F7 &kp F8 &kp F9 &kp F12
-            &none         &kp _TT_START &kp _TT_SHOW &kp _SS_CLIP &kp C_PLAY_PAUSE             &kp END    &kp F4 &kp F5 &kp F6 &kp F10
-            &kp _LOCK     &mt LSFT X    &kp K_PWR    &none        &none                        &to ADJUST &kp F1 &kp F2 &kp F3 &kp F11
-                                               &hm_to NUM_APP SPC &kp_to LGUI DEFAULT          &mt LCTL RET &mt LALT BSPC
+            &none         &kp _TT_START &kp _TT_SHOW &ss_clip_nav &kp C_PLAY_PAUSE             &kp END    &kp F4 &kp F5 &kp F6 &kp F10
+            &kp _LOCK     &mt LSFT X    &kp K_PWR    &LALT        &none                        &to ADJUST &kp F1 &kp F2 &kp F3 &kp F11
+                                                  &kp LCTL &kp_to LGUI DEFAULT                 &mt LCTL RET &mt LALT BSPC
         >;};
 
         adjust { bindings = <
@@ -79,14 +83,14 @@
         >;};
 
         emoji { bindings = <
-          &none &none &none &none &none        &none &none &none &none &none
-          &none &none &none &none &none        &none &none &none &none &none
-          &none &none &none &none &none        &none &none &none &none &none
-                &to DEFAULT &to DEFAULT        &none &none
+          &code_block &code_java &code_json &emoji_P &emoji_B        &emoji_J &emoji_L &emoji_U    &emoji_Y   &emoji_SCLN
+          &emoji_A    &emoji_R   &emoji_S   &emoji_T &emoji_G        &emoji_M &emoji_N &emoji_E    &emoji_I   &emoji_O
+          &emoji_Z    &emoji_X   &emoji_C   &emoji_D &emoji_V        &emoji_K &emoji_H &emoji_CMMA &emoji_DOT &emoji_FSLH
+                                      &to DEFAULT &to DEFAULT        &none &none
         >;};
 
         assisted { bindings = <
-            &kp Q &kp W      &kp F &kp P &kp B        &kp J &kp L &kp U    &kp Y        &kp SCLN
+            &hm Q A &kp W    &kp F &kp P &kp B        &kp J &kp L &kp U    &kp Y        &kp SCLN
             &kp A &kp R      &kp S &kp T &kp G        &kp M &kp N &kp E    &kp I        &kp O
             &kp Z &hm LSFT X &kp C &kp D &kp V        &kp K &kp H &kp CMMA &hm LSFT DOT &kp FSLH
                      &hm_spc RGUI SPC &kp LGUI        &hm_spc LCTL RET &hm_spc LALT BSPC
