@@ -1,12 +1,6 @@
-#define _UNDO       LG(Z)
-#define _CUT        LG(X)
-#define _COPY       LG(C)
-#define _PASTE      LG(V)
-
 #define HYPER(key)  LS(LC(LA(LG(key))))
 #define MEH(key)    LS(LC(LA(key)))
-#define HEM(key)    LG(LC(LA(key)))
-
+#define GCA(key)    LG(LC(LA(key)))
 #define GCS(key)    LG(LC(LS(key)))
 
 //#define _TT_NEW     HYPER(N)
@@ -29,4 +23,24 @@
 #define _OS_DARK    HYPER(RBKT)
 #define _TOG_DIACT  HYPER(SQT)
 
+//nav layer
+#define _APP0       GCA(N0)
+#define _APP1       GCA(N1)
+#define _APP2       GCA(N2)
+#define _APP3       GCA(N3)
+#define _APP4       GCA(N4)
 
+#define _LAST_APP   GCA(N9)
+#define _PREV_TAB   LG(LS(LBKT))
+#define _NEXT_TAB   LG(LS(RBKT))
+#define _TERM       LC(Q)
+
+#define _UNDO       LG(Z)
+#define _CUT        LG(X)
+#define _COPY       LG(C)
+#define _PASTE      LG(V)
+#define _SEARCH     HYPER(S)
+
+
+#define _NEW_TT     HYPER(N)
+#define _BKMRKS     HYPER(B)

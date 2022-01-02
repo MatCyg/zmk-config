@@ -41,10 +41,10 @@
         >;};
 
         navigation { bindings = <
-            &kp Q &kp W      &kp F &kp P &kp B        &kp J &kp L    &kp UP   &kp Y        &kp SCLN
-            &kp A &kp R      &kp S &kp T &kp G        &kp M &kp LEFT &kp DOWN &kp RIGHT    &kp O
-            &kp Z &mt LSFT X &kp C &kp D &kp V        &kp K &kp H    &kp CMMA &mt LSFT DOT &kp FSLH
-               &mo_to NUM_APP DEFAULT &kp LGUI        &mt LCTL RET &mt LALT BSPC
+            &kp _APP4     &kp _APP1     &kp _APP2     &kp _APP3   &kp _APP0         &kp PG_UP   &kp LA(LEFT) &kp UP    &kp LA(RIGHT)      &kp SCLN
+            &kp _LAST_APP &kp _PREV_TAB &kp _NEXT_TAB &kp T       &kp _TERM         &kp PG_DN   &kp LEFT     &kp DOWN  &kp RIGHT          &sl DEFAULT
+            &kp _UNDO     &hm LSFT _CUT &kp _COPY     &kp _SEARCH &kp _PASTE        &kp _NEW_TT &kp LA(UP)   &kp LG(L) &hm LSFT LA(DOWN)  &kp FSLH
+                                         &mo_to NUM_APP DEFAULT &kp LGUI         &mt LCTL RET &mt LALT BSPC
         >;};
 
         symbol { bindings = <
