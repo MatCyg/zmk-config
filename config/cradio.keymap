@@ -25,7 +25,8 @@
 
     behaviors {
         #include "behaviors.dtsi"
-        #include "emoji_macros.dtsi"
+        #include "macros_emoji.dtsi"
+        #include "macros_apps.dtsi"
         #include "macros.dtsi"
     };
 
@@ -69,17 +70,17 @@
         >;};
 
         adjust { bindings = <
-          &none      &kp _LAY_BAR &kp _OS_DARK &kp _OS_LIGHT &bootloader           &kp TILDE &kp INS &kp LBKT  &kp RBKT  &kp BSLH
+          &none      &kp _LAY_BAR &kp _OS_DARK &kp _OS_LIGHT &bootloader           &kp GRAVE &kp INS &kp LBKT  &kp RBKT  &kp BSLH
           &none      &none        &kp C_BRI_DN &kp C_BRI_UP  &kp _TOG_DIACT        &kp CAPS  &none   &kp MINUS &kp EQUAL &kp SQT
           &bt BT_CLR &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1  &bt BT_SEL 0          &none     &none   &none     &none     &none
-                                               &to DEFAULT   &to DEFAULT           &none &none
+                                               &to DEFAULT   &kp_to LGUI DEFAULT   &mt LCTL RET &mt LALT BSPC
         >;};
 
         apps { bindings = <
-          &kp HYPER(F1)  &kp HYPER(F2)  &kp HYPER(F3)  &kp HYPER(F4)  &kp HYPER(F5)         &kp HYPER(F16) &kp HYPER(F17) &kp HYPER(F18) &kp HYPER(F19) &kp HYPER(F20)
-          &kp HYPER(F6)  &kp HYPER(F7)  &kp HYPER(F8)  &kp HYPER(F9)  &kp HYPER(F10)        &kp HYPER(F21) &kp HYPER(F22) &kp HYPER(F23) &kp HYPER(F24) &kp MEH(F1)
-          &kp HYPER(F11) &kp HYPER(F12) &kp HYPER(F13) &kp HYPER(F14) &kp HYPER(F15)        &kp MEH(F2)    &kp MEH(F3)    &kp MEH(F4)    &kp MEH(F5)    &kp MEH(F6)
-                                                             &to DEFAULT &to DEFAULT        &none &none
+          &apps_F1  &apps_F2  &apps_F3  &apps_F4  &apps_F5         &apps_F16    &apps_F17    &apps_F18    &apps_F19    &apps_F20
+          &apps_F6  &apps_F7  &apps_F8  &apps_F9  &apps_F10        &apps_F21    &apps_F22    &apps_F23    &apps_F24    &apps_meh_F1
+          &apps_F11 &apps_F12 &apps_F13 &apps_F14 &apps_F15        &apps_meh_F2 &apps_meh_F3 &apps_meh_F4 &apps_meh_F5 &apps_meh_F6
+                                    &to DEFAULT &to DEFAULT        &none &none
         >;};
 
         emoji { bindings = <
