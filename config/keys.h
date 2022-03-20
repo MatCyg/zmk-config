@@ -24,13 +24,12 @@
 #define _TOG_DIACT  HYPER(SQT)
 
 //nav layer
-#define _APP0       GCA(N0)
 #define _APP1       GCA(N1)
 #define _APP2       GCA(N2)
 #define _APP3       GCA(N3)
-#define _APP4       GCA(N4)
+#define _LAST_APP   LG(TAB)
+#define _NEXT_WIN   LG(GRAVE)
 
-#define _LAST_APP   GCA(N9)
 #define _PREV_TAB   LG(LS(LBKT))
 #define _NEXT_TAB   LG(LS(RBKT))
 #define _TERM       LC(Q)

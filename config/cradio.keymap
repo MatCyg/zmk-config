@@ -28,6 +28,7 @@
         #include "macros_emoji.dtsi"
         #include "macros_apps.dtsi"
         #include "macros.dtsi"
+        #include "auto_shift.dtsi"
 
         macro_hm_bspc: macro_hm_bspc {
             compatible = "zmk,behavior-hold-tap";
@@ -147,16 +148,16 @@
         compatible = "zmk,keymap";
 
 		default { bindings = <
-            &kp Q &kp W      &kp F &kp P &kp B        &kp J &kp L &kp U    &kp Y        &kp SCLN
-            &a_sqt &kp R      &kp S &t_dqt &kp G        &kp M &kp N &kp E    &kp I        &kp O
+            &kp Q &kp W      &kp F &kp P &kp B        &kp J &kp L &kp U    &kp Y    &kp SCLN
+            &kp A &kp R      &kp S &kp T &kp G        &kp M &kp N &kp E    &kp I    &kp O
             &kp Z &hm LSFT X &kp C &kp D &kp V        &kp K &kp H &kp CMMA &hm LSFT DOT &kp FSLH
                    &hm_to NUM_APP SPC &kp LGUI        &hm_spc LCTL RET &hm_spc LALT BSPC
         >;};
 
         navigation { bindings = <
-            &kp _APP4     &kp _APP1     &kp _APP2     &kp _APP3   &kp _APP0         &kp PG_UP   &kp LA(LEFT) &kp UP    &kp LA(RIGHT)      &kp SCLN
+            &kp _NEXT_WIN &kp _APP3     &kp _APP2     &kp _APP1   &kp _SEARCH       &kp PG_UP   &kp LA(LEFT) &kp UP    &kp LA(RIGHT)      &kp DEL
             &kp _LAST_APP &kp _PREV_TAB &kp _NEXT_TAB &kp T       &kp _TERM         &kp PG_DN   &kp LEFT     &kp DOWN  &kp RIGHT          &sl DEFAULT
-            &kp _UNDO     &hm LSFT _CUT &kp _COPY     &kp _SEARCH &kp _PASTE        &kp _NEW_TT &kp LA(UP)   &kp LG(L) &hm LSFT LA(DOWN)  &kp FSLH
+            &kp _UNDO     &hm LSFT _CUT &kp _COPY     &kp LA(TAB) &kp _PASTE        &kp _NEW_TT &kp LA(UP)   &kp LG(L) &hm LSFT LA(DOWN)  &kp _BKMRKS
                                          &mo_to NUM_APP DEFAULT &nav_gui         &symbol_layer_alt_2  &macro_hm_bspc 0 BSPC
         >;};
 
