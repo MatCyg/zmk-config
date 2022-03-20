@@ -32,6 +32,7 @@
 
 #define _PREV_TAB   LG(LS(LBKT))
 #define _NEXT_TAB   LG(LS(RBKT))
+#define _LMB        HYPER(T)
 #define _TERM       LC(Q)
 
 #define _UNDO       LG(Z)

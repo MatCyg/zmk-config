@@ -24,7 +24,7 @@ compatible = "zmk,combos";
     timeout-ms = <50>; \
   };
 
-COMBO(esc,        1 2, &kp ESC)
+COMBO(esc,        1 2, &esc_nav)
 COMBO(tab,        7 8, &kp TAB)
 COMBO(word,       0 9, &wrt_word)
 
@@ -36,7 +36,6 @@ COMBO(apps2,      0 1 2, &to APPS)
 COMBO(apps3,      1 8, &to APPS)
 COMBO(adjust,     0 9 20 29, &to ADJUST)
 COMBO(default,    4 24, &to DEFAULT)
-COMBO(assisted,   5 25, &to ASSISTED)
 COMBO(emoji,      22 27, &to EMOJI)
 
 LAYER_COMBO(FUNCTION, mute,     2 3, &kp K_MUTE)

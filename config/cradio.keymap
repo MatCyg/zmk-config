@@ -11,7 +11,6 @@
 #define ADJUST     5
 #define APPS       6
 #define EMOJI      7
-#define ASSISTED   8
 
 &caps_word {
   continue-list = <UNDERSCORE MINUS BACKSPACE LALT>;
@@ -151,14 +150,14 @@
             &kp Q &kp W      &kp F &kp P &kp B        &kp J &kp L &kp U    &kp Y    &kp SCLN
             &kp A &kp R      &kp S &kp T &kp G        &kp M &kp N &kp E    &kp I    &kp O
             &kp Z &hm LSFT X &kp C &kp D &kp V        &kp K &kp H &kp CMMA &hm LSFT DOT &kp FSLH
-                   &hm_to NUM_APP SPC &kp LGUI        &hm_spc LCTL RET &hm_spc LALT BSPC
+                   &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
         >;};
 
         navigation { bindings = <
             &kp _NEXT_WIN &kp _APP3     &kp _APP2     &kp _APP1   &kp _SEARCH       &kp PG_UP   &kp LA(LEFT) &kp UP    &kp LA(RIGHT)      &kp DEL
-            &kp _LAST_APP &kp _PREV_TAB &kp _NEXT_TAB &kp T       &kp _TERM         &kp PG_DN   &kp LEFT     &kp DOWN  &kp RIGHT          &sl DEFAULT
+            &kp _LAST_APP &kp _PREV_TAB &kp _NEXT_TAB &kp _LMB    &kp _TERM         &kp PG_DN   &kp LEFT     &kp DOWN  &kp RIGHT          &sl DEFAULT
             &kp _UNDO     &hm LSFT _CUT &kp _COPY     &kp LA(TAB) &kp _PASTE        &kp _NEW_TT &kp LA(UP)   &kp LG(L) &hm LSFT LA(DOWN)  &kp _BKMRKS
-                                         &mo_to NUM_APP DEFAULT &nav_gui         &symbol_layer_alt_2  &macro_hm_bspc 0 BSPC
+                                         &mo_to NUM_APP DEFAULT &nav_gui         &mt LCTL RET  &macro_hm_bspc 0 BSPC
         >;};
 
         symbol { bindings = <
@@ -179,14 +178,14 @@
             &kp _ZOOM_OUT &kp _ZOOM_IN  &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT              &kp HOME   &kp F7 &kp F8 &kp F9 &kp F12
             &kp K_PWR     &kp _TT_START &kp _TT_SHOW &ss_clip_nav &kp C_PLAY_PAUSE        &kp END    &kp F4 &kp F5 &kp F6 &kp F10
             &kp _LOCK     &mt LSFT X    &kp LALT     &kp LCTL     &none                   &to ADJUST &kp F1 &kp F2 &kp F3 &kp F11
-                                                      &kp LCTL &kp_to LGUI DEFAULT        &mt LCTL RET &mt LALT BSPC
+                                                      &kp LCTL &kp_to LGUI NAV        &mt LCTL RET &mt LALT BSPC
         >;};
 
         adjust { bindings = <
           &none      &kp _LAY_BAR &kp _OS_DARK &kp _OS_LIGHT &bootloader           &kp GRAVE &kp INS &kp LBKT  &kp RBKT  &kp BSLH
           &none      &none        &kp C_BRI_DN &kp C_BRI_UP  &kp _TOG_DIACT        &kp CAPS  &none   &kp MINUS &kp EQUAL &kp SQT
           &bt BT_CLR &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1  &bt BT_SEL 0          &none     &none   &none     &none     &none
-                                               &to DEFAULT   &kp_to LGUI DEFAULT   &mt LCTL RET &mt LALT BSPC
+                                               &to DEFAULT   &kp_to LGUI NAV   &mt LCTL RET &mt LALT BSPC
         >;};
 
         apps { bindings = <
@@ -203,12 +202,6 @@
                                       &to DEFAULT &to DEFAULT        &none &none
         >;};
 
-        assisted { bindings = <
-            &hm Q A &kp W    &kp F &kp P &kp B        &kp J &kp L &kp U    &kp Y        &kp SCLN
-            &kp A &kp R      &kp S &kp T &kp G        &kp M &kp N &kp E    &kp I        &kp O
-            &kp Z &hm LSFT X &kp C &kp D &kp V        &kp K &kp H &kp CMMA &hm LSFT DOT &kp FSLH
-                     &hm_spc RGUI SPC &kp LGUI        &hm_spc LCTL RET &hm_spc LALT BSPC
-		>;};
 	};
 };
 

@@ -9,15 +9,14 @@ to_nav: to_nav {
     compatible = "zmk,behavior-macro";
     label = "to_nav";
     #binding-cells = <0>;
-    bindings = <&kp HYPER(MINUS)>,
-    <&to DEFAULT>;
+    bindings = <&to DEFAULT>;
 };
 
 wrt_word: wrt_word {
     compatible = "zmk,behavior-macro";
     label = "wrt_word";
     #binding-cells = <0>;
-    bindings = <&to_wrt>, <&caps_word>;
+    bindings = <&to DEFAULT>, <&caps_word>;
 };
 
 ss_clip_nav: ss_clip_nav {
@@ -37,3 +36,8 @@ test: test {
     bindings = <&to_nav>, <&to>;
 };
 
+ZMK_MACRO(esc_nav,
+    wait-ms = <0>;
+    tap-ms = <10>;
+    bindings = < &to NAV &kp ESC>;
+)
