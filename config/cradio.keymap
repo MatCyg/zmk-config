@@ -3,14 +3,16 @@
 #include <dt-bindings/zmk/bt.h>
 #include "keys.h"
 
-#define DEFAULT    0
-#define NAV        1
-#define SYMBOL     2
-#define NUM_APP    3
-#define FUNCTION   4
-#define ADJUST     5
-#define APPS       6
-#define EMOJI      7
+#define NAV        0
+#define ALPHA      1
+#define SHORTCUT   2
+#define SYMBOL     3
+#define NUM_APP    4
+#define FUNCTION   5
+#define ADJUST     6
+#define APPS       7
+#define EMOJI      8
+#define PASTE_MO   9
 
 &caps_word {
   continue-list = <UNDERSCORE MINUS BACKSPACE LALT>;
@@ -37,9 +39,18 @@
             quick_tap_ms = <180>;
             flavor = "hold-preferred";
             bindings = <&symbol_layer_alt>, <&kp>;
-            retro-tap;
         };
 
+
+        nav_ctrl_ret: nav_ctrl_ret {
+            compatible = "zmk,behavior-hold-tap";
+            label = "nav_ctrl_ret";
+            #binding-cells = <2>;
+            tapping-term-ms = <120>;
+            quick_tap_ms = <180>;
+            flavor = "hold-preferred";
+            bindings = <&nav_ctrl>, <&kp>;
+        };
 
         a_sqt: a_sqt {
             compatible = "zmk,behavior-mod-morph";
@@ -59,9 +70,42 @@
             masked_mods = <(MOD_LALT)>;
        };
 
+       td_paste: td_paste {
+            compatible = "zmk,behavior-tap-dance";
+            label = "td_paste";
+            #binding-cells = <0>;
+            tapping-term-ms = <1000>;
+            bindings = <&kp _PASTE>, <&paste_macro>;
+       };
+
+
+        num_app_to: num_app_to {
+            compatible = "zmk,behavior-hold-tap";
+            label = "num_app_to";
+            #binding-cells = <2>;
+            tapping-term-ms = <135>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&num_app_alpha>, <&to>;
+        };
     };
 
-    macros {
+
+   macros {
+        ZMK_MACRO(
+            paste_macro2,
+            wait-ms = <10>;
+            tap-ms = <20>;
+            bindings = <&kp _PASTE &sl PASTE_MO>;
+        )
+
+        ZMK_MACRO(
+            paste_macro,
+            wait-ms = <10>;
+            tap-ms = <20>;
+            bindings = <&kp _PASTE &kp RET>;
+        )
+
 		ZMK_MACRO(
 			abc_macro,
 			wait-ms = <10>;
@@ -107,24 +151,22 @@
 			wait-ms = <10>;
 			tap-ms = <40>;
 			bindings
-				= <&macro_tap &to SYMBOL>
+				= <&macro_tap &to ALPHA>
 				, <&macro_press &kp LALT>
 				, <&macro_pause_for_release>
 				, <&macro_release &kp LALT>
-				, <&macro_tap &to DEFAULT>
+				, <&macro_tap &to ALPHA>
 				;
 		)
 
 		ZMK_MACRO(
-			symbol_layer_alt_2,
+			num_app_alpha,
 			wait-ms = <10>;
 			tap-ms = <40>;
 			bindings
-				= <&macro_tap &kp A>
-				, <&macro_press &kp B>
+				= <&macro_tap &to NUM_APP>
 				, <&macro_pause_for_release>
-				, <&macro_release &kp B>
-				, <&macro_tap &kp C>
+				, <&macro_tap &to ALPHA>
 				;
 		)
 
@@ -133,7 +175,7 @@
             wait-ms = <0>;
             tap-ms = <40>;
             bindings
-                = <&macro_tap &to DEFAULT>
+                = <&macro_tap &to SHORTCUT>
                 , <&macro_press &kp LGUI>
                 , <&macro_pause_for_release>
                 , <&macro_release &kp LGUI>
@@ -141,23 +183,42 @@
                 ;
         )
 
+        ZMK_MACRO(
+            nav_ctrl,
+            wait-ms = <0>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_tap &to SHORTCUT>
+                , <&macro_press &kp LCTL>
+                , <&macro_pause_for_release>
+                , <&macro_release &kp LCTL>
+                , <&macro_tap &to NAV>
+                ;
+        )
 	};
 
     keymap {
         compatible = "zmk,keymap";
 
-		default { bindings = <
-            &kp Q &kp W      &kp F &kp P &kp B        &kp J &kp L &kp U    &kp Y    &kp SCLN
-            &kp A &kp R      &kp S &kp T &kp G        &kp M &kp N &kp E    &kp I    &kp O
-            &kp Z &hm LSFT X &kp C &kp D &kp V        &kp K &kp H &kp CMMA &hm LSFT DOT &kp FSLH
+        navigation { bindings = <
+            &kp _NEXT_WIN &kp _APP3     &kp _APP2     &kp _APP1   &kp _SEARCH       &kp PG_UP   &kp LA(LEFT) &kp UP    &kp LA(RIGHT)      &kp DEL
+            &kp _LAST_APP &kp _PREV_TAB &kp _NEXT_TAB &kp _LMB    &kp _TERM         &kp PG_DN   &kp LEFT     &kp DOWN  &kp RIGHT          &sl ALPHA
+            &kp _UNDO     &hm LSFT _CUT &kp _COPY     &kp LA(TAB) &paste_macro2        &kp _NEW_TT &kp LA(UP)   &kp LG(L) &hm LSFT LA(DOWN)  &kp _BKMRKS
+                                         &num_app_to 0 ALPHA &nav_gui         &nav_ctrl_ret 0 RET  &macro_hm_bspc 0 BSPC
+        >;};
+
+        alpha { bindings = <
+            &letter_Q &letter_W      &letter_F &letter_P &letter_B        &letter_J &letter_L &letter_U    &letter_Y    &letter_SCLN
+            &letter_A &letter_R      &letter_S &letter_T &letter_G        &letter_M &letter_N &letter_E    &letter_I    &letter_O
+            &letter_Z &hm LSFT X &letter_C &letter_D &letter_V        &letter_K &letter_H &letter_CMMA &hm LSFT DOT &letter_FSLH
                    &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
         >;};
 
-        navigation { bindings = <
-            &kp _NEXT_WIN &kp _APP3     &kp _APP2     &kp _APP1   &kp _SEARCH       &kp PG_UP   &kp LA(LEFT) &kp UP    &kp LA(RIGHT)      &kp DEL
-            &kp _LAST_APP &kp _PREV_TAB &kp _NEXT_TAB &kp _LMB    &kp _TERM         &kp PG_DN   &kp LEFT     &kp DOWN  &kp RIGHT          &sl DEFAULT
-            &kp _UNDO     &hm LSFT _CUT &kp _COPY     &kp LA(TAB) &kp _PASTE        &kp _NEW_TT &kp LA(UP)   &kp LG(L) &hm LSFT LA(DOWN)  &kp _BKMRKS
-                                         &mo_to NUM_APP DEFAULT &nav_gui         &mt LCTL RET  &macro_hm_bspc 0 BSPC
+        shortcut { bindings = <
+            &kp Q &kp W      &kp F &kp P &kp B        &kp J &kp LA(LEFT) &kp UP    &kp LA(RIGHT) &kp SCLN
+            &kp A &kp R      &kp S &kp T &kp G        &kp M &kp LEFT     &kp DOWN  &kp RIGHT     &kp O
+            &kp Z &hm LSFT X &kp C &kp D &kp V        &kp K &kp H        &kp CMMA  &hm LSFT DOT  &kp FSLH
+                   &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
         >;};
 
         symbol { bindings = <
@@ -185,21 +246,28 @@
           &none      &kp _LAY_BAR &kp _OS_DARK &kp _OS_LIGHT &bootloader           &kp GRAVE &kp INS &kp LBKT  &kp RBKT  &kp BSLH
           &none      &none        &kp C_BRI_DN &kp C_BRI_UP  &kp _TOG_DIACT        &kp CAPS  &none   &kp MINUS &kp EQUAL &kp SQT
           &bt BT_CLR &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1  &bt BT_SEL 0          &none     &none   &none     &none     &none
-                                               &to DEFAULT   &kp_to LGUI NAV   &mt LCTL RET &mt LALT BSPC
+                                               &to ALPHA   &kp_to LGUI NAV   &mt LCTL RET &mt LALT BSPC
         >;};
 
         apps { bindings = <
           &apps_F1  &apps_F2  &apps_F3  &apps_F4  &apps_F5         &apps_F16    &apps_F17    &apps_F18    &apps_F19    &apps_F20
           &apps_F6  &apps_F7  &apps_F8  &apps_F9  &apps_F10        &apps_F21    &apps_F22    &apps_F23    &apps_F24    &apps_meh_F1
           &apps_F11 &apps_F12 &apps_F13 &apps_F14 &apps_F15        &apps_meh_F2 &apps_meh_F3 &apps_meh_F4 &apps_meh_F5 &apps_meh_F6
-                                    &to DEFAULT &to DEFAULT        &none &none
+                                        &to ALPHA &to ALPHA        &none &none
         >;};
 
         emoji { bindings = <
           &code_block &code_java &code_json &emoji_P &emoji_B        &emoji_J &emoji_L &emoji_U    &emoji_Y   &emoji_SCLN
           &emoji_A    &emoji_R   &emoji_S   &emoji_T &emoji_G        &emoji_M &emoji_N &emoji_E    &emoji_I   &emoji_O
           &emoji_Z    &emoji_X   &emoji_C   &emoji_D &emoji_V        &emoji_K &emoji_H &emoji_CMMA &emoji_DOT &emoji_FSLH
-                                      &to DEFAULT &to DEFAULT        &none &none
+                                          &to ALPHA &to ALPHA        &none &none
+        >;};
+
+        paste_mo { bindings = <
+          &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans
+          &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans
+          &trans &trans &trans &trans &kp RET       &trans &trans &trans &trans &trans
+                               &trans &trans        &trans &trans
         >;};
 
 	};

@@ -7,11 +7,11 @@
   };
 
 #define EMOJI_KEY(KEY) \
-    MACRO(emoji_##KEY, &kp TILDE &kp KEY &kp TILDE &to DEFAULT)
+    MACRO(emoji_##KEY, &kp TILDE &kp KEY &kp TILDE &to ALPHA)
 
-MACRO(code_block, &kp GRAVE &kp GRAVE &kp GRAVE &to DEFAULT)
-MACRO(code_java, &kp GRAVE &kp GRAVE &kp GRAVE &kp J &kp A &kp V &kp A &to DEFAULT)
-MACRO(code_json, &kp GRAVE &kp GRAVE &kp GRAVE &kp J &kp S &kp O &kp N &to DEFAULT)
+MACRO(code_block, &kp GRAVE &kp GRAVE &kp GRAVE &to ALPHA)
+MACRO(code_java, &kp GRAVE &kp GRAVE &kp GRAVE &kp J &kp A &kp V &kp A &to ALPHA)
+MACRO(code_json, &kp GRAVE &kp GRAVE &kp GRAVE &kp J &kp S &kp O &kp N &to ALPHA)
 EMOJI_KEY(P)
 EMOJI_KEY(B)
 EMOJI_KEY(J)

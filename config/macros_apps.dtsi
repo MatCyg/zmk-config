@@ -7,10 +7,10 @@
   };
 
 #define OPEN_APP_HYPER_KEY(KEY) \
-    APP_MACRO(apps_##KEY, &kp HYPER(KEY) &to DEFAULT)
+    APP_MACRO(apps_##KEY, &kp HYPER(KEY) &to ALPHA)
 
 #define OPEN_APP_MEH_KEY(KEY) \
-    APP_MACRO(apps_meh_##KEY, &kp MEH(KEY) &to DEFAULT)
+    APP_MACRO(apps_meh_##KEY, &kp MEH(KEY) &to ALPHA)
 
 OPEN_APP_HYPER_KEY(F1)
 OPEN_APP_HYPER_KEY(F2)

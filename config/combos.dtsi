@@ -34,11 +34,13 @@ COMBO(function,   0 1, &to FUNCTION)
 //COMBO(apps1,      0 2, &to APPS)
 COMBO(apps2,      0 1 2, &to APPS)
 COMBO(apps3,      1 8, &to APPS)
-COMBO(adjust,     0 9 20 29, &to ADJUST)
-COMBO(default,    4 24, &to DEFAULT)
+COMBO(bootloader,     0 9 20 29, &bootloader)
+COMBO(symbol,     2 7, &to SYMBOL)
+COMBO(alpha,    4 24, &to ALPHA)
 COMBO(emoji,      22 27, &to EMOJI)
 
 LAYER_COMBO(FUNCTION, mute,     2 3, &kp K_MUTE)
 LAYER_COMBO(FUNCTION, previous, 4 14, &kp C_PREV)
+
 
 

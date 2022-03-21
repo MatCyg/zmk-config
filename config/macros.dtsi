@@ -9,14 +9,14 @@ to_nav: to_nav {
     compatible = "zmk,behavior-macro";
     label = "to_nav";
     #binding-cells = <0>;
-    bindings = <&to DEFAULT>;
+    bindings = <&to ALPHA>;
 };
 
 wrt_word: wrt_word {
     compatible = "zmk,behavior-macro";
     label = "wrt_word";
     #binding-cells = <0>;
-    bindings = <&to DEFAULT>, <&caps_word>;
+    bindings = <&to ALPHA>, <&caps_word>;
 };
 
 ss_clip_nav: ss_clip_nav {
