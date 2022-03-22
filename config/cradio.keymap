@@ -14,6 +14,7 @@
 #define APPS       8
 #define EMOJI      9
 #define PASTE_MO   10
+#define ALPHA_NORMAL 11
 
 &caps_word {
   continue-list = <UNDERSCORE MINUS BACKSPACE LALT>;
@@ -275,6 +276,13 @@
           &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans
           &trans &trans &trans &trans &kp RET       &trans &trans &trans &trans &trans
                                &trans &trans        &trans &trans
+        >;};
+
+        alpha_normal { bindings = <
+            &kp Q &kp W  &kp F &kp P &kp B        &kp J &kp L &kp U    &kp Y    &kp SCLN
+            &kp A &kp R  &kp S &kp T &kp G        &kp M &kp N &kp E    &kp I    &kp O
+            &kp Z &hm LSFT X &kp C &kp D &kp V        &kp K &kp H &kp CMMA &hm LSFT DOT &kp FSLH
+                   &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
         >;};
 
 	};

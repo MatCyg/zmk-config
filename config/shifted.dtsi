@@ -1,13 +1,31 @@
 #define SHIFTED(letter) \
+    ZMK_MACRO(f_capital_tog_##letter, \
+        wait-ms = <0>; \
+        tap-ms = <0>; \
+        bindings = <&kp LS(letter) &tog SHORTCUT_F>; \
+    ) \
+    ZMK_MACRO(f_letter_tog_##letter, \
+        wait-ms = <0>; \
+        tap-ms = <0>; \
+        bindings = <&kp letter &tog SHORTCUT_F>; \
+    ) \
+    shifted_tog_##letter: shifted_##letter { \
+        compatible = "zmk,behavior-hold-tap"; \
+        label = ZMK_MACRO_STRINGIFY(shifted_##letter); \
+        #binding-cells = <2>; \
+        tapping-term-ms = <180>; \
+        flavor = "tap-preferred"; \
+        bindings = <&f_capital_tog_##letter>, <&f_letter_tog_##letter>; \
+    }; \
     ZMK_MACRO(f_capital_##letter, \
         wait-ms = <0>; \
-        tap-ms = <10>; \
-        bindings = <&kp LS(letter) &tog SHORTCUT_F>; \
+        tap-ms = <0>; \
+        bindings = <&kp LS(letter)>; \
     ) \
     ZMK_MACRO(f_letter_##letter, \
         wait-ms = <0>; \
-        tap-ms = <10>; \
-        bindings = <&kp letter &tog SHORTCUT_F>; \
+        tap-ms = <0>; \
+        bindings = <&kp letter>; \
     ) \
     shifted_##letter: shifted_##letter { \
         compatible = "zmk,behavior-hold-tap"; \
