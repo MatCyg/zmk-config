@@ -15,6 +15,7 @@
 #define EMOJI      9
 #define PASTE_MO   10
 #define ALPHA_NORMAL 11
+#define SEL_MODE 12
 
 &caps_word {
   continue-list = <UNDERSCORE MINUS BACKSPACE LALT>;
@@ -33,6 +34,7 @@
         #include "macros.dtsi"
         #include "auto_shift.dtsi"
         #include "shifted.dtsi"
+        #include "selection_mode.dtsi"
 
         macro_hm_bspc: macro_hm_bspc {
             compatible = "zmk,behavior-hold-tap";
@@ -202,9 +204,9 @@
         compatible = "zmk,keymap";
 
         navigation { bindings = <
-            &kp _NEXT_WIN &kp _APP3     &kp _APP2     &kp _APP1   &kp _SEARCH       &kp PG_UP   &kp LA(LEFT) &kp UP    &kp LA(RIGHT)      &kp DEL
-            &kp _LAST_APP &kp _PREV_TAB &kp _NEXT_TAB &kp _LMB    &kp _TERM         &kp PG_DN   &kp LEFT     &kp DOWN  &kp RIGHT          &tog SHORTCUT_F
-            &kp _UNDO     &hm LSFT _CUT &kp _COPY     &kp LA(TAB) &paste_macro2        &kp _NEW_TT &kp LA(UP)   &kp LG(L) &hm LSFT LA(DOWN)  &kp _BKMRKS
+            &kp _NEXT_WIN &kp _APP3     &kp _APP2     &kp _APP1   &kp _SEARCH       &test_a_b   &kp LA(LEFT) &kp UP    &kp LA(RIGHT)      &kp DEL
+            &kp _LAST_APP &kp _PREV_TAB &kp _NEXT_TAB &kp _LMB    &kp _TERM         &sel_arrow_left   &kp LEFT     &kp DOWN  &kp RIGHT          &tog SHORTCUT_F
+            &kp _UNDO     &hm LSFT _CUT &kp _COPY     &kp LA(TAB) &paste_macro2        &kp _NEW_TT &kp LA(UP)   &kp LG(L) &hm RSFT LA(DOWN)  &kp _BKMRKS
                                          &num_app_to 0 ALPHA &nav_gui         &nav_ctrl_ret 0 RET  &macro_hm_bspc 0 BSPC
         >;};
 
@@ -216,9 +218,9 @@
         >;};
 
         shortcut_full { bindings = <
-            &shifted_Q 0 0 &shifted_W 0 0  &shifted_F 0 0 &shifted_P 0 0 &shifted_B 0 0        &shifted_J 0 0 &shifted_L 0 0 &shifted_U 0 0    &shifted_Y 0 0    &shifted_SCLN 0 0
-            &shifted_A 0 0 &shifted_R 0 0  &shifted_S 0 0 &shifted_T 0 0 &shifted_G 0 0        &shifted_M 0 0 &shifted_N 0 0 &shifted_E 0 0    &shifted_I 0 0    &shifted_O 0 0
-            &shifted_Z 0 0 &hm LSFT X      &shifted_C 0 0 &shifted_D 0 0 &shifted_V 0 0        &shifted_K 0 0 &shifted_H 0 0 &shifted_CMMA 0 0 &hm LSFT DOT &shifted_FSLH 0 0
+            &shifted_tog_Q 0 0 &shifted_tog_W 0 0  &shifted_tog_F 0 0 &shifted_tog_P 0 0 &shifted_tog_B 0 0        &shifted_tog_J 0 0 &shifted_tog_L 0 0 &shifted_tog_U 0 0    &shifted_tog_Y 0 0    &shifted_tog_SCLN 0 0
+            &shifted_tog_A 0 0 &shifted_tog_R 0 0  &shifted_tog_S 0 0 &shifted_tog_T 0 0 &shifted_tog_G 0 0        &shifted_tog_M 0 0 &shifted_tog_N 0 0 &shifted_tog_E 0 0    &shifted_tog_I 0 0    &shifted_tog_O 0 0
+            &shifted_tog_Z 0 0 &hm LSFT X          &shifted_tog_C 0 0 &shifted_tog_D 0 0 &shifted_tog_V 0 0        &shifted_tog_K 0 0 &shifted_tog_H 0 0 &shifted_tog_CMMA 0 0 &hm LSFT DOT          &shifted_tog_FSLH 0 0
                    &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
         >;};
 
@@ -285,6 +287,12 @@
                    &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
         >;};
 
+        sel_mode { bindings = <
+          &trans &trans &trans &trans &trans        &trans &trans       &kp LS(UP)   &trans        &trans
+          &trans &trans &trans &trans &trans        &sel_left1 &kp LS(LEFT) &kp LS(DOWN) &kp LS(RIGHT) &trans
+          &trans &trans &trans &trans &trans        &trans &trans       &trans       &trans        &trans
+                               &trans &trans        &trans &trans
+        >;};
 	};
 };
 
