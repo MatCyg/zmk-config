@@ -204,9 +204,9 @@
         compatible = "zmk,keymap";
 
         navigation { bindings = <
-            &kp _NEXT_WIN &kp _APP3     &kp _APP2     &kp _APP1   &kp _SEARCH       &test_a_b   &kp LA(LEFT) &kp UP    &kp LA(RIGHT)      &kp DEL
-            &kp _LAST_APP &kp _PREV_TAB &kp _NEXT_TAB &kp _LMB    &kp _TERM         &sel_arrow_left   &kp LEFT     &kp DOWN  &kp RIGHT          &tog SHORTCUT_F
-            &kp _UNDO     &hm LSFT _CUT &kp _COPY     &kp LA(TAB) &paste_macro2        &kp _NEW_TT &kp LA(UP)   &kp LG(L) &hm RSFT LA(DOWN)  &kp _BKMRKS
+            &kp _NEXT_WIN &kp _APP3     &kp _APP2     &kp _APP1   &kp _SEARCH       &kp PG_UP   &kp LA(LEFT) &kp UP    &kp LA(RIGHT)      &kp DEL
+            &kp _LAST_APP &kp _PREV_TAB &kp _NEXT_TAB &kp _LMB    &kp _TERM         &kp PG_DN   &morphing_left     &kp DOWN  &kp RIGHT          &tog SHORTCUT_F
+            &kp _UNDO     &hm LSFT _CUT &kp _COPY     &kp LA(TAB) &paste_macro2     &kp _NEW_TT &kp LA(UP)   &kp LG(L) &hm LSFT LA(DOWN)  &kp _BKMRKS
                                          &num_app_to 0 ALPHA &nav_gui         &nav_ctrl_ret 0 RET  &macro_hm_bspc 0 BSPC
         >;};
 
@@ -289,7 +289,7 @@
 
         sel_mode { bindings = <
           &trans &trans &trans &trans &trans        &trans &trans       &kp LS(UP)   &trans        &trans
-          &trans &trans &trans &trans &trans        &sel_left1 &kp LS(LEFT) &kp LS(DOWN) &kp LS(RIGHT) &trans
+          &trans &trans &trans &trans &trans        &trans &sel_arrow_left &kp LS(DOWN) &kp LS(RIGHT) &trans
           &trans &trans &trans &trans &trans        &trans &trans       &trans       &trans        &trans
                                &trans &trans        &trans &trans
         >;};
