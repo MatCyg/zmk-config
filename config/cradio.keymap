@@ -29,12 +29,12 @@
 
     behaviors {
         #include "behaviors.dtsi"
-        #include "macros_emoji.dtsi"
-        #include "macros_apps.dtsi"
-        #include "macros.dtsi"
-        #include "auto_shift.dtsi"
-        #include "shifted.dtsi"
-        #include "selection_mode.dtsi"
+        #include "macros/macros_emoji.dtsi"
+        #include "macros/macros_apps.dtsi"
+        #include "macros/macros.dtsi"
+        #include "macros/auto_shift.dtsi"
+        #include "macros/shifted.dtsi"
+        #include "macros/selection_mode.dtsi"
 
         macro_hm_bspc: macro_hm_bspc {
             compatible = "zmk,behavior-hold-tap";
