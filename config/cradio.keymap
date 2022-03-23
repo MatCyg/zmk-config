@@ -33,8 +33,9 @@
         #include "macros/macros_apps.dtsi"
         #include "macros/macros.dtsi"
         #include "macros/auto_shift.dtsi"
-        #include "macros/shifted.dtsi"
         #include "macros/selection_mode.dtsi"
+        #include "macros/shifted.dtsi"
+        #include "macros/symbols.dtsi"
 
         macro_hm_bspc: macro_hm_bspc {
             compatible = "zmk,behavior-hold-tap";
@@ -211,20 +212,6 @@
             ;
     )
 
-    ZMK_MACRO(
-        sym_bslh,
-        wait-ms = <0>;
-        tap-ms = <0>;
-        bindings
-            = <&macro_release &kp LALT>
-            , <&macro_tap &to ALPHA>
-            , <&macro_tap &tog SYMBOL>
-            , <&macro_press &kp BSLH>
-            , <&macro_pause_for_release>
-            , <&macro_release &kp BSLH>
-           ;
-    )
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -257,9 +244,9 @@
         >;};
 
         symbol { bindings = <
-           &kp GRAVE &kp LBRC      &kp RBRC &kp MINUS &kp DLLR        &sym_bslh &kp N7 &kp N8 &kp N9 &kp EXCL
-           &kp SQT   &kp LPAR      &kp RPAR &kp DQT   &kp UNDER       &kp PLUS &kp N4 &kp N5 &kp N6 &kp N0
-           &kp AT    &hm LSFT LBKT &kp RBKT &kp EQUAL &kp PIPE        &kp AMPS &kp N1 &kp N2 &kp N3 &kp TILDE
+           &sym_GRAVE &sym_LBRC     &sym_RBRC &sym_MINUS &sym_DLLR        &sym_BSLH &sym_N7 &sym_N8 &sym_N9 &sym_EXCL
+           &sym_SQT   &sym_LPAR     &sym_RPAR &sym_DQT   &sym_UNDER       &sym_PLUS &sym_N4 &sym_N5 &sym_N6 &sym_N0
+           &sym_AT    &hm LSFT LBKT &sym_RBKT &sym_EQUAL &sym_PIPE        &sym_AMPS &sym_N1 &sym_N2 &sym_N3 &sym_TILDE
                                          &mt RGUI SPC &kp LGUI        &mt LCTL RET &mt LALT BSPC
         >;};
 
