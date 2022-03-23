@@ -223,16 +223,16 @@
         >;};
 
         alpha { bindings = <
-            &letter_Q &letter_W  &letter_F &letter_P &letter_B        &letter_J &letter_L &letter_U    &letter_Y    &letter_SCLN
-            &letter_A &letter_R  &letter_S &letter_T &letter_G        &letter_M &letter_N &letter_E    &letter_I    &letter_O
-            &letter_Z &hm LSFT X &letter_C &letter_D &letter_V        &letter_K &letter_H &letter_CMMA &hm LSFT DOT &letter_FSLH
+            &letter_Q &letter_W           &letter_F &letter_P &letter_B        &letter_J &letter_L &letter_U    &letter_Y    &letter_SCLN
+            &letter_A &letter_R           &letter_S &letter_T &letter_G        &letter_M &letter_N &letter_E    &letter_I    &letter_O
+            &letter_Z &hm_letter_X LSFT 0 &letter_C &letter_D &letter_V        &letter_K &letter_H &letter_CMMA &hm LSFT DOT &letter_FSLH
                    &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &macro_hm_bspc 0 BSPC
         >;};
 
         symbol { bindings = <
-           &sym_GRAVE &sym_LBRC     &sym_RBRC &sym_MINUS &sym_DLLR        &sym_BSLH &sym_N7 &sym_N8 &sym_N9 &sym_EXCL
-           &sym_SQT   &sym_LPAR     &sym_RPAR &sym_DQT   &sym_UNDER       &sym_PLUS &sym_N4 &sym_N5 &sym_N6 &sym_N0
-           &sym_AT    &hm LSFT LBKT &sym_RBKT &sym_EQUAL &sym_PIPE        &sym_AMPS &sym_N1 &sym_N2 &sym_N3 &sym_TILDE
+           &sym_GRAVE &sym_LBRC           &sym_RBRC &sym_MINUS &sym_DLLR        &sym_BSLH &sym_N7 &sym_N8 &sym_N9 &sym_EXCL
+           &sym_SQT   &sym_LPAR           &sym_RPAR &sym_DQT   &sym_UNDER       &sym_PLUS &sym_N4 &sym_N5 &sym_N6 &sym_N0
+           &sym_AT    &hm_sym_LBKT LSFT 0 &sym_RBKT &sym_EQUAL &sym_PIPE        &sym_AMPS &sym_N1 &sym_N2 &sym_N3 &sym_TILDE
                                          &mt RGUI SPC &kp LGUI        &mt LCTL RET &mt LALT BSPC
         >;};
 

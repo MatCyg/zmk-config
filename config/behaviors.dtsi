@@ -68,3 +68,30 @@ mo_to: mo_to {
     flavor = "tap-preferred";
     bindings = <&mo>, <&to>;
 };
+
+
+hm: homerow_mods {
+    compatible = "zmk,behavior-hold-tap";
+    label = "HOMEROW_MODS";
+    #binding-cells = <2>;
+    tapping-term-ms = <120>;
+    quick_tap_ms = <180>;
+    flavor = "tap-preferred";
+    bindings = <&kp>, <&kp>;
+};
+
+
+#define HOME_ROW_MACRO(macro) \
+    hm_##macro: hm_##macro { \
+        compatible = "zmk,behavior-hold-tap"; \
+        label = ZMK_MACRO_STRINGIFY(hm_##macro); \
+        #binding-cells = <2>; \
+        tapping-term-ms = <120>; \
+        quick_tap_ms = <180>; \
+        flavor = "tap-preferred"; \
+        bindings = <&kp>, <&macro>; \
+    };
+
+HOME_ROW_MACRO(sym_LBKT)
+HOME_ROW_MACRO(letter_X)
+
