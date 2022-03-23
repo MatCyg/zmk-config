@@ -1,4 +1,31 @@
+#define SELECTION_MORPHING(keyName, key) \
+    morphing_##keyName: morphing_##keyName { \
+        compatible = "zmk,behavior-mod-morph"; \
+        label = ZMK_MACRO_STRINGIFY(morphing_##keyName); \
+        #binding-cells = <0>; \
+        bindings = <&kp key>, <&sel_arrow_##keyName>; \
+        mods = <(MOD_LSFT)>; \
+    }; \
+    ZMK_MACRO( \
+        sel_arrow_##keyName, \
+        wait-ms = <0>; \
+        tap-ms = <0>; \
+        bindings \
+            = <&macro_release &kp LSFT> \
+            , <&macro_press &kp LS(key)> \
+            , <&macro_pause_for_release> \
+            , <&macro_release &kp LS(key)> \
+            , <&macro_tap &to NAV> \
+            , <&macro_tap &sl SEL_MODE> \
+            ; \
+    )
 
+SELECTION_MORPHING(left, LEFT)
+SELECTION_MORPHING(right, RIGHT)
+SELECTION_MORPHING(down, DOWN)
+SELECTION_MORPHING(up, UP)
+
+/**
 morphing_left: morphing_left {
     compatible = "zmk,behavior-mod-morph";
     label = "morphing_left";
@@ -20,3 +47,4 @@ ZMK_MACRO(
         , <&macro_tap &sl SEL_MODE>
         ;
 )
+**/
