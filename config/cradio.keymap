@@ -162,17 +162,6 @@
 				;
 		)
 
-		ZMK_MACRO(
-			num_app_alpha,
-			wait-ms = <0>;
-			tap-ms = <0>;
-			bindings
-				= <&macro_tap &to NUM_APP>
-				, <&macro_pause_for_release>
-				, <&macro_tap &to ALPHA>
-				;
-		)
-
         ZMK_MACRO(
             nav_gui,
             wait-ms = <0>;
@@ -198,7 +187,31 @@
                 , <&macro_tap &to NAV>
                 ;
         )
+
+		ZMK_MACRO(
+			num_app_alpha,
+			wait-ms = <0>;
+			tap-ms = <0>;
+			bindings
+				= <&macro_tap &tog NUM_APP>
+				, <&macro_pause_for_release>
+				, <&macro_tap &tog NUM_APP>
+				;
+		)
 	};
+
+    ZMK_MACRO(
+        macro_bslh,
+        wait-ms = <0>;
+        tap-ms = <0>;
+        bindings
+            = <&macro_tap &to ALPHA>
+            , <&macro_tap &tog NUM_APP>
+            , <&macro_press &kp BSLH>
+            , <&macro_pause_for_release>
+            , <&macro_release &kp BSLH>
+           ;
+    )
 
     keymap {
         compatible = "zmk,keymap";
@@ -239,7 +252,7 @@
         >;};
 
         num_app { bindings = <
-           &kp LG(N4) &kp LG(N3)      &kp LG(N2) &kp LG(N1) &kp LG(N9)        &kp BSLH &kp N7 &kp N8 &kp N9 &kp EXCL
+           &kp LG(N4) &kp LG(N3)      &kp LG(N2) &kp LG(N1) &kp LG(N9)        &macro_bslh &kp N7 &kp N8 &kp N9 &kp EXCL
            &kp GCS(A) &kp GCS(R)      &kp GCS(S) &kp GCS(T) &kp GCS(G)        &kp PLUS &kp N4 &kp N5 &kp N6 &kp N0
            &kp GCS(Z) &mt LSFT GCS(X) &kp GCS(C) &kp GCS(D) &kp GCS(V)        &kp AMPS &kp N1 &kp N2 &kp N3 &kp TILDE
                                                       &kp SPC &kp LGUI        &mt LCTL LC(RET) &mt LALT LA(BSPC)
