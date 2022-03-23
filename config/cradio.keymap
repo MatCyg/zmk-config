@@ -226,7 +226,7 @@
             &letter_Q &letter_W  &letter_F &letter_P &letter_B        &letter_J &letter_L &letter_U    &letter_Y    &letter_SCLN
             &letter_A &letter_R  &letter_S &letter_T &letter_G        &letter_M &letter_N &letter_E    &letter_I    &letter_O
             &letter_Z &hm LSFT X &letter_C &letter_D &letter_V        &letter_K &letter_H &letter_CMMA &hm LSFT DOT &letter_FSLH
-                   &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
+                   &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &macro_hm_bspc 0 BSPC
         >;};
 
         shortcut_full { bindings = <
