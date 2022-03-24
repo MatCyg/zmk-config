@@ -97,6 +97,7 @@
            label = "space_cmd";
            #binding-cells = <0>;
            bindings = <&kp SPC>, <&space_cmd_alpha>;
+           mods = <(MOD_LGUI)>;
        };
        ZMK_MACRO(
            space_cmd_alpha,
