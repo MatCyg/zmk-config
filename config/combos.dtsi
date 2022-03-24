@@ -30,6 +30,7 @@ COMBO(word,       0 9, &wrt_word)
 
 //layers
 COMBO(nav,        0 4, &to NAV)
+COMBO(test,        4 5, &to TEST)
 COMBO(function,   0 1, &to FUNCTION)
 //COMBO(apps1,      0 2, &to APPS)
 COMBO(apps2,      0 1 2, &to APPS)
