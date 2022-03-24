@@ -70,6 +70,16 @@
             flavor = "tap-preferred";
             bindings = <&num_app_alpha>, <&to>;
         };
+
+        sym_num_app_spc: sym_num_app_spc {
+            compatible = "zmk,behavior-hold-tap";
+            label = "sym_num_app_spc";
+            #binding-cells = <2>;
+            tapping-term-ms = <135>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&num_app_alpha>, <&sym_SPC>;
+        };
     };
 
 
@@ -147,7 +157,7 @@
            &sym_GRAVE &sym_LBRC           &sym_RBRC &sym_MINUS &sym_DLLR        &sym_BSLH &sym_N7 &sym_N8 &sym_N9 &sym_EXCL
            &sym_SQT   &sym_LPAR           &sym_RPAR &sym_DQT   &sym_UNDER       &sym_PLUS &sym_N4 &sym_N5 &sym_N6 &sym_N0
            &sym_AT    &hm_sym_LBKT LSFT 0 &sym_RBKT &sym_EQUAL &sym_PIPE        &sym_AMPS &sym_N1 &sym_N2 &sym_N3 &sym_TILDE
-                                         &mt RGUI SPC &kp LGUI        &mt LCTL RET &mt LALT BSPC
+                                         &sym_num_app_spc 0 0 &mt LGUI RET        &mt LCTL RET &mt LALT BSPC
         >;};
 
         num_app { bindings = <
