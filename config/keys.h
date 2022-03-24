@@ -39,6 +39,7 @@
 #define _CUT        LG(X)
 #define _COPY       LG(C)
 #define _PASTE      LG(V)
+#define _PASTE_MGR  LG(LA(C))
 #define _SEARCH     HYPER(S)
 
 
