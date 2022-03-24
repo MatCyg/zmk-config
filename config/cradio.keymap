@@ -80,10 +80,35 @@
             flavor = "tap-preferred";
             bindings = <&num_app_alpha>, <&sym_SPC>;
         };
+
+        sht_num_app_spc: sht_num_app_spc {
+            compatible = "zmk,behavior-hold-tap";
+            label = "sht_num_app_spc";
+            #binding-cells = <2>;
+            tapping-term-ms = <135>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&num_app_alpha>, <&space_cmd>;
+        };
     };
+
+        space_cmd: space_cmd {
+           compatible = "zmk,behavior-mod-morph";
+           label = "space_cmd";
+           #binding-cells = <0>;
+           bindings = <&kp SPC>, <&space_cmd_alpha>;
+       };
+       ZMK_MACRO(
+           space_cmd_alpha,
+           wait-ms = <0>;
+           tap-ms = <0>;
+           bindings = <&to ALPHA &kp LG(SPC)>;
+       )
 
 
    macros {
+
+
         ZMK_MACRO(
             paste_macro,
             wait-ms = <10>;
@@ -220,7 +245,7 @@
             &shifted_Q 0 0 &shifted_W 0 0 &shifted_F 0 0 &shifted_P 0 0 &shifted_B 0 0        &shifted_J 0 0 &kp LA(LEFT)   &kp UP            &kp LA(RIGHT)   &shifted_SCLN 0 0
             &shifted_A 0 0 &shifted_R 0 0 &shifted_S 0 0 &shifted_T 0 0 &shifted_G 0 0        &shifted_M 0 0 &morphing_lg_left &kp DOWN    &morphing_lg_right &shifted_O 0 0
             &shifted_Z 0 0 &hm LSFT X     &shifted_C 0 0 &shifted_D 0 0 &shifted_V 0 0        &shifted_K 0 0 &shifted_H 0 0 &shifted_CMMA 0 0 &hm LSFT DOT    &shifted_FSLH 0 0
-                   &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
+                   &sht_num_app_spc 0 0 &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
         >;};
 
         sel_mode { bindings = <
