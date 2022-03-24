@@ -7,3 +7,4 @@
 - [ ] hold paste to paste manager
 - [ ] what should be done with sel mode cmd alt left arrow and cmd up arrow?
 - [ ] idea: hold numbers for Fkeys, once used, Fkeys on press instead of hold
+- [ ] nav layer cmd + num + number won't send cmd 1
