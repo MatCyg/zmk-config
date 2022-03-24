@@ -40,7 +40,7 @@
 #define _COPY       LG(C)
 #define _PASTE      LG(V)
 #define _CLPBRD_MGR LG(LA(C))
-#define _SEARCH     HYPER(S)
+#define _SEARCH     GCA(S)
 
 
 #define _NEW_TT     HYPER(N)
