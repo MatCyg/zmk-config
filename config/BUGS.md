@@ -1,18 +1,9 @@
-[*] when selecting with shift, pressing shift + tab doesn't work
-
-[*] when selection mode adding cmd + arrow breaks selection
-
-[ ] ctrl + g hold doesn't work
-
-[ ] one shot layer space
-[ ] symbol layer `[` doesn't work
-
-[ ] double x doesnt produce shifted X
-
-
-[ ] hold paste to paste manager
-
-
-[ ] what should be done with sel mode cmd alt left arrow and cmd up arrow?
-
-
+- [x] when selecting with shift, pressing shift + tab doesn't work
+- [x] when selection mode adding cmd + arrow breaks selection
+- [ ] ctrl + g hold doesn't work
+- [ ] one shot layer space
+- [ ] symbol layer `[` doesn't work
+- [ ] double x doesnt produce shifted X
+- [ ] hold paste to paste manager
+- [ ] what should be done with sel mode cmd alt left arrow and cmd up arrow?
+- [ ] idea: hold numbers for Fkeys, once used, Fkeys on press instead of hold
