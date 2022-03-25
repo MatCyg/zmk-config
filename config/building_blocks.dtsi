@@ -1,12 +1,11 @@
 #define MACRO(name,...) \
-	name: name { \
-			label = ZMK_MACRO_STRINGIFY(ZM_ ## name); \
-			compatible = "zmk,behavior-macro"; \
-			#binding-cells = <0>; \
-            wait-ms = <0>; \
-            tap-ms = <0>; \
-			bindings = __VA_ARGS__ ;\
-		};
+	MACRO_TIMED(name, 0, 0, __VA_ARGS__)
 
+#define MACRO_TIMED(name, waitMs, tapMs, ...) \
+    ZMK_MACRO(name, \
+        wait-ms = <waitMs>; \
+        tap-ms = <tapMs>; \
+        bindings = __VA_ARGS__ ; \
+    )
 
 MACRO(test, <&to ALPHA>, <&caps_word>)

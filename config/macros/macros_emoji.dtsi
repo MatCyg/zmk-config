@@ -1,16 +1,8 @@
-#define SNIPPET(NAME, BINDINGS) \
-    ZMK_MACRO(NAME, \
-        wait-ms = <0>; \
-        tap-ms = <0>; \
-        bindings = <BINDINGS>; \
-    )
+#define EMOJI_KEY(KEY) MACRO(emoji_##KEY, <&kp TILDE &kp KEY &kp TILDE &to ALPHA>)
 
-#define EMOJI_KEY(KEY) \
-    SNIPPET(emoji_##KEY, &kp TILDE &kp KEY &kp TILDE &to ALPHA)
-
-SNIPPET(code_block, &kp GRAVE &kp GRAVE &kp GRAVE &to ALPHA)
-SNIPPET(code_java, &kp GRAVE &kp GRAVE &kp GRAVE &kp J &kp A &kp V &kp A &to ALPHA)
-SNIPPET(code_json, &kp GRAVE &kp GRAVE &kp GRAVE &kp J &kp S &kp O &kp N &to ALPHA)
+MACRO(code_block, <&kp GRAVE &kp GRAVE &kp GRAVE &to ALPHA>)
+MACRO(code_java, <&kp GRAVE &kp GRAVE &kp GRAVE &kp J &kp A &kp V &kp A &to ALPHA>)
+MACRO(code_json, <&kp GRAVE &kp GRAVE &kp GRAVE &kp J &kp S &kp O &kp N &to ALPHA>)
 EMOJI_KEY(P)
 EMOJI_KEY(B)
 EMOJI_KEY(J)
