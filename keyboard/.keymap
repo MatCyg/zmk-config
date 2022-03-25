@@ -30,19 +30,19 @@
     };
 
     behaviors {
-        #include "behaviors.dtsi"
         #include "building_blocks.dtsi"
+        #include "behaviors.dtsi"
 
         #include "macros/auto_shift.dtsi"
         #include "macros/auto_shift_non_breaking.dtsi"
         #include "macros/auto_shift_one_shot.dtsi"
-
-        #include "macros/macros_emoji.dtsi"
-        #include "macros/macros_apps.dtsi"
-        #include "macros/macros.dtsi"
+        #include "macros/emoji_layer.dtsi"
+        #include "macros/general.dtsi"
+        #include "macros/num_app_layer.dtsi"
+        #include "macros/open_application_layer.dtsi"
         #include "macros/selection_mode.dtsi"
-        #include "macros/symbols.dtsi"
-        #include "macros/num_app.dtsi"
+        #include "macros/symbol_layer.dtsi"
+
 
         macro_hm_bspc: macro_hm_bspc {
             compatible = "zmk,behavior-hold-tap";
@@ -63,8 +63,8 @@
             quick_tap_ms = <180>;
             flavor = "hold-preferred";
             bindings = <&nav_ctrl>, <&kp>;
-        };
 
+        };
         num_app_to: num_app_to {
             compatible = "zmk,behavior-hold-tap";
             label = "num_app_to";
@@ -304,7 +304,7 @@
            &sym_AT    &hm_sym_LBKT2 0 0 &sym_RBKT &sym_EQUAL &sym_PIPE        &sym_AMPS &sym_N1 &sym_N2 &sym_N3 &sym_TILDE
                                       &sym_num_app_spc 0 0 &mt LGUI RET       &mt LCTL RET &mt LALT BSPC
         >;};
-//holding_hm_shift_lbkt
+
         num_app { bindings = <
            &double_key_LG8 0 LG(N4) &double_key_LG7 0 LG(N3)      &double_key_LG6 0 LG(N2) &double_key_LG5 0 LG(N1) &double_key_LG0 0 LG(N9)        &num_BSLH &num_N7 &num_N8 &num_N9 &num_EXCL
            &kp GCS(A)               &kp GCS(R)                    &kp GCS(S)               &kp GCS(T)               &kp GCS(G)                      &num_PLUS &num_N4 &num_N5 &num_N6 &num_N0
