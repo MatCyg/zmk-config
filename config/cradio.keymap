@@ -31,6 +31,7 @@
 
     behaviors {
         #include "behaviors.dtsi"
+        #include "building_blocks.dtsi"
         #include "macros/macros_emoji.dtsi"
         #include "macros/macros_apps.dtsi"
         #include "macros/macros.dtsi"
@@ -280,7 +281,7 @@
         compatible = "zmk,keymap";
 
         navigation { bindings = <
-            &kp _NEXT_WIN &kp _APP3     &kp _APP2     &kp _APP1   &kp _SEARCH                                &morphing_pg_up   &morphing_alt_left &morphing_up    &morphing_alt_right &kp DEL
+            &test &kp _APP3     &kp _APP2     &kp _APP1   &kp _SEARCH                                &morphing_pg_up   &morphing_alt_left &morphing_up    &morphing_alt_right &kp DEL
             &kp _LAST_APP &kp _PREV_TAB &kp _NEXT_TAB &kp _LMB    &kp _TERM                                  &morphing_pg_dn   &morphing_left     &morphing_down  &morphing_right     &tog SHORTCUT_F
             &kp _UNDO     &hm LSFT _CUT &kp _COPY     &kp LA(TAB) &double_key_macro_paste _CLPBRD_MGR 0      &kp _NEW_TT       &kp LA(UP)         &kp LG(L)       &hm LSFT LA(DOWN)   &kp _BKMRKS
                                          &num_app_to 0 ALPHA &nav_gui         &nav_ctrl_ret 0 RET  &macro_hm_bspc 0 BSPC
