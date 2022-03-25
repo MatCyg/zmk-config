@@ -19,140 +19,136 @@
 #define SHORTCUT_SEL    13
 #define TEST            14
 
-&caps_word {
-  continue-list = <UNDERSCORE MINUS BACKSPACE LALT>;
-};
+&caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE LALT>; };
 
 / {
 
-    combos {
-        #include "combos.dtsi"
-    };
+combos {
+    #include "combos.dtsi"
+};
 
-    behaviors {
-        #include "building_blocks.dtsi"
-        #include "behaviors.dtsi"
-        #include "behaviors2.dtsi"
+behaviors {
+    #include "building_blocks.dtsi"
+    #include "behaviors.dtsi"
+    #include "behaviors2.dtsi"
 
-        #include "macros/auto_shift.dtsi"
-        #include "macros/auto_shift_non_breaking.dtsi"
-        #include "macros/auto_shift_one_shot.dtsi"
-        #include "macros/emoji_layer.dtsi"
-        #include "macros/general.dtsi"
-        #include "macros/num_app_layer.dtsi"
-        #include "macros/open_application_layer.dtsi"
-        #include "macros/selection_mode.dtsi"
-        #include "macros/symbol_layer.dtsi"
-    };
+    #include "macros/auto_shift.dtsi"
+    #include "macros/auto_shift_non_breaking.dtsi"
+    #include "macros/auto_shift_one_shot.dtsi"
+    #include "macros/emoji_layer.dtsi"
+    #include "macros/general.dtsi"
+    #include "macros/num_app_layer.dtsi"
+    #include "macros/open_application_layer.dtsi"
+    #include "macros/selection_mode.dtsi"
+    #include "macros/symbol_layer.dtsi"
+};
 
-    keymap {
-        compatible = "zmk,keymap";
+keymap { compatible = "zmk,keymap";
 
-        navigation { bindings = <
-            &test &kp _APP3     &kp _APP2     &kp _APP1   &kp _SEARCH                                &morphing_pg_up   &morphing_alt_left &morphing_up    &morphing_alt_right &kp DEL
-            &kp _LAST_APP &kp _PREV_TAB &kp _NEXT_TAB &kp _LMB    &kp _TERM                                  &morphing_pg_dn   &morphing_left     &morphing_down  &morphing_right     &tog SHORTCUT_F
-            &kp _UNDO     &hm LSFT _CUT &kp _COPY     &kp LA(TAB) &double_key_macro_paste _CLPBRD_MGR 0      &kp _NEW_TT       &kp LA(UP)         &kp LG(L)       &hm LSFT LA(DOWN)   &kp _BKMRKS
-                                         &num_app_to 0 ALPHA &nav_gui         &nav_ctrl_ret 0 RET  &macro_hm_bspc 0 BSPC
-        >;};
+navigation { bindings = <
+    &kp _NEXT_WIN &kp _APP3     &kp _APP2     &kp _APP1   &kp _SEARCH                                &morphing_pg_up   &morphing_alt_left &morphing_up    &morphing_alt_right &kp DEL
+    &kp _LAST_APP &kp _PREV_TAB &kp _NEXT_TAB &kp _LMB    &kp _TERM                                  &morphing_pg_dn   &morphing_left     &morphing_down  &morphing_right     &tog SHORTCUT_F
+    &kp _UNDO     &hm LSFT _CUT &kp _COPY     &kp LA(TAB) &double_key_macro_paste _CLPBRD_MGR 0      &kp _NEW_TT       &kp LA(UP)         &kp LG(L)       &hm LSFT LA(DOWN)   &kp _BKMRKS
+                                                                   &num_app_to 0 ALPHA &nav_gui      &nav_ctrl_ret 0 RET  &macro_hm_bspc 0 BSPC
+>;};
 
-        alpha { bindings = <
+alpha { bindings = <
+    &shifted_nb_Q &shifted_nb_W           &shifted_nb_F &shifted_nb_P &shifted_nb_B        &shifted_nb_J &shifted_nb_L &shifted_nb_U    &shifted_nb_Y    &shifted_nb_SCLN
+    &shifted_nb_A &shifted_nb_R           &shifted_nb_S &shifted_nb_T &shifted_nb_G        &shifted_nb_M &shifted_nb_N &shifted_nb_E    &shifted_nb_I    &shifted_nb_O
+    &shifted_nb_Z &hm_shifted_nb_X LSFT 0 &shifted_nb_C &shifted_nb_D &shifted_nb_V        &shifted_nb_K &shifted_nb_H &shifted_nb_CMMA &hm LSFT DOT     &shifted_nb_FSLH
+                                                 &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &macro_hm_bspc 0 BSPC
+>;};
 
-            &shifted_nb_Q &shifted_nb_W           &shifted_nb_F &shifted_nb_P &shifted_nb_B        &shifted_nb_J &shifted_nb_L &shifted_nb_U    &shifted_nb_Y    &shifted_nb_SCLN
-            &shifted_nb_A &shifted_nb_R           &shifted_nb_S &shifted_nb_T &shifted_nb_G        &shifted_nb_M &shifted_nb_N &shifted_nb_E    &shifted_nb_I    &shifted_nb_O
-            &shifted_nb_Z &hm_shifted_nb_X LSFT 0 &shifted_nb_C &shifted_nb_D &shifted_nb_V        &shifted_nb_K &shifted_nb_H &shifted_nb_CMMA &hm LSFT DOT     &shifted_nb_FSLH
-                                                         &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &macro_hm_bspc 0 BSPC
-        >;};
+symbol { bindings = <
+   &sym_GRAVE &sym_LBRC         &sym_RBRC &sym_MINUS &sym_DLLR        &sym_BSLH &sym_N7 &sym_N8 &sym_N9 &sym_EXCL
+   &sym_SQT   &sym_LPAR         &sym_RPAR &sym_DQT   &sym_UNDER       &sym_PLUS &sym_N4 &sym_N5 &sym_N6 &sym_N0
+   &sym_AT    &hm_sym_LBKT2 0 0 &sym_RBKT &sym_EQUAL &sym_PIPE        &sym_AMPS &sym_N1 &sym_N2 &sym_N3 &sym_TILDE
+                              &sym_num_app_spc 0 0 &mt LGUI RET       &mt LCTL RET &mt LALT BSPC
+>;};
 
-        symbol { bindings = <
-           &sym_GRAVE &sym_LBRC         &sym_RBRC &sym_MINUS &sym_DLLR        &sym_BSLH &sym_N7 &sym_N8 &sym_N9 &sym_EXCL
-           &sym_SQT   &sym_LPAR         &sym_RPAR &sym_DQT   &sym_UNDER       &sym_PLUS &sym_N4 &sym_N5 &sym_N6 &sym_N0
-           &sym_AT    &hm_sym_LBKT2 0 0 &sym_RBKT &sym_EQUAL &sym_PIPE        &sym_AMPS &sym_N1 &sym_N2 &sym_N3 &sym_TILDE
-                                      &sym_num_app_spc 0 0 &mt LGUI RET       &mt LCTL RET &mt LALT BSPC
-        >;};
+num_app { bindings = <
+   &double_key_LG8 0 LG(N4) &double_key_LG7 0 LG(N3)      &double_key_LG6 0 LG(N2) &double_key_LG5 0 LG(N1) &double_key_LG0 0 LG(N9)        &num_BSLH &num_N7 &num_N8 &num_N9 &num_EXCL
+   &kp GCS(A)               &kp GCS(R)                    &kp GCS(S)               &kp GCS(T)               &kp GCS(G)                      &num_PLUS &num_N4 &num_N5 &num_N6 &num_N0
+   &kp GCS(Z)               &mt LSFT GCS(X)               &kp GCS(C)               &kp GCS(D)               &kp GCS(V)                      &num_AMPS &num_N1 &num_N2 &num_N3 &num_TILDE
+                                                                                                                    &kp SPC &kp LGUI        &mt LCTL LC(RET) &mt LALT LA(BSPC)
+>;};
 
-        num_app { bindings = <
-           &double_key_LG8 0 LG(N4) &double_key_LG7 0 LG(N3)      &double_key_LG6 0 LG(N2) &double_key_LG5 0 LG(N1) &double_key_LG0 0 LG(N9)        &num_BSLH &num_N7 &num_N8 &num_N9 &num_EXCL
-           &kp GCS(A)               &kp GCS(R)                    &kp GCS(S)               &kp GCS(T)               &kp GCS(G)                      &num_PLUS &num_N4 &num_N5 &num_N6 &num_N0
-           &kp GCS(Z)               &mt LSFT GCS(X)               &kp GCS(C)               &kp GCS(D)               &kp GCS(V)                      &num_AMPS &num_N1 &num_N2 &num_N3 &num_TILDE
-                                                                                                                            &kp SPC &kp LGUI        &mt LCTL LC(RET) &mt LALT LA(BSPC)
-        >;};
+function { bindings = <
+    &kp _ZOOM_OUT &kp _ZOOM_IN  &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT              &kp HOME   &kp F7 &kp F8 &kp F9 &kp F12
+    &kp K_PWR     &kp _TT_START &kp _TT_SHOW &ss_clip_nav &kp C_PLAY_PAUSE        &kp END    &kp F4 &kp F5 &kp F6 &kp F10
+    &kp _LOCK     &mt LSFT X    &kp LALT     &kp LCTL     &none                   &to ADJUST &kp F1 &kp F2 &kp F3 &kp F11
+                                                  &kp LCTL &kp_to LGUI NAV        &mt LCTL RET &mt LALT BSPC
+>;};
 
-        function { bindings = <
-            &kp _ZOOM_OUT &kp _ZOOM_IN  &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT              &kp HOME   &kp F7 &kp F8 &kp F9 &kp F12
-            &kp K_PWR     &kp _TT_START &kp _TT_SHOW &ss_clip_nav &kp C_PLAY_PAUSE        &kp END    &kp F4 &kp F5 &kp F6 &kp F10
-            &kp _LOCK     &mt LSFT X    &kp LALT     &kp LCTL     &none                   &to ADJUST &kp F1 &kp F2 &kp F3 &kp F11
-                                                      &kp LCTL &kp_to LGUI NAV        &mt LCTL RET &mt LALT BSPC
-        >;};
+adjust { bindings = <
+    &none      &kp _LAY_BAR &kp _OS_DARK &kp _OS_LIGHT &bootloader           &kp GRAVE &kp INS &kp LBKT  &kp RBKT  &kp BSLH
+    &none      &none        &kp C_BRI_DN &kp C_BRI_UP  &kp _TOG_DIACT        &kp CAPS  &none   &kp MINUS &kp EQUAL &kp SQT
+    &bt BT_CLR &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1  &bt BT_SEL 0          &none     &none   &none     &none     &none
+                                          &to ALPHA   &kp_to LGUI NAV        &mt LCTL RET &mt LALT BSPC
+>;};
 
-        adjust { bindings = <
-          &none      &kp _LAY_BAR &kp _OS_DARK &kp _OS_LIGHT &bootloader           &kp GRAVE &kp INS &kp LBKT  &kp RBKT  &kp BSLH
-          &none      &none        &kp C_BRI_DN &kp C_BRI_UP  &kp _TOG_DIACT        &kp CAPS  &none   &kp MINUS &kp EQUAL &kp SQT
-          &bt BT_CLR &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1  &bt BT_SEL 0          &none     &none   &none     &none     &none
-                                               &to ALPHA   &kp_to LGUI NAV   &mt LCTL RET &mt LALT BSPC
-        >;};
+apps { bindings = <
+    &apps_F1  &apps_F2  &apps_F3  &apps_F4  &apps_F5         &apps_F16    &apps_F17    &apps_F18    &apps_F19    &apps_F20
+    &apps_F6  &apps_F7  &apps_F8  &apps_F9  &apps_F10        &apps_F21    &apps_F22    &apps_F23    &apps_F24    &apps_meh_F1
+    &apps_F11 &apps_F12 &apps_F13 &apps_F14 &apps_F15        &apps_meh_F2 &apps_meh_F3 &apps_meh_F4 &apps_meh_F5 &apps_meh_F6
+                                  &to ALPHA &to ALPHA        &none &none
+>;};
 
-        apps { bindings = <
-          &apps_F1  &apps_F2  &apps_F3  &apps_F4  &apps_F5         &apps_F16    &apps_F17    &apps_F18    &apps_F19    &apps_F20
-          &apps_F6  &apps_F7  &apps_F8  &apps_F9  &apps_F10        &apps_F21    &apps_F22    &apps_F23    &apps_F24    &apps_meh_F1
-          &apps_F11 &apps_F12 &apps_F13 &apps_F14 &apps_F15        &apps_meh_F2 &apps_meh_F3 &apps_meh_F4 &apps_meh_F5 &apps_meh_F6
-                                        &to ALPHA &to ALPHA        &none &none
-        >;};
+emoji { bindings = <
+    &code_block &code_java &code_json &emoji_P &emoji_B        &emoji_J &emoji_L &emoji_U    &emoji_Y   &emoji_SCLN
+    &emoji_A    &emoji_R   &emoji_S   &emoji_T &emoji_G        &emoji_M &emoji_N &emoji_E    &emoji_I   &emoji_O
+    &emoji_Z    &emoji_X   &emoji_C   &emoji_D &emoji_V        &emoji_K &emoji_H &emoji_CMMA &emoji_DOT &emoji_FSLH
+                                    &to ALPHA &to ALPHA        &none &none
+>;};
 
-        emoji { bindings = <
-          &code_block &code_java &code_json &emoji_P &emoji_B        &emoji_J &emoji_L &emoji_U    &emoji_Y   &emoji_SCLN
-          &emoji_A    &emoji_R   &emoji_S   &emoji_T &emoji_G        &emoji_M &emoji_N &emoji_E    &emoji_I   &emoji_O
-          &emoji_Z    &emoji_X   &emoji_C   &emoji_D &emoji_V        &emoji_K &emoji_H &emoji_CMMA &emoji_DOT &emoji_FSLH
-                                          &to ALPHA &to ALPHA        &none &none
-        >;};
+paste_mo { bindings = <
+    &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans
+    &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans
+    &trans &trans &trans &trans &kp RET       &trans &trans &trans &trans &trans
+                         &trans &trans        &trans &trans
+>;};
 
-        paste_mo { bindings = <
-          &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans
-          &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans
-          &trans &trans &trans &trans &kp RET       &trans &trans &trans &trans &trans
-                               &trans &trans        &trans &trans
-        >;};
+alpha_normal { bindings = <
+    &kp Q &kp W      &kp F &kp P &kp B        &kp J &kp L &kp U    &kp Y        &kp SCLN
+    &kp A &kp R      &kp S &kp T &kp G        &kp M &kp N &kp E    &kp I        &kp O
+    &kp Z &hm LSFT X &kp C &kp D &kp V        &kp K &kp H &kp CMMA &hm LSFT DOT &kp FSLH
+    &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
+>;};
 
-        alpha_normal { bindings = <
-            &kp Q &kp W  &kp F &kp P &kp B        &kp J &kp L &kp U    &kp Y    &kp SCLN
-            &kp A &kp R  &kp S &kp T &kp G        &kp M &kp N &kp E    &kp I    &kp O
-            &kp Z &hm LSFT X &kp C &kp D &kp V        &kp K &kp H &kp CMMA &hm LSFT DOT &kp FSLH
-                   &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
-        >;};
+shortcut_full { bindings = <
+    &shifted_os_Q 0 0 &shifted_os_W 0 0  &shifted_os_F 0 0 &shifted_os_P 0 0 &shifted_os_B 0 0        &shifted_os_J 0 0 &shifted_os_L 0 0 &shifted_os_U 0 0    &shifted_os_Y 0 0    &shifted_os_SCLN 0 0
+    &shifted_os_A 0 0 &shifted_os_R 0 0  &shifted_os_S 0 0 &shifted_os_T 0 0 &shifted_os_G 0 0        &shifted_os_M 0 0 &shifted_os_N 0 0 &shifted_os_E 0 0    &shifted_os_I 0 0    &shifted_os_O 0 0
+    &shifted_os_Z 0 0 &hm LSFT X         &shifted_os_C 0 0 &shifted_os_D 0 0 &shifted_os_V 0 0        &shifted_os_K 0 0 &shifted_os_H 0 0 &shifted_os_CMMA 0 0 &hm LSFT DOT         &shifted_os_FSLH 0 0
+                                                            &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
+>;};
 
-        shortcut_full { bindings = <
-            &shifted_os_Q 0 0 &shifted_os_W 0 0  &shifted_os_F 0 0 &shifted_os_P 0 0 &shifted_os_B 0 0        &shifted_os_J 0 0 &shifted_os_L 0 0 &shifted_os_U 0 0    &shifted_os_Y 0 0    &shifted_os_SCLN 0 0
-            &shifted_os_A 0 0 &shifted_os_R 0 0  &shifted_os_S 0 0 &shifted_os_T 0 0 &shifted_os_G 0 0        &shifted_os_M 0 0 &shifted_os_N 0 0 &shifted_os_E 0 0    &shifted_os_I 0 0    &shifted_os_O 0 0
-            &shifted_os_Z 0 0 &hm LSFT X         &shifted_os_C 0 0 &shifted_os_D 0 0 &shifted_os_V 0 0        &shifted_os_K 0 0 &shifted_os_H 0 0 &shifted_os_CMMA 0 0 &hm LSFT DOT         &shifted_os_FSLH 0 0
-                                                                    &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
-        >;};
+shortcut { bindings = <
+    &shifted_Q 0 0 &shifted_W 0 0 &shifted_F 0 0 &shifted_P 0 0 &shifted_B 0 0        &shifted_J 0 0 &kp LA(LEFT)   &kp UP            &kp LA(RIGHT)   &shifted_SCLN 0 0
+    &shifted_A 0 0 &shifted_R 0 0 &shifted_S 0 0 &shifted_T 0 0 &shifted_G 0 0        &shifted_M 0 0 &morphing_lg_left &kp DOWN    &morphing_lg_right &shifted_O 0 0
+    &shifted_Z 0 0 &hm LSFT X     &shifted_C 0 0 &shifted_D 0 0 &shifted_V 0 0        &shifted_K 0 0 &shifted_H 0 0 &shifted_CMMA 0 0 &hm LSFT DOT    &shifted_FSLH 0 0
+                                          &sht_num_app_spc 0 0 &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
+>;};
 
-        shortcut { bindings = <
-            &shifted_Q 0 0 &shifted_W 0 0 &shifted_F 0 0 &shifted_P 0 0 &shifted_B 0 0        &shifted_J 0 0 &kp LA(LEFT)   &kp UP            &kp LA(RIGHT)   &shifted_SCLN 0 0
-            &shifted_A 0 0 &shifted_R 0 0 &shifted_S 0 0 &shifted_T 0 0 &shifted_G 0 0        &shifted_M 0 0 &morphing_lg_left &kp DOWN    &morphing_lg_right &shifted_O 0 0
-            &shifted_Z 0 0 &hm LSFT X     &shifted_C 0 0 &shifted_D 0 0 &shifted_V 0 0        &shifted_K 0 0 &shifted_H 0 0 &shifted_CMMA 0 0 &hm LSFT DOT    &shifted_FSLH 0 0
-                   &sht_num_app_spc 0 0 &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
-        >;};
+sel_mode { bindings = <
+    &trans &trans &trans &trans &trans       &sel_pg_up &sel_alt_left &sel_up   &sel_alt_right &trans
+    &trans &trans &trans &trans &trans       &sel_pg_dn &sel_left     &sel_down &sel_right     &trans
+    &trans &trans &trans &trans &trans       &trans     &trans        &trans    &trans         &trans
+            &trans &sel_lgui_nav 0 NAV       &trans     &trans
+>;};
 
-        sel_mode { bindings = <
-          &trans &trans &trans &trans &trans                    &sel_pg_up &sel_alt_left &sel_up   &sel_alt_right &trans
-          &trans &trans &trans &trans &trans                    &sel_pg_dn &sel_left     &sel_down &sel_right     &trans
-          &trans &trans &trans &trans &trans                    &trans     &trans        &trans    &trans         &trans
-                               &trans &sel_lgui_nav 0 NAV       &trans     &trans
-        >;};
+shortcut_sel { bindings = <
+    &shifted_Q 0 0 &shifted_W 0 0 &shifted_F 0 0 &shifted_P 0 0 &shifted_B 0 0        &shifted_J 0 0 &kp LA(LEFT)   &kp UP            &kp LA(RIGHT) &shifted_SCLN 0 0
+    &shifted_A 0 0 &shifted_R 0 0 &shifted_S 0 0 &shifted_T 0 0 &shifted_G 0 0        &shifted_M 0 0 &kp LS(LEFT)   &kp DOWN          &kp LS(RIGHT) &shifted_O 0 0
+    &shifted_Z 0 0 &hm LSFT X     &shifted_C 0 0 &shifted_D 0 0 &shifted_V 0 0        &shifted_K 0 0 &shifted_H 0 0 &shifted_CMMA 0 0 &hm LSFT DOT  &shifted_FSLH 0 0
+                                            &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
+>;};
 
-        shortcut_sel { bindings = <
-            &shifted_Q 0 0 &shifted_W 0 0 &shifted_F 0 0 &shifted_P 0 0 &shifted_B 0 0        &shifted_J 0 0 &kp LA(LEFT)   &kp UP            &kp LA(RIGHT) &shifted_SCLN 0 0
-            &shifted_A 0 0 &shifted_R 0 0 &shifted_S 0 0 &shifted_T 0 0 &shifted_G 0 0        &shifted_M 0 0 &kp LS(LEFT)   &kp DOWN          &kp LS(RIGHT) &shifted_O 0 0
-            &shifted_Z 0 0 &hm LSFT X     &shifted_C 0 0 &shifted_D 0 0 &shifted_V 0 0        &shifted_K 0 0 &shifted_H 0 0 &shifted_CMMA 0 0 &hm LSFT DOT  &shifted_FSLH 0 0
-                   &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
-        >;};
-
-        test { bindings = <
-          &none &none &none &none &none        &none &none &none &none &none
-          &none &none &none &none &none        &none &none &none &none &none
-          &none &none &none &none &none        &none &none &none &none &none
-                            &none &none        &none &none
-        >;};
+test { bindings = <
+    &none &none &none &none &none        &none &none &none &none &none
+    &none &none &none &none &none        &none &none &none &none &none
+    &none &none &none &none &none        &none &none &none &none &none
+                      &none &none        &none &none
+>;};
 
 	};
 };
