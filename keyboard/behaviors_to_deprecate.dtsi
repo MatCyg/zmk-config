@@ -1,0 +1,26 @@
+
+#define HOME_ROW_MACRO(macro) \
+    hm_##macro: hm_##macro { \
+        compatible = "zmk,behavior-hold-tap"; \
+        label = STRINGIFY(hm_##macro); \
+        #binding-cells = <2>; \
+        tapping-term-ms = <120>; \
+        quick_tap_ms = <180>; \
+        flavor = "tap-preferred"; \
+        bindings = <&kp>, <&macro>; \
+    };
+
+HOME_ROW_MACRO(sym_LBKT)
+
+
+sym_num_app_spc2: sym_num_app_spc2 {
+    compatible = "zmk,behavior-hold-tap";
+    label = "sym_num_app_spc2";
+    #binding-cells = <2>;
+    tapping-term-ms = <120>;
+    quick_tap_ms = <180>;
+    flavor = "tap-preferred";
+    bindings = <&num_app_alpha>, <&sym_SPC>;
+};
+
+

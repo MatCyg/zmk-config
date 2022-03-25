@@ -1,22 +1,4 @@
-hm: homerow_mods {
-    compatible = "zmk,behavior-hold-tap";
-    label = "HOMEROW_MODS";
-    #binding-cells = <2>;
-    tapping-term-ms = <120>;
-    quick_tap_ms = <180>;
-    flavor = "tap-preferred";
-    bindings = <&kp>, <&kp>;
-};
 
-hm_spc: hm_spc {
-    compatible = "zmk,behavior-hold-tap";
-    label = "hm_spc";
-    #binding-cells = <2>;
-    tapping-term-ms = <200>;
-    quick_tap_ms = <180>;
-    flavor = "tap-preferred";
-    bindings = <&kp>, <&kp>;
-};
 
 hm_bspc: hm_bspc {
     compatible = "zmk,behavior-hold-tap";
@@ -29,15 +11,7 @@ hm_bspc: hm_bspc {
     retro-tap;
 };
 
-hm_to: homerow_layer {
-    compatible = "zmk,behavior-hold-tap";
-    label = "HOMEROW_LAYER";
-    #binding-cells = <2>;
-    tapping-term-ms = <200>;
-    quick_tap_ms = <180>;
-    flavor = "tap-preferred";
-    bindings = <&mo>, <&kp>;
-};
+
 
 kp_tog: kp_tog {
     compatible = "zmk,behavior-hold-tap";
@@ -49,15 +23,7 @@ kp_tog: kp_tog {
     bindings = <&kp>, <&tog>;
 };
 
-kp_to: kp_to {
-    compatible = "zmk,behavior-hold-tap";
-    label = "KP_TO";
-    #binding-cells = <2>;
-    tapping-term-ms = <135>;
-    quick_tap_ms = <0>;
-    flavor = "tap-preferred";
-    bindings = <&kp>, <&to>;
-};
+
 
 mo_to: mo_to {
     compatible = "zmk,behavior-hold-tap";
@@ -80,19 +46,6 @@ hm: homerow_mods {
     bindings = <&kp>, <&kp>;
 };
 
-#define HOME_ROW_MACRO(macro) \
-    hm_##macro: hm_##macro { \
-        compatible = "zmk,behavior-hold-tap"; \
-        label = STRINGIFY(hm_##macro); \
-        #binding-cells = <2>; \
-        tapping-term-ms = <120>; \
-        quick_tap_ms = <180>; \
-        flavor = "tap-preferred"; \
-        bindings = <&kp>, <&macro>; \
-    };
-
-HOME_ROW_MACRO(sym_LBKT)
-HOME_ROW_MACRO(shifted_nb_X)
 
 
 #define DOUBLE_KEY(name, holdKey) \
