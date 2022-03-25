@@ -15,7 +15,7 @@
     ) \
     shifted_##letter: shifted_##letter { \
         compatible = "zmk,behavior-hold-tap"; \
-        label = ZMK_MACRO_STRINGIFY(shifted_##letter); \
+        label = STRINGIFY(shifted_##letter); \
         #binding-cells = <2>; \
         tapping-term-ms = <180>; \
         quick_tap_ms = <180>; \

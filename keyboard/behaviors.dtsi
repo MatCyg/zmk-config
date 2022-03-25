@@ -84,7 +84,7 @@ hm: homerow_mods {
 #define HOME_ROW_MACRO(macro) \
     hm_##macro: hm_##macro { \
         compatible = "zmk,behavior-hold-tap"; \
-        label = ZMK_MACRO_STRINGIFY(hm_##macro); \
+        label = STRINGIFY(hm_##macro); \
         #binding-cells = <2>; \
         tapping-term-ms = <120>; \
         quick_tap_ms = <180>; \
@@ -108,7 +108,7 @@ HOME_ROW_MACRO(shifted_nb_X)
     ) \
     double_key_##name: double_key_##name { \
         compatible = "zmk,behavior-hold-tap"; \
-        label = ZMK_MACRO_STRINGIFY(double_key_##name); \
+        label = STRINGIFY(double_key_##name); \
         #binding-cells = <2>; \
         tapping-term-ms = <180>; \
         flavor = "tap-preferred"; \
@@ -118,7 +118,7 @@ HOME_ROW_MACRO(shifted_nb_X)
 #define DOUBLE_KEY_WITH_MACRO(name, pressMacro) \
     double_key_macro_##name: double_key_##name { \
         compatible = "zmk,behavior-hold-tap"; \
-        label = ZMK_MACRO_STRINGIFY(double_key_##name); \
+        label = STRINGIFY(double_key_##name); \
         #binding-cells = <2>; \
         tapping-term-ms = <180>; \
         flavor = "tap-preferred"; \

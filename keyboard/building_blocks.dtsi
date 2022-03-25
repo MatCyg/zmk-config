@@ -8,4 +8,7 @@
         bindings = __VA_ARGS__ ; \
     )
 
+#define STRINGIFY(s) #s
+
+
 MACRO(test, <&to ALPHA>, <&caps_word>)

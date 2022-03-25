@@ -1,7 +1,7 @@
 #define SELECTION_MORPHING(keyName, key) \
     morphing_##keyName: morphing_##keyName { \
         compatible = "zmk,behavior-mod-morph"; \
-        label = ZMK_MACRO_STRINGIFY(morphing_##keyName); \
+        label = STRINGIFY(morphing_##keyName); \
         #binding-cells = <0>; \
         bindings = <&kp key>, <&sel_##keyName>; \
         mods = <(MOD_LSFT)>; \

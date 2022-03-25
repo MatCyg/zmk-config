@@ -16,7 +16,7 @@
     ) \
     hold_letter_##letter: hold_letter_##letter { \
         compatible = "zmk,behavior-hold-tap"; \
-        label = ZMK_MACRO_STRINGIFY(hold_letter_##letter); \
+        label = STRINGIFY(hold_letter_##letter); \
         #binding-cells = <2>; \
         tapping-term-ms = <180>; \
         flavor = "tap-preferred"; \
