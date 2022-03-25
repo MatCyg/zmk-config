@@ -30,7 +30,7 @@ behaviors {
     #include "building_blocks.dtsi"
 
     #include "behaviors_promoted.dtsi"
-    #include "behaviors_deprecated.dtsi"
+//    #include "behaviors_deprecated.dtsi"
     #include "behaviors_to_deprecate.dtsi"
 
     #include "hold-taps/navigation_layer.dtsi"

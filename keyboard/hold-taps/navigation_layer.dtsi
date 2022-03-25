@@ -4,7 +4,7 @@
      label = "num_app_to";
      #binding-cells = <2>;
      tapping-term-ms = <135>;
-     quick_tap_ms = <0>;
+     quick-tap-ms = <0>;
      flavor = "tap-preferred";
      bindings = <&num_app_alpha>, <&to>;
  };
@@ -28,7 +28,7 @@ nav_ctrl_ret: nav_ctrl_ret {
     label = "nav_ctrl_ret";
     #binding-cells = <2>;
     tapping-term-ms = <120>;
-    quick_tap_ms = <180>;
+    quick-tap-ms = <180>;
     flavor = "hold-preferred";
     bindings = <&nav_ctrl>, <&kp>;
 
@@ -47,7 +47,7 @@ macro_hm_bspc: macro_hm_bspc {
     label = "macro_hm_bspc";
     #binding-cells = <2>;
     tapping-term-ms = <120>;
-    quick_tap_ms = <180>;
+    quick-tap-ms = <180>;
     flavor = "hold-preferred";
     bindings = <&symbol_layer_alt>, <&kp>;
 };
@@ -74,7 +74,7 @@ sht_num_app_spc: sht_num_app_spc {
     label = "sht_num_app_spc";
     #binding-cells = <2>;
     tapping-term-ms = <135>;
-    quick_tap_ms = <0>;
+    quick-tap-ms = <0>;
     flavor = "tap-preferred";
     bindings = <&num_app_alpha>, <&space_cmd>;
 };

@@ -10,7 +10,7 @@
         label = STRINGIFY(shifted_##letter); \
         #binding-cells = <2>; \
         tapping-term-ms = <180>; \
-        quick_tap_ms = <180>; \
+        quick-tap-ms = <180>; \
         flavor = "tap-preferred"; \
         bindings = <&f_capital_##letter>, <&f_letter_##letter>; \
     };

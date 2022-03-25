@@ -20,7 +20,7 @@ MACRO(test, <&to ALPHA>, <&caps_word>)
 //    label = "HOMEROW_MODS";
 //    #binding-cells = <2>;
 //    tapping-term-ms = <120>;
-//    quick_tap_ms = <180>;
+//    quick-tap-ms = <180>;
 //    flavor = "tap-preferred";
 //    bindings = <&kp>, <&kp>;
 //};
@@ -39,7 +39,7 @@ MACRO(test, <&to ALPHA>, <&caps_word>)
 //    label = "hm_bspc";
 //    #binding-cells = <2>;
 //    tapping-term-ms = <120>;
-//    quick_tap_ms = <180>;
+//    quick-tap-ms = <180>;
 //    flavor = "hold-preferred";
 //    bindings = <&kp>, <&kp>;
 //    retro-tap;
@@ -61,7 +61,7 @@ MACRO(test, <&to ALPHA>, <&caps_word>)
 //
 //
 //        tapping-term-ms = <120>;
-//        quick_tap_ms = <180>;
+//        quick-tap-ms = <180>;
 //        flavor = "hold-preferred";
 //        bindings = <&kp>, <&kp>;
 //        retro-tap;

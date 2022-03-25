@@ -1,42 +1,21 @@
-hm: home_row_mods {
-    compatible = "zmk,behavior-hold-tap";
-    label = "HOME_ROW_MODS";
-    #binding-cells = <2>;
-    tapping-term-ms = <120>;
-    quick_tap_ms = <180>;
-    flavor = "tap-preferred";
-    bindings = <&kp>, <&kp>;
-};
+#define HT(flavor, name, bindingHold, bindingTap, tappingTermMs) \
+    HOLD_TAP_TEMPLATE(flavor, name, bindingHold, bindingTap, tappingTermMs)
 
-kp_to: kp_to {
-    compatible = "zmk,behavior-hold-tap";
-    label = "KP_TO";
-    #binding-cells = <2>;
-    tapping-term-ms = <135>;
-    quick_tap_ms = <-1>;
-    flavor = "tap-preferred";
-    bindings = <&kp>, <&to>;
-};
+#define HT_QT(flavor, name, bindingHold, bindingTap, tappingTermMs, quickTapMs) \
+    HOLD_TAP_TEMPLATE(flavor, name, bindingHold, bindingTap, tappingTermMs, quick-tap-ms = <quickTapMs>;)
 
-hm_to: homerow_layer {
-    compatible = "zmk,behavior-hold-tap";
-    label = "HOME_ROW_LAYER";
-    #binding-cells = <2>;
-    tapping-term-ms = <200>;
-    quick_tap_ms = <180>;
-    flavor = "tap-preferred";
-    bindings = <&mo>, <&kp>;
-};
+#define HOLD_TAP_TEMPLATE(definedFlavor, name, bindingHold, bindingTap, tappingTermMs, ...) \
+	name: name { \
+        label = STRINGIFY(ZM_##name); \
+        compatible = "zmk,behavior-hold-tap"; \
+        #binding-cells = <2>; \
+        tapping-term-ms = <tappingTermMs>; \
+        flavor = definedFlavor; \
+        bindings = <bindingHold>, <bindingTap>; \
+        __VA_ARGS__ \
+    };
 
-
-hm_spc: hm_spc {
-    compatible = "zmk,behavior-hold-tap";
-    label = "hm_spc";
-    #binding-cells = <2>;
-    tapping-term-ms = <200>;
-    quick_tap_ms = <180>;
-    flavor = "tap-preferred";
-    bindings = <&kp>, <&kp>;
-};
-
-
+HT_QT("tap-preferred", hm, &kp, &kp, 120, 180)
+HT_QT("tap-preferred", hm_spc, &kp, &kp, 200, 180)
+HT_QT("tap-preferred", hm_to, &mo, &kp, 200, 180)
+HT("tap-preferred", kp_to, &kp, &to, 135)
