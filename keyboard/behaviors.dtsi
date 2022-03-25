@@ -80,7 +80,6 @@ hm: homerow_mods {
     bindings = <&kp>, <&kp>;
 };
 
-
 #define HOME_ROW_MACRO(macro) \
     hm_##macro: hm_##macro { \
         compatible = "zmk,behavior-hold-tap"; \
