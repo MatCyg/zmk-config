@@ -1,14 +1,6 @@
 #define AUTO_SHIFT_ONE_SHOT(letter) \
-    ZMK_MACRO(f_capital_tog_##letter, \
-        wait-ms = <0>; \
-        tap-ms = <0>; \
-        bindings = <&kp LS(letter) &tog SHORTCUT_F>; \
-    ) \
-    ZMK_MACRO(f_letter_tog_##letter, \
-        wait-ms = <0>; \
-        tap-ms = <0>; \
-        bindings = <&kp letter &tog SHORTCUT_F>; \
-    ) \
+    MACRO(f_capital_tog_##letter, <&kp LS(letter) &tog SHORTCUT_F>) \
+    MACRO(f_letter_tog_##letter, <&kp letter &tog SHORTCUT_F>) \
     shifted_os_##letter: shifted_os_##letter { \
         compatible = "zmk,behavior-hold-tap"; \
         label = STRINGIFY(shifted_os_##letter); \

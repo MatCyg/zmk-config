@@ -1,3 +1,5 @@
+#define STRINGIFY(s) #s
+
 #define MACRO(name,...) \
 	MACRO_TIMED(name, 0, 0, __VA_ARGS__)
 
@@ -8,7 +10,6 @@
         bindings = __VA_ARGS__ ; \
     )
 
-#define STRINGIFY(s) #s
 
 
 MACRO(test, <&to ALPHA>, <&caps_word>)
