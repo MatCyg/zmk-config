@@ -1,19 +1,4 @@
 
- num_app_to: num_app_to {
-     compatible = "zmk,behavior-hold-tap";
-     label = "num_app_to";
-     #binding-cells = <2>;
-     tapping-term-ms = <135>;
-     quick-tap-ms = <0>;
-     flavor = "tap-preferred";
-     bindings = <&num_app_alpha>, <&to>;
- };
-
- MACRO(num_app_alpha,
-       <&macro_tap &tog NUM_APP>
-     , <&macro_pause_for_release>
-     , <&macro_tap &tog NUM_APP>
- )
 
 
 MACRO(nav_gui,
@@ -22,24 +7,6 @@ MACRO(nav_gui,
     , <&macro_release &mo SHORTCUT &kp LGUI>
 )
 
-
-nav_ctrl_ret: nav_ctrl_ret {
-    compatible = "zmk,behavior-hold-tap";
-    label = "nav_ctrl_ret";
-    #binding-cells = <2>;
-    tapping-term-ms = <120>;
-    quick-tap-ms = <180>;
-    flavor = "hold-preferred";
-    bindings = <&nav_ctrl>, <&kp>;
-
-};
-
-
-MACRO(nav_ctrl,
-      <&macro_press &mo SHORTCUT &kp LCTL>
-    , <&macro_pause_for_release>
-    , <&macro_release &mo SHORTCUT &kp LCTL>
-)
 
 
 macro_hm_bspc: macro_hm_bspc {

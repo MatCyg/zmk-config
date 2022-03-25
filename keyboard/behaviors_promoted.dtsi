@@ -19,3 +19,27 @@ HT_QT("tap-preferred", hm, &kp, &kp, 120, 180)
 HT_QT("tap-preferred", hm_spc, &kp, &kp, 200, 180)
 HT_QT("tap-preferred", hm_to, &mo, &kp, 200, 180)
 HT("tap-preferred", kp_to, &kp, &to, 135)
+
+
+HT("tap-preferred", num_app_to, &num_app_alpha, &to, 135)
+MACRO(num_app_alpha,
+      <&macro_tap &tog NUM_APP>
+    , <&macro_pause_for_release>
+    , <&macro_tap &tog NUM_APP>
+)
+
+
+HT_QT("hold-preferred", nav_ctrl_ret, &nav_ctrl, &kp, 120, 180)
+MACRO(nav_ctrl,
+      <&macro_press &mo SHORTCUT &kp LCTL>
+    , <&macro_pause_for_release>
+    , <&macro_release &mo SHORTCUT &kp LCTL>
+)
+
+
+
+
+
+
+
+
