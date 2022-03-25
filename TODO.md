@@ -9,3 +9,4 @@
 - [ ] idea: hold numbers for Fkeys, once used, Fkeys on press instead of hold
 - [ ] nav layer cmd + num + number won't send cmd 1
 - [ ] bug with release not propagated via -> macro -> hold-tap -> macro
+- [ ] sym layer space gets stuck in sym layer
