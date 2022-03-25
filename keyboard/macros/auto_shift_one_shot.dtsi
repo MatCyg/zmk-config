@@ -1,0 +1,51 @@
+#define AUTO_SHIFT_ONE_SHOT(letter) \
+    ZMK_MACRO(f_capital_tog_##letter, \
+        wait-ms = <0>; \
+        tap-ms = <0>; \
+        bindings = <&kp LS(letter) &tog SHORTCUT_F>; \
+    ) \
+    ZMK_MACRO(f_letter_tog_##letter, \
+        wait-ms = <0>; \
+        tap-ms = <0>; \
+        bindings = <&kp letter &tog SHORTCUT_F>; \
+    ) \
+    shifted_tog_##letter: shifted_tog_##letter { \
+        compatible = "zmk,behavior-hold-tap"; \
+        label = ZMK_MACRO_STRINGIFY(shifted_tog_##letter); \
+        #binding-cells = <2>; \
+        tapping-term-ms = <180>; \
+        flavor = "tap-preferred"; \
+        bindings = <&f_capital_tog_##letter>, <&f_letter_tog_##letter>; \
+    };
+
+
+AUTO_SHIFT_ONE_SHOT(A)
+AUTO_SHIFT_ONE_SHOT(B)
+AUTO_SHIFT_ONE_SHOT(C)
+AUTO_SHIFT_ONE_SHOT(D)
+AUTO_SHIFT_ONE_SHOT(E)
+AUTO_SHIFT_ONE_SHOT(F)
+AUTO_SHIFT_ONE_SHOT(G)
+AUTO_SHIFT_ONE_SHOT(H)
+AUTO_SHIFT_ONE_SHOT(I)
+AUTO_SHIFT_ONE_SHOT(J)
+AUTO_SHIFT_ONE_SHOT(K)
+AUTO_SHIFT_ONE_SHOT(L)
+AUTO_SHIFT_ONE_SHOT(M)
+AUTO_SHIFT_ONE_SHOT(N)
+AUTO_SHIFT_ONE_SHOT(O)
+AUTO_SHIFT_ONE_SHOT(P)
+AUTO_SHIFT_ONE_SHOT(Q)
+AUTO_SHIFT_ONE_SHOT(R)
+AUTO_SHIFT_ONE_SHOT(S)
+AUTO_SHIFT_ONE_SHOT(T)
+AUTO_SHIFT_ONE_SHOT(U)
+AUTO_SHIFT_ONE_SHOT(V)
+AUTO_SHIFT_ONE_SHOT(W)
+AUTO_SHIFT_ONE_SHOT(X)
+AUTO_SHIFT_ONE_SHOT(Y)
+AUTO_SHIFT_ONE_SHOT(Z)
+AUTO_SHIFT_ONE_SHOT(SCLN)
+AUTO_SHIFT_ONE_SHOT(CMMA)
+AUTO_SHIFT_ONE_SHOT(DOT)
+AUTO_SHIFT_ONE_SHOT(FSLH)

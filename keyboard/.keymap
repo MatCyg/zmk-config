@@ -32,12 +32,15 @@
     behaviors {
         #include "behaviors.dtsi"
         #include "building_blocks.dtsi"
+
+        #include "macros/auto_shift.dtsi"
+        #include "macros/auto_shift_non_breaking.dtsi"
+        #include "macros/auto_shift_one_shot.dtsi"
+
         #include "macros/macros_emoji.dtsi"
         #include "macros/macros_apps.dtsi"
         #include "macros/macros.dtsi"
-        #include "macros/auto_shift.dtsi"
         #include "macros/selection_mode.dtsi"
-        #include "macros/shifted.dtsi"
         #include "macros/symbols.dtsi"
         #include "macros/num_app.dtsi"
 
