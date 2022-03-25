@@ -13,3 +13,62 @@
 
 
 MACRO(test, <&to ALPHA>, <&caps_word>)
+
+//
+//hm: homerow_mods {
+//    compatible = "zmk,behavior-hold-tap";
+//    label = "HOMEROW_MODS";
+//    #binding-cells = <2>;
+//    tapping-term-ms = <120>;
+//    quick_tap_ms = <180>;
+//    flavor = "tap-preferred";
+//    bindings = <&kp>, <&kp>;
+//};
+//
+//hold_letter_##letter: hold_letter_##letter { \
+//    compatible = "zmk,behavior-hold-tap"; \
+//    label = STRINGIFY(hold_letter_##letter); \
+//    #binding-cells = <2>; \
+//    tapping-term-ms = <180>; \
+//    flavor = "tap-preferred"; \
+//    bindings = <&capital_letter_##letter>, <&none>; \
+//};
+//
+//hm_bspc: hm_bspc {
+//    compatible = "zmk,behavior-hold-tap";
+//    label = "hm_bspc";
+//    #binding-cells = <2>;
+//    tapping-term-ms = <120>;
+//    quick_tap_ms = <180>;
+//    flavor = "hold-preferred";
+//    bindings = <&kp>, <&kp>;
+//    retro-tap;
+//};
+//
+//
+//#define HOLD_TAP(name,...) \
+//	name: name { \
+//        label = STRINGIFY(ZM_##name); \
+//        compatible = "zmk,behavior-hold-tap"; \
+//        #binding-cells = <2>; \
+//        __VA_ARGS__ \
+//    };
+//
+//    hm_bspc: hm_bspc {
+//        compatible = "zmk,behavior-hold-tap";
+//        label = "hm_bspc";
+//        #binding-cells = <2>;
+//
+//
+//        tapping-term-ms = <120>;
+//        quick_tap_ms = <180>;
+//        flavor = "hold-preferred";
+//        bindings = <&kp>, <&kp>;
+//        retro-tap;
+//
+//
+//    };
+
+
+
+
