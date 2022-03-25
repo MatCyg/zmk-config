@@ -33,8 +33,10 @@ behaviors {
     #include "behaviors_promoted.dtsi"
     #include "behaviors_deprecated.dtsi"
     #include "behaviors_to_deprecate.dtsi"
-    #include "behaviors.dtsi"
-    #include "behaviors2.dtsi"
+
+    #include "hold-taps/navigation_layer.dtsi"
+//    #include "behaviors.dtsi"
+//    #include "behaviors2.dtsi"
 
     #include "macros/auto_shift.dtsi"
     #include "macros/auto_shift_non_breaking.dtsi"
