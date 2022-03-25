@@ -20,7 +20,7 @@ sym_num_app_spc2: sym_num_app_spc2 {
     tapping-term-ms = <120>;
     quick-tap-ms = <180>;
     flavor = "tap-preferred";
-    bindings = <&num_app_alpha>, <&sym_SPC>;
+    bindings = <&num_app_layer>, <&sym_SPC>;
 };
 
 

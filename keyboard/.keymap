@@ -54,27 +54,27 @@ navigation { bindings = <
     &kp _NEXT_WIN &kp _APP3     &kp _APP2     &kp _APP1   &kp _SEARCH                                &morphing_pg_up   &morphing_alt_left &morphing_up   &morphing_alt_right &kp DEL
     &kp _LAST_APP &kp _PREV_TAB &kp _NEXT_TAB &kp _LMB    &kp _TERM                                  &morphing_pg_dn   &morphing_left     &morphing_down &morphing_right     &tog SHORTCUT_F
     &kp _UNDO     &hm LSFT _CUT &kp _COPY     &kp LA(TAB) &double_key_macro_paste _CLPBRD_MGR 0      &kp _NEW_TT       &kp LA(UP)         &kp LG(L)      &hm LSFT LA(DOWN)   &kp _BKMRKS
-                                                                   &num_app_to 0 ALPHA &nav_gui      &nav_ctrl_ret 0 RET  &macro_hm_bspc 0 BSPC
+                                                              &num_app_to 0 ALPHA &sht_with_gui      &sht_with_ctl_kp 0 RET  &symbol_with_alt_kp 0 BSPC
 >;};
 
 alpha { bindings = <
     &shifted_nb_Q &shifted_nb_W &shifted_nb_F &shifted_nb_P &shifted_nb_B        &shifted_nb_J &shifted_nb_L &shifted_nb_U    &shifted_nb_Y &shifted_nb_SCLN
     &shifted_nb_A &shifted_nb_R &shifted_nb_S &shifted_nb_T &shifted_nb_G        &shifted_nb_M &shifted_nb_N &shifted_nb_E    &shifted_nb_I &shifted_nb_O
     &shifted_nb_Z &hm LSFT X    &shifted_nb_C &shifted_nb_D &shifted_nb_V        &shifted_nb_K &shifted_nb_H &shifted_nb_CMMA &hm LSFT DOT  &shifted_nb_FSLH
-                                                 &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &macro_hm_bspc 0 BSPC
+                                       &hm_to NUM_APP SPC &kp_to LGUI NAV        &sht_with_ctl_kp LCTL RET &symbol_with_alt_kp 0 BSPC
 >;};
 
 symbol { bindings = <
-   &sym_GRAVE &sym_LBRC         &sym_RBRC &sym_MINUS &sym_DLLR        &sym_BSLH &sym_N7 &sym_N8 &sym_N9 &sym_EXCL
-   &sym_SQT   &sym_LPAR         &sym_RPAR &sym_DQT   &sym_UNDER       &sym_PLUS &sym_N4 &sym_N5 &sym_N6 &sym_N0
-   &sym_AT    &hm_sym_LBKT2 0 0 &sym_RBKT &sym_EQUAL &sym_PIPE        &sym_AMPS &sym_N1 &sym_N2 &sym_N3 &sym_TILDE
-                             &sym_num_app_spc2 0 0 &mt LGUI RET       &mt LCTL RET &mt LALT BSPC
+    &sym_GRAVE &sym_LBRC         &sym_RBRC &sym_MINUS &sym_DLLR        &sym_BSLH &sym_N7 &sym_N8 &sym_N9 &sym_EXCL
+    &sym_SQT   &sym_LPAR         &sym_RPAR &sym_DQT   &sym_UNDER       &sym_PLUS &sym_N4 &sym_N5 &sym_N6 &sym_N0
+    &sym_AT    &hm_sym_LBKT2 0 0 &sym_RBKT &sym_EQUAL &sym_PIPE        &sym_AMPS &sym_N1 &sym_N2 &sym_N3 &sym_TILDE
+                              &sym_num_app_spc2 0 0 &mt LGUI RET       &mt LCTL RET &mt LALT BSPC
 >;};
 
 num_app { bindings = <
-   &double_key_LG8 0 LG(N4) &double_key_LG7 0 LG(N3)      &double_key_LG6 0 LG(N2) &double_key_LG5 0 LG(N1) &double_key_LG0 0 LG(N9)        &num_BSLH &num_N7 &num_N8 &num_N9 &num_EXCL
-   &kp GCS(A)               &kp GCS(R)                    &kp GCS(S)               &kp GCS(T)               &kp GCS(G)                      &num_PLUS &num_N4 &num_N5 &num_N6 &num_N0
-   &kp GCS(Z)               &mt LSFT GCS(X)               &kp GCS(C)               &kp GCS(D)               &kp GCS(V)                      &num_AMPS &num_N1 &num_N2 &num_N3 &num_TILDE
+    &double_key_LG8 0 LG(N4) &double_key_LG7 0 LG(N3)      &double_key_LG6 0 LG(N2) &double_key_LG5 0 LG(N1) &double_key_LG0 0 LG(N9)        &num_BSLH &num_N7 &num_N8 &num_N9 &num_EXCL
+    &kp GCS(A)               &kp GCS(R)                    &kp GCS(S)               &kp GCS(T)               &kp GCS(G)                      &num_PLUS &num_N4 &num_N5 &num_N6 &num_N0
+    &kp GCS(Z)               &mt LSFT GCS(X)               &kp GCS(C)               &kp GCS(D)               &kp GCS(V)                      &num_AMPS &num_N1 &num_N2 &num_N3 &num_TILDE
                                                                                                                     &kp SPC &kp LGUI        &mt LCTL LC(RET) &mt LALT LA(BSPC)
 >;};
 

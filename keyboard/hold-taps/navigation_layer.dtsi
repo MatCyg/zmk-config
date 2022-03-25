@@ -1,30 +1,6 @@
 
 
 
-MACRO(nav_gui,
-      <&macro_press &mo SHORTCUT &kp LGUI>
-    , <&macro_pause_for_release>
-    , <&macro_release &mo SHORTCUT &kp LGUI>
-)
-
-
-
-macro_hm_bspc: macro_hm_bspc {
-    compatible = "zmk,behavior-hold-tap";
-    label = "macro_hm_bspc";
-    #binding-cells = <2>;
-    tapping-term-ms = <120>;
-    quick-tap-ms = <180>;
-    flavor = "hold-preferred";
-    bindings = <&symbol_layer_alt>, <&kp>;
-};
-
-
-MACRO(symbol_layer_alt,
-      <&macro_press &mo SYMBOL &kp LALT>
-    , <&macro_pause_for_release>
-    , <&macro_release &mo SYMBOL &kp LALT>
-)
 
 
 
@@ -43,7 +19,7 @@ sht_num_app_spc: sht_num_app_spc {
     tapping-term-ms = <135>;
     quick-tap-ms = <0>;
     flavor = "tap-preferred";
-    bindings = <&num_app_alpha>, <&space_cmd>;
+    bindings = <&num_app_layer>, <&space_cmd>;
 };
 
 
