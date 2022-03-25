@@ -12,12 +12,11 @@
 #define APPS            6
 #define EMOJI           7
 #define PASTE_MO        8
-#define ALPHA_NORMAL    9
-#define SHORTCUT_F      10
-#define SHORTCUT        11
-#define SEL_MODE        12
-#define SHORTCUT_SEL    13
-#define TEST            14
+#define SHORTCUT_F      9
+#define SHORTCUT        10
+#define SEL_MODE        11
+#define SHORTCUT_SEL    12
+#define TEST            13
 
 &caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE LALT>; };
 
@@ -112,13 +111,6 @@ paste_mo { bindings = <
     &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans
     &trans &trans &trans &trans &kp RET       &trans &trans &trans &trans &trans
                          &trans &trans        &trans &trans
->;};
-
-alpha_normal { bindings = <
-    &kp Q &kp W      &kp F &kp P &kp B        &kp J &kp L &kp U    &kp Y        &kp SCLN
-    &kp A &kp R      &kp S &kp T &kp G        &kp M &kp N &kp E    &kp I        &kp O
-    &kp Z &hm LSFT X &kp C &kp D &kp V        &kp K &kp H &kp CMMA &hm LSFT DOT &kp FSLH
-    &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
 >;};
 
 shortcut_full { bindings = <
