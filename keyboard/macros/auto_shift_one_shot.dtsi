@@ -9,9 +9,9 @@
         tap-ms = <0>; \
         bindings = <&kp letter &tog SHORTCUT_F>; \
     ) \
-    shifted_tog_##letter: shifted_tog_##letter { \
+    shifted_os_##letter: shifted_os_##letter { \
         compatible = "zmk,behavior-hold-tap"; \
-        label = ZMK_MACRO_STRINGIFY(shifted_tog_##letter); \
+        label = ZMK_MACRO_STRINGIFY(shifted_os_##letter); \
         #binding-cells = <2>; \
         tapping-term-ms = <180>; \
         flavor = "tap-preferred"; \

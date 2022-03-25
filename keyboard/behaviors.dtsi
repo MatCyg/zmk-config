@@ -93,7 +93,7 @@ hm: homerow_mods {
     };
 
 HOME_ROW_MACRO(sym_LBKT)
-HOME_ROW_MACRO(letter_X)
+HOME_ROW_MACRO(shifted_nb_X)
 
 
 #define DOUBLE_KEY(name, holdKey) \

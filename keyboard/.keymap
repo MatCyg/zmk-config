@@ -292,10 +292,10 @@
 
         alpha { bindings = <
 
-            &letter_Q  &letter_W           &letter_F &letter_P &letter_B        &letter_J &letter_L &letter_U    &letter_Y    &letter_SCLN
-            &letter_A &letter_R           &letter_S &letter_T &letter_G        &letter_M &letter_N &letter_E    &letter_I    &letter_O
-            &letter_Z &hm_letter_X LSFT 0 &letter_C &letter_D &letter_V        &letter_K &letter_H &letter_CMMA &hm LSFT DOT &letter_FSLH
-                   &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &macro_hm_bspc 0 BSPC
+            &shifted_nb_Q &shifted_nb_W           &shifted_nb_F &shifted_nb_P &shifted_nb_B        &shifted_nb_J &shifted_nb_L &shifted_nb_U    &shifted_nb_Y    &shifted_nb_SCLN
+            &shifted_nb_A &shifted_nb_R           &shifted_nb_S &shifted_nb_T &shifted_nb_G        &shifted_nb_M &shifted_nb_N &shifted_nb_E    &shifted_nb_I    &shifted_nb_O
+            &shifted_nb_Z &hm_shifted_nb_X LSFT 0 &shifted_nb_C &shifted_nb_D &shifted_nb_V        &shifted_nb_K &shifted_nb_H &shifted_nb_CMMA &hm LSFT DOT     &shifted_nb_FSLH
+                                                         &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &macro_hm_bspc 0 BSPC
         >;};
 
         symbol { bindings = <
@@ -355,10 +355,10 @@
         >;};
 
         shortcut_full { bindings = <
-            &shifted_tog_Q 0 0 &shifted_tog_W 0 0  &shifted_tog_F 0 0 &shifted_tog_P 0 0 &shifted_tog_B 0 0        &shifted_tog_J 0 0 &shifted_tog_L 0 0 &shifted_tog_U 0 0    &shifted_tog_Y 0 0    &shifted_tog_SCLN 0 0
-            &shifted_tog_A 0 0 &shifted_tog_R 0 0  &shifted_tog_S 0 0 &shifted_tog_T 0 0 &shifted_tog_G 0 0        &shifted_tog_M 0 0 &shifted_tog_N 0 0 &shifted_tog_E 0 0    &shifted_tog_I 0 0    &shifted_tog_O 0 0
-            &shifted_tog_Z 0 0 &hm LSFT X          &shifted_tog_C 0 0 &shifted_tog_D 0 0 &shifted_tog_V 0 0        &shifted_tog_K 0 0 &shifted_tog_H 0 0 &shifted_tog_CMMA 0 0 &hm LSFT DOT          &shifted_tog_FSLH 0 0
-                   &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
+            &shifted_os_Q 0 0 &shifted_os_W 0 0  &shifted_os_F 0 0 &shifted_os_P 0 0 &shifted_os_B 0 0        &shifted_os_J 0 0 &shifted_os_L 0 0 &shifted_os_U 0 0    &shifted_os_Y 0 0    &shifted_os_SCLN 0 0
+            &shifted_os_A 0 0 &shifted_os_R 0 0  &shifted_os_S 0 0 &shifted_os_T 0 0 &shifted_os_G 0 0        &shifted_os_M 0 0 &shifted_os_N 0 0 &shifted_os_E 0 0    &shifted_os_I 0 0    &shifted_os_O 0 0
+            &shifted_os_Z 0 0 &hm LSFT X         &shifted_os_C 0 0 &shifted_os_D 0 0 &shifted_os_V 0 0        &shifted_os_K 0 0 &shifted_os_H 0 0 &shifted_os_CMMA 0 0 &hm LSFT DOT         &shifted_os_FSLH 0 0
+                                                                    &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
         >;};
 
         shortcut { bindings = <

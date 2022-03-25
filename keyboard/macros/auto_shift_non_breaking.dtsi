@@ -1,5 +1,5 @@
 #define AUTO_SHIFT_NON_BREAKING(letter) \
-    ZMK_MACRO(letter_##letter, \
+    ZMK_MACRO(shifted_nb_##letter, \
         wait-ms = <0>; \
         tap-ms = <10>; \
         bindings \
