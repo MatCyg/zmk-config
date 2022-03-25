@@ -31,7 +31,7 @@
 
     behaviors {
         #include "behaviors.dtsi"
-        #include "building_blocks.dtsi"
+        #include "../keyboard/building_blocks.dtsi"
         #include "macros/macros_emoji.dtsi"
         #include "macros/macros_apps.dtsi"
         #include "macros/macros.dtsi"
