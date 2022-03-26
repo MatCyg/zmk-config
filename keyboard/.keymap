@@ -7,16 +7,15 @@
 #define ALPHA           1
 #define SYMBOL          2
 #define NUM_APP         3
-#define FUNCTION        4
-#define ADJUST          5
-#define APPS            6
-#define EMOJI           7
-#define PASTE_MO        8
-#define SHORTCUT_F      9
-#define SHORTCUT        10
-#define SEL_MODE        11
-#define SHORTCUT_SEL    12
-#define TEST            13
+#define SHORTCUT_F      4
+#define SHORTCUT        5
+#define SEL_MODE        6
+#define SHORTCUT_SEL    7
+#define FUNCTION        8
+#define ADJUST          9
+#define APPS            10
+#define EMOJI           11
+#define PASTE_MO        12
 
 &caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE LALT>; };
 
@@ -72,6 +71,34 @@ num_app { bindings = <
                                                                                        &kp SPC &kp LGUI        &mt LCTL LC(RET) &mt LALT LA(BSPC)
 >;};
 
+shortcut_full { bindings = <
+    &shifted_os_Q 0 0 &shifted_os_W 0 0  &shifted_os_F 0 0 &shifted_os_P 0 0 &shifted_os_B 0 0        &shifted_os_J 0 0 &shifted_os_L 0 0 &shifted_os_U 0 0    &shifted_os_Y 0 0    &shifted_os_SCLN 0 0
+    &shifted_os_A 0 0 &shifted_os_R 0 0  &shifted_os_S 0 0 &shifted_os_T 0 0 &shifted_os_G 0 0        &shifted_os_M 0 0 &shifted_os_N 0 0 &shifted_os_E 0 0    &shifted_os_I 0 0    &shifted_os_O 0 0
+    &shifted_os_Z 0 0 &hm LSFT X         &shifted_os_C 0 0 &shifted_os_D 0 0 &shifted_os_V 0 0        &shifted_os_K 0 0 &shifted_os_H 0 0 &shifted_os_CMMA 0 0 &hm LSFT DOT         &shifted_os_FSLH 0 0
+                                                            &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
+>;};
+
+shortcut { bindings = <
+    &shifted_Q 0 0 &shifted_W 0 0 &shifted_F 0 0 &shifted_P 0 0 &shifted_B 0 0        &shifted_J 0 0 &kp LA(LEFT)   &kp UP            &kp LA(RIGHT)   &shifted_SCLN 0 0
+    &shifted_A 0 0 &shifted_R 0 0 &shifted_S 0 0 &shifted_T 0 0 &shifted_G 0 0        &shifted_M 0 0 &morphing_lg_left &kp DOWN    &morphing_lg_right &shifted_O 0 0
+    &shifted_Z 0 0 &hm LSFT X     &shifted_C 0 0 &shifted_D 0 0 &shifted_V 0 0        &shifted_K 0 0 &shifted_H 0 0 &shifted_CMMA 0 0 &hm LSFT DOT    &shifted_FSLH 0 0
+                                          &sht_num_app_spc 0 0 &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
+>;};
+
+sel_mode { bindings = <
+    &trans &trans &trans &trans &trans       &sel_pg_up &sel_alt_left &sel_up   &sel_alt_right &trans
+    &trans &trans &trans &trans &trans       &sel_pg_dn &sel_left     &sel_down &sel_right     &trans
+    &trans &trans &trans &trans &trans       &trans     &trans        &trans    &trans         &trans
+            &trans &sel_lgui_nav 0 NAV       &trans     &trans
+>;};
+
+shortcut_sel { bindings = <
+    &shifted_Q 0 0 &shifted_W 0 0 &shifted_F 0 0 &shifted_P 0 0 &shifted_B 0 0        &shifted_J 0 0 &kp LA(LEFT)   &kp UP            &kp LA(RIGHT) &shifted_SCLN 0 0
+    &shifted_A 0 0 &shifted_R 0 0 &shifted_S 0 0 &shifted_T 0 0 &shifted_G 0 0        &shifted_M 0 0 &kp LS(LEFT)   &kp DOWN          &kp LS(RIGHT) &shifted_O 0 0
+    &shifted_Z 0 0 &hm LSFT X     &shifted_C 0 0 &shifted_D 0 0 &shifted_V 0 0        &shifted_K 0 0 &shifted_H 0 0 &shifted_CMMA 0 0 &hm LSFT DOT  &shifted_FSLH 0 0
+                                            &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
+>;};
+
 function { bindings = <
     &kp _ZOOM_OUT &kp _ZOOM_IN  &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT              &kp HOME   &kp F7 &kp F8 &kp F9 &kp F12
     &kp K_PWR     &kp _TT_START &kp _TT_SHOW &ss_clip_nav &kp C_PLAY_PAUSE        &kp END    &kp F4 &kp F5 &kp F6 &kp F10
@@ -105,41 +132,6 @@ paste_mo { bindings = <
     &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans
     &trans &trans &trans &trans &kp RET       &trans &trans &trans &trans &trans
                          &trans &trans        &trans &trans
->;};
-
-shortcut_full { bindings = <
-    &shifted_os_Q 0 0 &shifted_os_W 0 0  &shifted_os_F 0 0 &shifted_os_P 0 0 &shifted_os_B 0 0        &shifted_os_J 0 0 &shifted_os_L 0 0 &shifted_os_U 0 0    &shifted_os_Y 0 0    &shifted_os_SCLN 0 0
-    &shifted_os_A 0 0 &shifted_os_R 0 0  &shifted_os_S 0 0 &shifted_os_T 0 0 &shifted_os_G 0 0        &shifted_os_M 0 0 &shifted_os_N 0 0 &shifted_os_E 0 0    &shifted_os_I 0 0    &shifted_os_O 0 0
-    &shifted_os_Z 0 0 &hm LSFT X         &shifted_os_C 0 0 &shifted_os_D 0 0 &shifted_os_V 0 0        &shifted_os_K 0 0 &shifted_os_H 0 0 &shifted_os_CMMA 0 0 &hm LSFT DOT         &shifted_os_FSLH 0 0
-                                                            &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
->;};
-
-shortcut { bindings = <
-    &shifted_Q 0 0 &shifted_W 0 0 &shifted_F 0 0 &shifted_P 0 0 &shifted_B 0 0        &shifted_J 0 0 &kp LA(LEFT)   &kp UP            &kp LA(RIGHT)   &shifted_SCLN 0 0
-    &shifted_A 0 0 &shifted_R 0 0 &shifted_S 0 0 &shifted_T 0 0 &shifted_G 0 0        &shifted_M 0 0 &morphing_lg_left &kp DOWN    &morphing_lg_right &shifted_O 0 0
-    &shifted_Z 0 0 &hm LSFT X     &shifted_C 0 0 &shifted_D 0 0 &shifted_V 0 0        &shifted_K 0 0 &shifted_H 0 0 &shifted_CMMA 0 0 &hm LSFT DOT    &shifted_FSLH 0 0
-                                          &sht_num_app_spc 0 0 &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
->;};
-
-sel_mode { bindings = <
-    &trans &trans &trans &trans &trans       &sel_pg_up &sel_alt_left &sel_up   &sel_alt_right &trans
-    &trans &trans &trans &trans &trans       &sel_pg_dn &sel_left     &sel_down &sel_right     &trans
-    &trans &trans &trans &trans &trans       &trans     &trans        &trans    &trans         &trans
-            &trans &sel_lgui_nav 0 NAV       &trans     &trans
->;};
-
-shortcut_sel { bindings = <
-    &shifted_Q 0 0 &shifted_W 0 0 &shifted_F 0 0 &shifted_P 0 0 &shifted_B 0 0        &shifted_J 0 0 &kp LA(LEFT)   &kp UP            &kp LA(RIGHT) &shifted_SCLN 0 0
-    &shifted_A 0 0 &shifted_R 0 0 &shifted_S 0 0 &shifted_T 0 0 &shifted_G 0 0        &shifted_M 0 0 &kp LS(LEFT)   &kp DOWN          &kp LS(RIGHT) &shifted_O 0 0
-    &shifted_Z 0 0 &hm LSFT X     &shifted_C 0 0 &shifted_D 0 0 &shifted_V 0 0        &shifted_K 0 0 &shifted_H 0 0 &shifted_CMMA 0 0 &hm LSFT DOT  &shifted_FSLH 0 0
-                                            &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
->;};
-
-test { bindings = <
-    &none &none &none &none &none        &none &none &none &none &none
-    &none &none &none &none &none        &none &none &none &none &none
-    &none &none &none &none &none        &none &none &none &none &none
-                      &none &none        &none &none
 >;};
 
 	};
