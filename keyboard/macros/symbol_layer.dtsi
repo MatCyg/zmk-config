@@ -8,7 +8,6 @@
     )
 
 
-SYMBOL_KEY(SPC)
 
 SYMBOL_KEY(BSLH)
 SYMBOL_KEY(GRAVE)
@@ -25,7 +24,6 @@ SYMBOL_KEY(DQT)
 SYMBOL_KEY(UNDER)
 SYMBOL_KEY(PLUS)
 SYMBOL_KEY(AT)
-//SYMBOL_KEY(LBKT)
 SYMBOL_KEY(RBKT)
 SYMBOL_KEY(EQUAL)
 SYMBOL_KEY(PIPE)
@@ -42,16 +40,17 @@ SYMBOL_KEY(N7)
 SYMBOL_KEY(N8)
 SYMBOL_KEY(N9)
 
+
 MACRO(ihm_shift_lbkt,
     <&macro_tap &to SYMBOL &tog ALPHA>,
-    <&macro_press &hold_hm_shift_lbkt 0 0>,
+    <&macro_press &hold_ihm_shift_lbkt 0 0>,
     <&macro_pause_for_release>,
-    <&macro_release &hold_hm_shift_lbkt 0 0>
+    <&macro_release &hold_ihm_shift_lbkt 0 0>
 )
 
-HT("tap-preferred", hold_hm_shift_lbkt, &nav_hold_shift, &sym_LBKT, 180)
+HT("tap-preferred", hold_ihm_shift_lbkt, &hold_shift_release_to_nav, &sym_LBKT, 180)
 
-MACRO(nav_hold_shift,
+MACRO(hold_shift_release_to_nav,
     <&macro_tap &to SHORTCUT_F>,
     <&macro_press &kp LSFT>,
     <&macro_pause_for_release>,
@@ -66,3 +65,28 @@ MACRO(sym_LBKT,
     <&macro_release &kp LBKT>
 )
 
+
+
+
+MACRO(ihm_num_app_spc,
+    <&macro_tap &to SYMBOL &tog ALPHA>,
+    <&macro_press &hold_ihm_num_app_spc 0 0>,
+    <&macro_pause_for_release>,
+    <&macro_release &hold_ihm_num_app_spc 0 0>
+)
+
+HT("tap-preferred", hold_ihm_num_app_spc, &hold_num_app_layer_release_to_nav, &sym_SPC, 180)
+
+MACRO(hold_num_app_layer_release_to_nav,
+    <&macro_press &num_app_layer>,
+    <&macro_pause_for_release>,
+    <&macro_release &num_app_layer>,
+    <&macro_tap &to NAV>
+)
+
+MACRO(sym_SPC,
+    <&macro_release &kp LALT>,
+    <&macro_press &kp SPC>,
+    <&macro_pause_for_release>,
+    <&macro_release &kp SPC>
+)
