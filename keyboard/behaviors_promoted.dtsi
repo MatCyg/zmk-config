@@ -41,10 +41,6 @@ MACRO(sht_with_gui,
 )
 
 
-//TODO should be replaced
-HT("tap-preferred", sym_num_app_spc, &num_app_layer, &sym_SPC, 135)
-
-
 
 
 
