@@ -12,63 +12,38 @@
 
 
 
-MACRO(test, <&to ALPHA>, <&caps_word>)
-
-//
-//hm: homerow_mods {
-//    compatible = "zmk,behavior-hold-tap";
-//    label = "HOMEROW_MODS";
-//    #binding-cells = <2>;
-//    tapping-term-ms = <120>;
-//    quick-tap-ms = <180>;
-//    flavor = "tap-preferred";
-//    bindings = <&kp>, <&kp>;
-//};
-//
-//hold_letter_##letter: hold_letter_##letter { \
-//    compatible = "zmk,behavior-hold-tap"; \
-//    label = STRINGIFY(hold_letter_##letter); \
-//    #binding-cells = <2>; \
-//    tapping-term-ms = <180>; \
-//    flavor = "tap-preferred"; \
-//    bindings = <&capital_letter_##letter>, <&none>; \
-//};
-//
-//hm_bspc: hm_bspc {
-//    compatible = "zmk,behavior-hold-tap";
-//    label = "hm_bspc";
-//    #binding-cells = <2>;
-//    tapping-term-ms = <120>;
-//    quick-tap-ms = <180>;
-//    flavor = "hold-preferred";
-//    bindings = <&kp>, <&kp>;
-//    retro-tap;
-//};
-//
-//
-//#define HOLD_TAP(name,...) \
-//	name: name { \
-//        label = STRINGIFY(ZM_##name); \
-//        compatible = "zmk,behavior-hold-tap"; \
-//        #binding-cells = <2>; \
-//        __VA_ARGS__ \
-//    };
-//
-//    hm_bspc: hm_bspc {
-//        compatible = "zmk,behavior-hold-tap";
-//        label = "hm_bspc";
-//        #binding-cells = <2>;
-//
-//
-//        tapping-term-ms = <120>;
-//        quick-tap-ms = <180>;
-//        flavor = "hold-preferred";
-//        bindings = <&kp>, <&kp>;
-//        retro-tap;
-//
-//
-//    };
+#define MOD_MORPH(name, normalTap, morphedTap, morphingMods) \
+    name: name { \
+        label = STRINGIFY(ZM_##name); \
+        compatible = "zmk,behavior-mod-morph"; \
+        #binding-cells = <0>; \
+        bindings = <normalTap>, <morphedTap>; \
+        mods = <(morphingMods)>; \
+    };
 
 
 
+#define HT(flavor, name, bindingHold, bindingTap, tappingTermMs) \
+    HOLD_TAP_TEMPLATE(flavor, name, bindingHold, bindingTap, tappingTermMs)
 
+#define HT_QT(flavor, name, bindingHold, bindingTap, tappingTermMs, quickTapMs) \
+    HOLD_TAP_TEMPLATE(flavor, name, bindingHold, bindingTap, tappingTermMs, quick-tap-ms = <quickTapMs>;)
+
+#define HOLD_TAP_TEMPLATE(definedFlavor, name, bindingHold, bindingTap, tappingTermMs, ...) \
+	name: name { \
+        label = STRINGIFY(ZM_##name); \
+        compatible = "zmk,behavior-hold-tap"; \
+        #binding-cells = <2>; \
+        tapping-term-ms = <tappingTermMs>; \
+        flavor = definedFlavor; \
+        bindings = <bindingHold>, <bindingTap>; \
+        __VA_ARGS__ \
+    };
+
+
+#define DUAL_KEY(name, bindingHold, bindingTap) \
+    MACRO(dual_macro_##name, \
+          <&macro_tap bindingHold> \
+        , <&macro_pause_for_release> \
+    ) \
+    HT("tap-preferred", dual_##name, &dual_macro_##name, bindingTap, 180)

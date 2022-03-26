@@ -1,25 +1,14 @@
-#define HT(flavor, name, bindingHold, bindingTap, tappingTermMs) \
-    HOLD_TAP_TEMPLATE(flavor, name, bindingHold, bindingTap, tappingTermMs)
-
-#define HT_QT(flavor, name, bindingHold, bindingTap, tappingTermMs, quickTapMs) \
-    HOLD_TAP_TEMPLATE(flavor, name, bindingHold, bindingTap, tappingTermMs, quick-tap-ms = <quickTapMs>;)
-
-#define HOLD_TAP_TEMPLATE(definedFlavor, name, bindingHold, bindingTap, tappingTermMs, ...) \
-	name: name { \
-        label = STRINGIFY(ZM_##name); \
-        compatible = "zmk,behavior-hold-tap"; \
-        #binding-cells = <2>; \
-        tapping-term-ms = <tappingTermMs>; \
-        flavor = definedFlavor; \
-        bindings = <bindingHold>, <bindingTap>; \
-        __VA_ARGS__ \
-    };
 
 HT_QT("tap-preferred", hm, &kp, &kp, 120, 180)
 HT_QT("tap-preferred", hm_spc, &kp, &kp, 200, 180)
 HT_QT("tap-preferred", hm_to, &mo, &kp, 200, 180)
 HT("tap-preferred", kp_to, &kp, &to, 135)
 
+
+
+HT("tap-preferred", sht_num_app_spc, &num_app_layer, &space_cmd, 135)
+MOD_MORPH(space_cmd, &kp SPC, &space_cmd_alpha, MOD_LGUI)
+MACRO(space_cmd_alpha, <&to ALPHA &kp LG(SPC)>)
 
 HT("tap-preferred", num_app_to, &num_app_layer, &to, 135)
 MACRO(num_app_layer,
@@ -36,6 +25,7 @@ MACRO(sht_with_ctl,
     , <&macro_release &mo SHORTCUT &kp LCTL>
 )
 
+
 HT_QT("hold-preferred", symbol_with_alt_kp, &symbol_with_alt, &kp, 120, 180)
 MACRO(symbol_with_alt,
       <&macro_press &mo SYMBOL &kp LALT>
@@ -43,10 +33,19 @@ MACRO(symbol_with_alt,
     , <&macro_release &mo SYMBOL &kp LALT>
 )
 
+
 MACRO(sht_with_gui,
       <&macro_press &mo SHORTCUT &kp LGUI>
     , <&macro_pause_for_release>
     , <&macro_release &mo SHORTCUT &kp LGUI>
 )
+
+
+//TODO should be replaced
+HT("tap-preferred", sym_num_app_spc, &num_app_layer, &sym_SPC, 135)
+
+
+
+
 
 

@@ -3,15 +3,6 @@
 
 
 
-sym_num_app_spc: sym_num_app_spc {
-    compatible = "zmk,behavior-hold-tap";
-    label = "sym_num_app_spc";
-    #binding-cells = <2>;
-    tapping-term-ms = <135>;
-    quick-tap-ms = <0>;
-    flavor = "tap-preferred";
-    bindings = <&num_app_layer>, <&sym_SPC>;
-};
 
 
 
