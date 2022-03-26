@@ -4,7 +4,7 @@
         <&macro_pause_for_release>, \
         <&macro_release &kp letter> \
     ) \
-    DUAL_KEY(shifted_##letter, &kp LS(letter), &shifted_lowercase_##letter)
+    DUAL_KEY_QT(shifted_##letter, &kp LS(letter), &shifted_lowercase_##letter)
 
 
 AUTO_SHIFT(A)

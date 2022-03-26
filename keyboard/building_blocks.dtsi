@@ -47,3 +47,10 @@
         <&macro_pause_for_release> \
     ) \
     HT("tap-preferred", name, &dual_macro_##name, bindingTap, 180)
+
+#define DUAL_KEY_QT(name, bindingHold, bindingTap) \
+    MACRO(dual_macro_qt_##name, \
+        <&macro_tap bindingHold>, \
+        <&macro_pause_for_release> \
+    ) \
+    HT_QT("tap-preferred", name, &dual_macro_qt_##name, bindingTap, 180, 200)
