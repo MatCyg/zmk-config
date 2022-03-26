@@ -12,3 +12,5 @@
 - [ ] sym layer space gets stuck in sym layer
 - [ ] alpha command to shortcut layer
 - [ ] sym layer -> after symbol release reapply LALT??
+- [ ] consider caps work space -> _
+- [ ] one shot alpha should not contain home rows
