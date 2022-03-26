@@ -29,12 +29,7 @@ combos {
 behaviors {
     #include "building_blocks.dtsi"
 
-    #include "behaviors_promoted.dtsi"
-//    #include "behaviors_deprecated.dtsi"
-//    #include "behaviors_to_deprecate.dtsi"
-
-//    #include "behaviors.dtsi"
-//    #include "behaviors2.dtsi"
+    #include "behaviors.dtsi"
 
     #include "macros/auto_shift.dtsi"
     #include "macros/auto_shift_non_breaking.dtsi"
