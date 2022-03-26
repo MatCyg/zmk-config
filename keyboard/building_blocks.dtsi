@@ -43,7 +43,7 @@
 
 #define DUAL_KEY(name, bindingHold, bindingTap) \
     MACRO(dual_macro_##name, \
-          <&macro_tap bindingHold> \
-        , <&macro_pause_for_release> \
+        <&macro_tap bindingHold>, \
+        <&macro_pause_for_release> \
     ) \
     HT("tap-preferred", dual_##name, &dual_macro_##name, bindingTap, 180)

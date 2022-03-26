@@ -1,9 +1,9 @@
 #define AUTO_SHIFT(letter) \
     MACRO(f_capital_##letter, <&kp LS(letter)>) \
     MACRO(f_letter_##letter, \
-          <&macro_press &kp letter> \
-        , <&macro_pause_for_release> \
-        , <&macro_release &kp letter> \
+        <&macro_press &kp letter>, \
+        <&macro_pause_for_release>, \
+        <&macro_release &kp letter> \
     ) \
     shifted_##letter: shifted_##letter { \
         compatible = "zmk,behavior-hold-tap"; \

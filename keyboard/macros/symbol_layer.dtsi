@@ -1,11 +1,10 @@
 #define SYMBOL_KEY(key) \
     MACRO(sym_##key, \
-          <&macro_tap &to SYMBOL> \
-        , <&macro_tap &tog ALPHA> \
-        , <&macro_release &kp LALT> \
-        , <&macro_press &kp key> \
-        , <&macro_pause_for_release> \
-        , <&macro_release &kp key> \
+        <&macro_tap &to SYMBOL &tog ALPHA>, \
+        <&macro_release &kp LALT>, \
+        <&macro_press &kp key>, \
+        <&macro_pause_for_release>, \
+        <&macro_release &kp key> \
     )
 
 
@@ -43,41 +42,27 @@ SYMBOL_KEY(N7)
 SYMBOL_KEY(N8)
 SYMBOL_KEY(N9)
 
-
-
-
-
-
-
-MACRO(holding_hm_shift_lbkt,
-      <&macro_tap &to ALPHA>
-    , <&macro_tap &tog SYMBOL>
-    , <&macro_press &hold_hm_shift_lbkt 0 0>
-    , <&macro_pause_for_release>
-    , <&macro_release &hold_hm_shift_lbkt 0 0>
+MACRO(ihm_shift_lbkt,
+    <&macro_tap &to SYMBOL &tog ALPHA>,
+    <&macro_press &hold_hm_shift_lbkt 0 0>,
+    <&macro_pause_for_release>,
+    <&macro_release &hold_hm_shift_lbkt 0 0>
 )
 
 HT("tap-preferred", hold_hm_shift_lbkt, &nav_hold_shift, &sym_LBKT, 180)
 
-ZMK_MACRO(nav_hold_shift,
-    wait-ms = <0>;
-    tap-ms = <0>;
-    bindings
-        = <&macro_press &kp LSFT>
-        , <&macro_pause_for_release>
-        , <&macro_release &kp LSFT>
-        , <&macro_tap &to NAV>
-        ;
+MACRO(nav_hold_shift,
+    <&macro_tap &to SHORTCUT_F>,
+    <&macro_press &kp LSFT>,
+    <&macro_pause_for_release>,
+    <&macro_release &kp LSFT>,
+    <&macro_tap &to NAV>
 )
 
-ZMK_MACRO(
-    sym_LBKT,
-    wait-ms = <0>;
-    tap-ms = <0>;
-    bindings
-        = <&macro_release &kp LALT>
-        , <&macro_press &kp LBKT>
-        , <&macro_pause_for_release>
-        , <&macro_release &kp LBKT>
-        ;
+MACRO(sym_LBKT,
+    <&macro_release &kp LALT>,
+    <&macro_press &kp LBKT>,
+    <&macro_pause_for_release>,
+    <&macro_release &kp LBKT>
 )
+

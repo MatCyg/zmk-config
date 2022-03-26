@@ -1,10 +1,10 @@
 #define NUM_KEY(key) \
     MACRO(num_##key, \
-          <&macro_tap &to NUM_APP> \
-        , <&macro_tap &tog ALPHA> \
-        , <&macro_press &kp key> \
-        , <&macro_pause_for_release> \
-        , <&macro_release &kp key> \
+        <&macro_tap &to NUM_APP>,  \
+        <&macro_tap &tog ALPHA>,  \
+        <&macro_press &kp key>,  \
+        <&macro_pause_for_release>,  \
+        <&macro_release &kp key> \
     )
 
 
