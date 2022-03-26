@@ -15,3 +15,5 @@
 - [ ] consider caps work space -> _
 - [ ] one shot alpha should not contain home rows
 - [ ] review combos
+- [ ] auto shift normal should allow for quick tap ms so that I can hold i.e. Cmd+w
+- [ ] qwerty keyboard should have hyper and have some sort of interoperability of system shortcuts.
