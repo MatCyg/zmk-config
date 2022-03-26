@@ -14,3 +14,4 @@
 - [ ] sym layer -> after symbol release reapply LALT??
 - [ ] consider caps work space -> _
 - [ ] one shot alpha should not contain home rows
+- [ ] review combos

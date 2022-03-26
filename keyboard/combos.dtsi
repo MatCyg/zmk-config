@@ -24,6 +24,7 @@ compatible = "zmk,combos";
     timeout-ms = <50>; \
   };
 
+
 COMBO(esc,        1 2, &esc_nav)
 COMBO(tab,        7 8, &kp TAB)
 COMBO(word,       0 9, &wrt_word)

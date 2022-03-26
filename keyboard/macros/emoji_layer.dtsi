@@ -1,5 +1,6 @@
 #define EMOJI_KEY(KEY) MACRO(emoji_##KEY, <&kp TILDE &kp KEY &kp TILDE &to ALPHA>)
 
+
 MACRO(code_block, <&kp GRAVE &kp GRAVE &kp GRAVE &to ALPHA>)
 MACRO(code_java, <&kp GRAVE &kp GRAVE &kp GRAVE &kp J &kp A &kp V &kp A &to ALPHA>)
 MACRO(code_json, <&kp GRAVE &kp GRAVE &kp GRAVE &kp J &kp S &kp O &kp N &to ALPHA>)

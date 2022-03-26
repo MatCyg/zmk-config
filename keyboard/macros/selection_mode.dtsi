@@ -1,17 +1,12 @@
 #define SELECTION_MORPHING(keyName, key) \
-    morphing_##keyName: morphing_##keyName { \
-        compatible = "zmk,behavior-mod-morph"; \
-        label = STRINGIFY(morphing_##keyName); \
-        #binding-cells = <0>; \
-        bindings = <&kp key>, <&sel_##keyName>; \
-        mods = <(MOD_LSFT)>; \
-    }; \
+    MOD_MORPH(morphing_##keyName, &kp key, &sel_##keyName, MOD_LSFT) \
     MACRO(sel_##keyName, \
         <&macro_press &kp LS(key)>, \
         <&macro_pause_for_release>, \
         <&macro_release &kp LS(key)>, \
         <&macro_tap &sl SEL_MODE> \
     )
+
 
 SELECTION_MORPHING(left, LEFT)
 SELECTION_MORPHING(right, RIGHT)
@@ -26,15 +21,7 @@ SELECTION_MORPHING(lg_left, LG(LEFT))
 SELECTION_MORPHING(lg_right, LG(RIGHT))
 
 
-sel_lgui_nav: sel_lgui_nav {
-    compatible = "zmk,behavior-hold-tap";
-    label = "sel_lgui_nav";
-    #binding-cells = <2>;
-    tapping-term-ms = <135>;
-    quick-tap-ms = <0>;
-    flavor = "tap-preferred";
-    bindings = <&sel_lgui_shortcut_sel>, <&to>;
-};
+HT("tap-preferred", sel_lgui_nav, &sel_lgui_shortcut_sel, &to, 135)
 
 MACRO(sel_lgui_shortcut_sel,
     <&macro_press &mo SHORTCUT_SEL &kp LGUI>,
