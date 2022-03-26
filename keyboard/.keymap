@@ -7,7 +7,7 @@
 #define ALPHA           1
 #define SYMBOL          2
 #define NUM_APP         3
-#define SHORTCUT_F      4
+#define ALPHA_ONE_SHOT  4
 #define SHORTCUT        5
 #define SEL_MODE        6
 #define SHORTCUT_SEL    7
@@ -45,7 +45,7 @@ keymap { compatible = "zmk,keymap";
 
 navigation { bindings = <
     &kp _NEXT_WIN &kp _APP3     &kp _APP2     &kp _APP1   &kp _SEARCH            &morphing_pg_up   &morphing_alt_left &morphing_up   &morphing_alt_right &kp DEL
-    &kp _LAST_APP &kp _PREV_TAB &kp _NEXT_TAB &kp _LMB    &kp _TERM              &morphing_pg_dn   &morphing_left     &morphing_down &morphing_right     &tog SHORTCUT_F
+    &kp _LAST_APP &kp _PREV_TAB &kp _NEXT_TAB &kp _LMB    &kp _TERM              &morphing_pg_dn   &morphing_left     &morphing_down &morphing_right     &tog ALPHA_ONE_SHOT
     &kp _UNDO     &hm LSFT _CUT &kp _COPY     &kp LA(TAB) &dual_paste 0 0        &kp _NEW_TT       &kp LA(UP)         &kp LG(L)      &hm LSFT LA(DOWN)   &kp _BKMRKS
                                         &num_app_to 0 ALPHA &sht_with_gui      &sht_with_ctl_kp 0 RET  &symbol_with_alt_kp 0 BSPC
 >;};
@@ -71,7 +71,7 @@ num_app { bindings = <
                                                                                        &kp SPC &kp LGUI        &mt LCTL LC(RET) &mt LALT LA(BSPC)
 >;};
 
-shortcut_full { bindings = <
+alpha_one_shot { bindings = <
     &shifted_os_Q 0 0 &shifted_os_W 0 0  &shifted_os_F 0 0 &shifted_os_P 0 0 &shifted_os_B 0 0        &shifted_os_J 0 0 &shifted_os_L 0 0 &shifted_os_U 0 0    &shifted_os_Y 0 0    &shifted_os_SCLN 0 0
     &shifted_os_A 0 0 &shifted_os_R 0 0  &shifted_os_S 0 0 &shifted_os_T 0 0 &shifted_os_G 0 0        &shifted_os_M 0 0 &shifted_os_N 0 0 &shifted_os_E 0 0    &shifted_os_I 0 0    &shifted_os_O 0 0
     &shifted_os_Z 0 0 &hm LSFT X         &shifted_os_C 0 0 &shifted_os_D 0 0 &shifted_os_V 0 0        &shifted_os_K 0 0 &shifted_os_H 0 0 &shifted_os_CMMA 0 0 &hm LSFT DOT         &shifted_os_FSLH 0 0

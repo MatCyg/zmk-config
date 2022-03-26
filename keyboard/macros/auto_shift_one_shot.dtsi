@@ -1,6 +1,6 @@
 #define AUTO_SHIFT_ONE_SHOT(letter) \
-    MACRO(shifted_os_uppercase_##letter, <&kp LS(letter) &tog SHORTCUT_F>) \
-    MACRO(shifted_os_lowercase_##letter, <&kp letter &tog SHORTCUT_F>) \
+    MACRO(shifted_os_uppercase_##letter, <&tog ALPHA_ONE_SHOT &kp LS(letter)>) \
+    MACRO(shifted_os_lowercase_##letter, <&tog ALPHA_ONE_SHOT &kp letter>) \
     DUAL_KEY(shifted_os_##letter, &shifted_os_uppercase_##letter, &shifted_os_lowercase_##letter)
 
 
