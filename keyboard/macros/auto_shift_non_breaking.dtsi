@@ -1,19 +1,12 @@
 #define AUTO_SHIFT_NON_BREAKING(letter) \
     MACRO_TIMED(shifted_nb_##letter, 0, 10, \
         <&kp letter>, \
-        <&macro_press &hold_letter_##letter 0 0>, \
+        <&macro_press &shifted_nb_hold_##letter 0 0>, \
         <&macro_pause_for_release>, \
-        <&macro_release &hold_letter_##letter 0 0> \
+        <&macro_release &shifted_nb_hold_##letter 0 0> \
     ) \
-    MACRO_TIMED(capital_letter_##letter, 0, 10, <&kp BSPC &kp LS(letter)> ) \
-    hold_letter_##letter: hold_letter_##letter { \
-        compatible = "zmk,behavior-hold-tap"; \
-        label = STRINGIFY(hold_letter_##letter); \
-        #binding-cells = <2>; \
-        tapping-term-ms = <180>; \
-        flavor = "tap-preferred"; \
-        bindings = <&capital_letter_##letter>, <&none>; \
-    };
+    MACRO(shifted_nb_uppercase_##letter, <&kp BSPC &kp LS(letter)>) \
+    DUAL_KEY(shifted_nb_hold_##letter, &shifted_nb_uppercase_##letter, &none)
 
 
 AUTO_SHIFT_NON_BREAKING(A)
