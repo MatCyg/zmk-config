@@ -59,9 +59,9 @@ alpha { bindings = <
 >;};
 
 symbol { bindings = <
-    &sym_GRAVE &sym_LBRC       &sym_RBRC &sym_MINUS &sym_DLLR        &sym_BSLH &sym_N7 &sym_N8 &sym_N9 &sym_EXCL
-    &sym_SQT   &sym_LPAR       &sym_RPAR &sym_DQT   &sym_UNDER       &sym_PLUS &sym_N4 &sym_N5 &sym_N6 &sym_N0
-    &sym_AT    &ihm_shift_lbkt &sym_RBKT &sym_EQUAL &sym_PIPE        &sym_AMPS &sym_N1 &sym_N2 &sym_N3 &sym_TILDE
+    &sym_GRAVE &sym_LBRC       &sym_RBRC &dk_sym_MINUS &dk_sym_DLLR         &sym_BSLH    &sym_N7 &sym_N8 &sym_N9 &sym_EXCL
+    &sym_SQT   &sym_LPAR       &sym_RPAR &sym_DQT      &dk_sym_UNDER        &dk_sym_PLUS &sym_N4 &sym_N5 &sym_N6 &sym_N0
+    &sym_AT    &ihm_shift_lbkt &sym_RBKT &sym_EQUAL    &dk_sym_PIPE         &sym_AMPS    &sym_N1 &sym_N2 &sym_N3 &sym_TILDE
                                  &ihm_num_app_spc &mt LGUI RET       &mt LCTL RET &mt LALT BSPC
 >;};
 

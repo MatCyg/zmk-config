@@ -55,6 +55,7 @@
     ) \
     HT_QT("tap-preferred", name, &dk_qt_##name, bindingTap, 180, 200)
 
+
 #define DUAL_KEY_INVOKED(name, tapOnKeyDown, tapOnHold) \
     MACRO_TIMED(name, 0, 10, \
         <&macro_tap tapOnKeyDown>, \
