@@ -18,6 +18,7 @@
 #define PASTE_MO        12
 
 &caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE LALT>; };
+&sl { release-after-ms = <60000>; };
 
 / {
 
@@ -79,9 +80,9 @@ alpha_one_shot { bindings = <
 >;};
 
 shortcut { bindings = <
-    &shifted_Q 0 0 &shifted_W 0 0 &shifted_F 0 0 &shifted_P 0 0 &shifted_B 0 0        &shifted_J 0 0 &kp LA(LEFT)   &kp UP            &kp LA(RIGHT)   &shifted_SCLN 0 0
-    &shifted_A 0 0 &shifted_R 0 0 &shifted_S 0 0 &shifted_T 0 0 &shifted_G 0 0        &shifted_M 0 0 &morphing_lg_left &kp DOWN    &morphing_lg_right &shifted_O 0 0
-    &shifted_Z 0 0 &hm LSFT X     &shifted_C 0 0 &shifted_D 0 0 &shifted_V 0 0        &shifted_K 0 0 &shifted_H 0 0 &shifted_CMMA 0 0 &hm LSFT DOT    &shifted_FSLH 0 0
+    &shifted_Q 0 0 &trans         &shifted_F 0 0 &shifted_P 0 0 &shifted_B 0 0        &shifted_J 0 0 &trans         &trans            &trans       &shifted_SCLN 0 0
+    &shifted_A 0 0 &shifted_R 0 0 &shifted_S 0 0 &shifted_T 0 0 &shifted_G 0 0        &shifted_M 0 0 &trans         &trans            &trans       &shifted_O 0 0
+    &shifted_Z 0 0 &hm LSFT X     &shifted_C 0 0 &shifted_D 0 0 &shifted_V 0 0        &shifted_K 0 0 &shifted_H 0 0 &shifted_CMMA 0 0 &hm LSFT DOT &shifted_FSLH 0 0
                                           &sht_num_app_spc 0 0 &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
 >;};
 
@@ -136,5 +137,3 @@ paste_mo { bindings = <
 
 	};
 };
-
-

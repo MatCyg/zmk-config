@@ -6,7 +6,7 @@
         <&macro_release &kp LS(key)>, \
         <&macro_tap &sl SEL_MODE> \
     )
-
+//try moving &sl to the top
 
 SELECTION_MORPHING(left, LEFT)
 SELECTION_MORPHING(right, RIGHT)
@@ -16,9 +16,6 @@ SELECTION_MORPHING(pg_up, PG_UP)
 SELECTION_MORPHING(pg_dn, PG_DN)
 SELECTION_MORPHING(alt_left, LA(LEFT))
 SELECTION_MORPHING(alt_right, LA(RIGHT))
-
-SELECTION_MORPHING(lg_left, LG(LEFT))
-SELECTION_MORPHING(lg_right, LG(RIGHT))
 
 
 HT("tap-preferred", sel_lgui_nav, &sel_lgui_shortcut_sel, &to, 135)
