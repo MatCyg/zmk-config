@@ -5,18 +5,17 @@
 - [x] symbol layer `[` doesn't work
 - [x] double x doesn't produce shifted X
 - [x] hold paste to paste manager
+- [x] sym layer space gets stuck in sym layer
+- [x] one shot alpha should not contain home rows
+- [x] auto shift normal should allow for quick tap ms so that I can hold i.e. Cmd+w
+- [x] bug sel mode cmd + letter stays on sel mode layer
+- [x] bug one shot x allows for two letter
+- [x] automatic shifting after dot space
 - [ ] what should be done with sel mode cmd alt left arrow and cmd up arrow?
 - [ ] idea: hold numbers for function keys, once used, function keys on press instead of hold (this would mean sending number on release...)
 - [ ] nav layer cmd + num + number won't send cmd 1
-- [x] sym layer space gets stuck in sym layer
 - [ ] alpha command to shortcut layer
 - [ ] sym layer -> after symbol release reapply LALT??
 - [ ] consider caps work space -> _
-- [x] one shot alpha should not contain home rows
 - [ ] review combos
-- [x] auto shift normal should allow for quick tap ms so that I can hold i.e. Cmd+w
 - [ ] qwerty keyboard should have hyper and have some sort of interoperability of system shortcuts.
-- [x] bug sel mode cmd + letter stays on sel mode layer
-- [x] bug one shot x allows for two letter
-- [ ] automatic shifting after dot space
-- 
