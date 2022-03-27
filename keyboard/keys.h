@@ -10,8 +10,10 @@
 #define _ZOOM_IN    LG(EQUAL)
 #define _LOCK       LG(LC(Q))
 
-#define _SS_CLIP    LG(LC(LS(N4)))
-//#define _SS_TOOL    LG(LC(Q))
+#define _SS_CLPBRD  LG(LC(LS(N4)))
+#define _SS_TOOL    LG(LS(N5))
+
+
 #define _TT_START   HYPER(H)
 #define _TT_SHOW    HYPER(SCLN)
 
