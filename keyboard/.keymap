@@ -67,14 +67,14 @@ alpha_one_shot { bindings = <
     &shifted_os_Q 0 0 &shifted_os_W 0 0 &shifted_os_F 0 0 &shifted_os_P 0 0 &shifted_os_B 0 0        &shifted_os_J 0 0 &shifted_os_L 0 0 &shifted_os_U 0 0    &shifted_os_Y 0 0    &shifted_os_SCLN 0 0
     &shifted_os_A 0 0 &shifted_os_R 0 0 &shifted_os_S 0 0 &shifted_os_T 0 0 &shifted_os_G 0 0        &shifted_os_M 0 0 &shifted_os_N 0 0 &shifted_os_E 0 0    &shifted_os_I 0 0    &shifted_os_O 0 0
     &shifted_os_Z 0 0 &hm_os_X LSFT 0   &shifted_os_C 0 0 &shifted_os_D 0 0 &shifted_os_V 0 0        &shifted_os_K 0 0 &shifted_os_H 0 0 &shifted_os_CMMA 0 0 &hm_os_DOT LSFT 0    &shifted_os_FSLH 0 0
-                                                          &hm_os_SPC NUM_APP 0 &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
+                                                         &hm_os_SPC NUM_APP 0 &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
 >;};
 
 alpha_shifted { bindings = <
     &shifted_up_Q &shifted_up_W   &shifted_up_F &shifted_up_P &shifted_up_B        &shifted_up_J &shifted_up_L &shifted_up_U    &shifted_up_Y     &shifted_up_SCLN
     &shifted_up_A &shifted_up_R   &shifted_up_S &shifted_up_T &shifted_up_G        &shifted_up_M &shifted_up_N &shifted_up_E    &shifted_up_I     &shifted_up_O
     &shifted_up_Z &hm_up_X LSFT 0 &shifted_up_C &shifted_up_D &shifted_up_V        &shifted_up_K &shifted_up_H &shifted_up_CMMA &hm_up_DOT LSFT 0 &shifted_up_FSLH
-                                        &hm_to NUM_APP SPC  &kp_to LGUI NAV        &hm_spc LCTL RET &symbol_with_alt_kp 0 BSPC
+                                                              &trans &trans        &trans &trans
 >;};
 
 symbol { bindings = <
@@ -116,7 +116,7 @@ function { bindings = <
     &kp _ZOOM_OUT &kp _ZOOM_IN  &kp C_VOL_DN &kp C_VOL_UP      &kp C_NEXT              &kp HOME   &kp F7 &kp F8 &kp F9 &kp F12
     &kp K_PWR     &kp _TT_START &kp _TT_SHOW &dual_ss_tool 0 0 &kp C_PLAY_PAUSE        &kp END    &kp F4 &kp F5 &kp F6 &kp F10
     &kp _LOCK     &mt LSFT X    &kp LALT     &kp LCTL          &none                   &to ADJUST &kp F1 &kp F2 &kp F3 &kp F11
-                                                   &kp LCTL &kp_to LGUI NAV        &mt LCTL RET &mt LALT BSPC
+                                                       &kp LCTL &kp_to LGUI NAV        &mt LCTL RET &mt LALT BSPC
 >;};
 
 adjust { bindings = <
