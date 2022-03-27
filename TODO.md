@@ -18,3 +18,5 @@
 - [ ] qwerty keyboard should have hyper and have some sort of interoperability of system shortcuts.
 - [x] bug sel mode cmd + letter stays on sel mode layer
 - [x] bug one shot x allows for two letter
+- [ ] automatic shifting after dot space
+- 

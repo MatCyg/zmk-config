@@ -1,5 +1,9 @@
 MACRO(wrt_word, <&to ALPHA>, <&caps_word>)
 MACRO(ss_clip_nav, <&kp _SS_CLIP &to NAV>)
 MACRO(esc_nav, <&to NAV &kp ESC>)
+
 DUAL_KEY(dual_paste, &kp _CLPBRD_MGR, &paste_macro)
 MACRO(paste_macro, <&kp _PASTE &sl PASTE_MO>)
+
+DUAL_KEY(dual_back, &kp _GO_BACK, &kp)
+DUAL_KEY(dual_frwd, &kp _GO_FRWD, &kp)
