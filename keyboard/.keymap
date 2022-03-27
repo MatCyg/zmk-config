@@ -25,6 +25,14 @@
 &sl { release-after-ms = <60000>; };
 
 / {
+conditional_layers {
+    compatible = "zmk,conditional-layers";
+    tri_layer {
+        if-layers = <SHORTCUT NUM_APP>;
+        then-layer = <NUM_APP_LOWER_COPY>;
+    };
+};
+
 
 combos {
     #include "combos.dtsi"
@@ -47,11 +55,14 @@ behaviors {
     #include "macros/shifting_detector.dtsi"
     #include "macros/symbol_layer.dtsi"
 };
+MACRO(test,
+    <&macro_press &mo SYMBOL>
+)
 
 keymap { compatible = "zmk,keymap";
 
 navigation { bindings = <
-    &kp _NEXT_WIN &kp _APP3              &kp _APP2               &kp _APP1   &kp _SEARCH            &morphing_pg_up   &morphing_alt_left &morphing_up                 &morphing_alt_right &kp DEL
+    &test &kp _APP3              &kp _APP2               &kp _APP1   &kp _SEARCH            &morphing_pg_up   &morphing_alt_left &morphing_up                 &morphing_alt_right &kp DEL
     &kp _LAST_APP &dual_back 0 _PREV_TAB &dual_frwd 0  _NEXT_TAB &kp _LMB    &kp _TERM              &morphing_pg_dn   &morphing_left     &morphing_down               &morphing_right     &tog ALPHA_ONE_SHOT
     &kp _UNDO     &hm LSFT _CUT          &kp _COPY               &kp LA(TAB) &dual_paste 0 0        &kp _NEW_TT       &kp LA(UP)         &dual_focus_url 0 _FOCUS_URL &hm LSFT LA(DOWN)   &dual_prj_bkmrks 0 0
                                                            &num_app_to 0 ALPHA &sht_with_gui        &sht_with_ctl_kp 0 RET  &symbol_with_alt_kp 0 BSPC
