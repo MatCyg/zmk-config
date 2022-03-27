@@ -60,7 +60,7 @@ alpha { bindings = <
     &shifted_nb_Q &shifted_nb_W &shifted_nb_F &shifted_nb_P &shifted_nb_B        &shifted_nb_J &shifted_nb_L &shifted_nb_U    &shifted_nb_Y  &shifted_nb_SCLN
     &shifted_nb_A &shifted_nb_R &shifted_nb_S &shifted_nb_T &shifted_nb_G        &shifted_nb_M &shifted_nb_N &shifted_nb_E    &shifted_nb_I  &shifted_nb_O
     &shifted_nb_Z &hm LSFT X    &shifted_nb_C &shifted_nb_D &shifted_nb_V        &shifted_nb_K &shifted_nb_H &shifted_nb_CMMA &hm_dot LSFT 0 &shifted_nb_FSLH
-                                       &hm_to NUM_APP SPC &kp_to LGUI NAV        &sht_with_ctl_kp LCTL RET &symbol_with_alt_kp 0 BSPC
+                             &hm_to NUM_APP SPC &sht_with_gui_to LGUI NAV        &sht_with_ctl_kp LCTL RET &symbol_with_alt_kp 0 BSPC
 >;};
 
 alpha_one_shot { bindings = <

@@ -14,7 +14,7 @@
 - [ ] what should be done with sel mode cmd alt left arrow and cmd up arrow?
 - [ ] idea: hold numbers for function keys, once used, function keys on press instead of hold (this would mean sending number on release...)
 - [ ] nav layer cmd + num + number won't send cmd 1
-- [ ] alpha command to shortcut layer
+- [x] alpha command to shortcut layer
 - [ ] sym layer -> after symbol release reapply LALT??
 - [ ] consider caps work space -> _
 - [ ] review combos
