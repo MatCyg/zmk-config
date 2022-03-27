@@ -6,7 +6,7 @@
         <&macro_release &kp LS(key)>, \
         <&macro_tap &sl SEL_MODE> \
     )
-//try moving &sl to the top
+
 
 SELECTION_MORPHING(left, LEFT)
 SELECTION_MORPHING(right, RIGHT)
