@@ -4,6 +4,7 @@ HT_QT("tap-preferred", hm_spc, &kp, &kp, 200, 180)
 HT_QT("tap-preferred", hm_to, &mo, &kp, 200, 180)
 HT("tap-preferred", kp_to, &kp, &to, 135)
 
+HT_QT("tap-preferred", hm_dot, &kp, &shifting_dot, 120, 180)
 
 
 HT("tap-preferred", sht_num_app_spc, &num_app_layer, &space_cmd, 135)
@@ -39,9 +40,4 @@ MACRO(sht_with_gui,
     <&macro_pause_for_release>,
     <&macro_release &mo SHORTCUT &kp LGUI>
 )
-
-
-
-
-
 

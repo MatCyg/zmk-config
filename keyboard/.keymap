@@ -3,19 +3,22 @@
 #include <dt-bindings/zmk/bt.h>
 #include "keys.h"
 
-#define NAV             0
-#define ALPHA           1
-#define SYMBOL          2
-#define NUM_APP         3
-#define ALPHA_ONE_SHOT  4
-#define SHORTCUT        5
-#define SEL_MODE        6
-#define SHORTCUT_SEL    7
-#define FUNCTION        8
-#define ADJUST          9
-#define APPS            10
-#define EMOJI           11
-#define PASTE_MO        12
+#define NAV                     0
+#define ALPHA                   1
+#define ALPHA_ONE_SHOT          2
+#define ALPHA_SHIFTED           3
+#define SYMBOL                  4
+#define NUM_APP                 5
+#define SHORTCUT                6
+#define SEL_MODE                7
+#define SHORTCUT_SEL            8
+#define FUNCTION                9
+#define ADJUST                  10
+#define APPS                    11
+#define EMOJI                   12
+#define PASTE_MO                13
+#define SHIFTING_DTCTR          14
+#define SHIFTED_ALPHA           15
 
 &caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE LALT>; };
 &sl { release-after-ms = <60000>; };
@@ -34,11 +37,13 @@ behaviors {
     #include "macros/auto_shift.dtsi"
     #include "macros/auto_shift_non_breaking.dtsi"
     #include "macros/auto_shift_one_shot.dtsi"
+    #include "macros/auto_shift_uppercase_one_shot.dtsi"
     #include "macros/emoji_layer.dtsi"
     #include "macros/general.dtsi"
     #include "macros/num_app_layer.dtsi"
     #include "macros/open_application_layer.dtsi"
     #include "macros/selection_mode.dtsi"
+    #include "macros/shifting_detector.dtsi"
     #include "macros/symbol_layer.dtsi"
 };
 
@@ -52,10 +57,24 @@ navigation { bindings = <
 >;};
 
 alpha { bindings = <
-    &shifted_nb_Q &shifted_nb_W &shifted_nb_F &shifted_nb_P &shifted_nb_B        &shifted_nb_J &shifted_nb_L &shifted_nb_U    &shifted_nb_Y &shifted_nb_SCLN
-    &shifted_nb_A &shifted_nb_R &shifted_nb_S &shifted_nb_T &shifted_nb_G        &shifted_nb_M &shifted_nb_N &shifted_nb_E    &shifted_nb_I &shifted_nb_O
-    &shifted_nb_Z &hm LSFT X    &shifted_nb_C &shifted_nb_D &shifted_nb_V        &shifted_nb_K &shifted_nb_H &shifted_nb_CMMA &hm LSFT DOT  &shifted_nb_FSLH
+    &shifted_nb_Q &shifted_nb_W &shifted_nb_F &shifted_nb_P &shifted_nb_B        &shifted_nb_J &shifted_nb_L &shifted_nb_U    &shifted_nb_Y  &shifted_nb_SCLN
+    &shifted_nb_A &shifted_nb_R &shifted_nb_S &shifted_nb_T &shifted_nb_G        &shifted_nb_M &shifted_nb_N &shifted_nb_E    &shifted_nb_I  &shifted_nb_O
+    &shifted_nb_Z &hm LSFT X    &shifted_nb_C &shifted_nb_D &shifted_nb_V        &shifted_nb_K &shifted_nb_H &shifted_nb_CMMA &hm_dot LSFT 0 &shifted_nb_FSLH
                                        &hm_to NUM_APP SPC &kp_to LGUI NAV        &sht_with_ctl_kp LCTL RET &symbol_with_alt_kp 0 BSPC
+>;};
+
+alpha_one_shot { bindings = <
+    &shifted_os_Q 0 0 &shifted_os_W 0 0 &shifted_os_F 0 0 &shifted_os_P 0 0 &shifted_os_B 0 0        &shifted_os_J 0 0 &shifted_os_L 0 0 &shifted_os_U 0 0    &shifted_os_Y 0 0    &shifted_os_SCLN 0 0
+    &shifted_os_A 0 0 &shifted_os_R 0 0 &shifted_os_S 0 0 &shifted_os_T 0 0 &shifted_os_G 0 0        &shifted_os_M 0 0 &shifted_os_N 0 0 &shifted_os_E 0 0    &shifted_os_I 0 0    &shifted_os_O 0 0
+    &shifted_os_Z 0 0 &hm_os_X LSFT 0   &shifted_os_C 0 0 &shifted_os_D 0 0 &shifted_os_V 0 0        &shifted_os_K 0 0 &shifted_os_H 0 0 &shifted_os_CMMA 0 0 &hm_os_DOT LSFT 0    &shifted_os_FSLH 0 0
+                                                          &hm_os_SPC NUM_APP 0 &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
+>;};
+
+alpha_shifted { bindings = <
+    &shifted_up_Q &shifted_up_W   &shifted_up_F &shifted_up_P &shifted_up_B        &shifted_up_J &shifted_up_L &shifted_up_U    &shifted_up_Y     &shifted_up_SCLN
+    &shifted_up_A &shifted_up_R   &shifted_up_S &shifted_up_T &shifted_up_G        &shifted_up_M &shifted_up_N &shifted_up_E    &shifted_up_I     &shifted_up_O
+    &shifted_up_Z &hm_up_X LSFT 0 &shifted_up_C &shifted_up_D &shifted_up_V        &shifted_up_K &shifted_up_H &shifted_up_CMMA &hm_up_DOT LSFT 0 &shifted_up_FSLH
+                                        &hm_to NUM_APP SPC  &kp_to LGUI NAV        &hm_spc LCTL RET &symbol_with_alt_kp 0 BSPC
 >;};
 
 symbol { bindings = <
@@ -70,13 +89,6 @@ num_app { bindings = <
     &kp GCS(A)         &kp GCS(R)              &kp GCS(S)         &kp GCS(T)         &kp GCS(G)                &dk_num_PLUS &num_N4 &num_N5 &num_N6 &num_N0
     &kp GCS(Z)         &mt LSFT GCS(X)         &kp GCS(C)         &kp GCS(D)         &kp GCS(V)                &num_AMPS    &num_N1 &num_N2 &num_N3 &num_TILDE
                                                                                        &kp SPC &kp LGUI        &mt LCTL LC(RET) &mt LALT LA(BSPC)
->;};
-
-alpha_one_shot { bindings = <
-    &shifted_os_Q 0 0 &shifted_os_W 0 0 &shifted_os_F 0 0 &shifted_os_P 0 0 &shifted_os_B 0 0        &shifted_os_J 0 0 &shifted_os_L 0 0 &shifted_os_U 0 0    &shifted_os_Y 0 0    &shifted_os_SCLN 0 0
-    &shifted_os_A 0 0 &shifted_os_R 0 0 &shifted_os_S 0 0 &shifted_os_T 0 0 &shifted_os_G 0 0        &shifted_os_M 0 0 &shifted_os_N 0 0 &shifted_os_E 0 0    &shifted_os_I 0 0    &shifted_os_O 0 0
-    &shifted_os_Z 0 0 &hm_os_X LSFT 0   &shifted_os_C 0 0 &shifted_os_D 0 0 &shifted_os_V 0 0        &shifted_os_K 0 0 &shifted_os_H 0 0 &shifted_os_CMMA 0 0 &hm_os_DOT LSFT 0    &shifted_os_FSLH 0 0
-                                                          &hm_os_SPC NUM_APP 0 &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
 >;};
 
 shortcut { bindings = <
@@ -133,6 +145,13 @@ paste_mo { bindings = <
     &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans
     &trans &trans &trans &trans &kp RET       &trans &trans &trans &trans &trans
                          &trans &trans        &trans &trans
+>;};
+
+shifting_detector { bindings = <
+    &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans
+    &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans
+    &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans
+                &spc_to_shifted &trans        &trans &trans
 >;};
 
 	};
