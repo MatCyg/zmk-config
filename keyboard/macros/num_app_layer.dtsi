@@ -1,7 +1,6 @@
 #define NUM_KEY(key) \
     MACRO(num_##key, \
-        <&macro_tap &to NUM_APP>,  \
-        <&macro_tap &tog ALPHA>,  \
+        <&macro_tap &to NUM_APP &tog ALPHA>,  \
         <&macro_press &kp key>,  \
         <&macro_pause_for_release>,  \
         <&macro_release &kp key> \
@@ -10,7 +9,6 @@
 
 NUM_KEY(BSLH)
 NUM_KEY(EXCL)
-NUM_KEY(PLUS)
 NUM_KEY(AMPS)
 NUM_KEY(TILDE)
 NUM_KEY(N0)
@@ -24,6 +22,10 @@ NUM_KEY(N7)
 NUM_KEY(N8)
 NUM_KEY(N9)
 
+
+NUM_KEY(PLUS)
+MACRO(num_ASTRK, <&kp BSPC &kp ASTRK>)
+DUAL_KEY_INVOKED(dk_num_PLUS, &num_PLUS, &num_ASTRK)
 
 DUAL_KEY(dual_LG5, &kp LG(N5), &kp)
 DUAL_KEY(dual_LG6, &kp LG(N6), &kp)
