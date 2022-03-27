@@ -60,7 +60,7 @@ alpha { bindings = <
     &shifted_nb_Q &shifted_nb_W &shifted_nb_F &shifted_nb_P &shifted_nb_B        &shifted_nb_J &shifted_nb_L &shifted_nb_U    &shifted_nb_Y  &shifted_nb_SCLN
     &shifted_nb_A &shifted_nb_R &shifted_nb_S &shifted_nb_T &shifted_nb_G        &shifted_nb_M &shifted_nb_N &shifted_nb_E    &shifted_nb_I  &shifted_nb_O
     &shifted_nb_Z &hm LSFT X    &shifted_nb_C &shifted_nb_D &shifted_nb_V        &shifted_nb_K &shifted_nb_H &shifted_nb_CMMA &hm_dot LSFT 0 &shifted_nb_FSLH
-                             &hm_to NUM_APP SPC &sht_with_gui_to LGUI NAV        &sht_with_ctl_kp LCTL RET &symbol_with_alt_kp 0 BSPC
+                                &hm_to NUM_APP SPC &sht_with_gui_to 0 NAV        &sht_with_ctl_kp 0 RET &symbol_with_alt_kp 0 BSPC
 >;};
 
 alpha_one_shot { bindings = <
@@ -81,7 +81,7 @@ symbol { bindings = <
     &sym_GRAVE &sym_LBRC       &sym_RBRC &dk_sym_MINUS &dk_sym_DLLR         &sym_BSLH    &sym_N7 &sym_N8 &sym_N9 &sym_EXCL
     &sym_SQT   &sym_LPAR       &sym_RPAR &sym_DQT      &dk_sym_UNDER        &dk_sym_PLUS &sym_N4 &sym_N5 &sym_N6 &sym_N0
     &sym_AT    &ihm_shift_lbkt &sym_RBKT &sym_EQUAL    &dk_sym_PIPE         &sym_AMPS    &sym_N1 &sym_N2 &sym_N3 &sym_TILDE
-                                       &ihm_num_app_spc &mt LGUI RET        &mt LCTL RET &mt LALT BSPC
+                         &ihm_num_app_spc &sht_with_gui_kp 0 LA(NAV)        &sht_with_ctl_kp 0 RET &mt LALT BSPC
 >;};
 
 num_app { bindings = <
