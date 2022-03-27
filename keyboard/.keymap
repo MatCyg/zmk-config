@@ -10,15 +10,16 @@
 #define SYMBOL                  4
 #define NUM_APP                 5
 #define SHORTCUT                6
-#define SEL_MODE                7
-#define SHORTCUT_SEL            8
-#define FUNCTION                9
-#define ADJUST                  10
-#define APPS                    11
-#define EMOJI                   12
-#define PASTE_MO                13
-#define SHIFTING_DTCTR          14
-#define SHIFTED_ALPHA           15
+#define NUM_APP_LOWER_COPY      7
+#define SEL_MODE                8
+#define SHORTCUT_SEL            9
+#define FUNCTION                10
+#define ADJUST                  11
+#define APPS                    12
+#define EMOJI                   13
+#define PASTE_MO                14
+#define SHIFTING_DTCTR          15
+#define SHIFTED_ALPHA           16
 
 &caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE LALT>; };
 &sl { release-after-ms = <60000>; };
@@ -96,6 +97,13 @@ shortcut { bindings = <
     &shifted_A 0 0 &shifted_R 0 0 &shifted_S 0 0 &shifted_T 0 0 &shifted_G 0 0        &shifted_M 0 0 &trans         &trans            &trans       &shifted_O 0 0
     &shifted_Z 0 0 &hm LSFT X     &shifted_C 0 0 &shifted_D 0 0 &shifted_V 0 0        &shifted_K 0 0 &shifted_H 0 0 &shifted_CMMA 0 0 &hm LSFT DOT &shifted_FSLH 0 0
                                           &sht_num_app_spc 0 0 &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
+>;};
+
+num_app_lower_copy { bindings = <
+    &dual_LG8 0 LG(N4) &dual_LG7 0 LG(N3)      &dual_LG6 0 LG(N2) &dual_LG5 0 LG(N1) &dual_LG0 0 LG(N9)        &num_BSLH    &num_N7 &num_N8 &num_N9 &num_EXCL
+    &kp GCS(A)         &kp GCS(R)              &kp GCS(S)         &kp GCS(T)         &kp GCS(G)                &dk_num_PLUS &num_N4 &num_N5 &num_N6 &num_N0
+    &kp GCS(Z)         &mt LSFT GCS(X)         &kp GCS(C)         &kp GCS(D)         &kp GCS(V)                &num_AMPS    &num_N1 &num_N2 &num_N3 &num_TILDE
+                                                                                       &kp SPC &kp LGUI        &mt LCTL LC(RET) &mt LALT LA(BSPC)
 >;};
 
 sel_mode { bindings = <
