@@ -7,7 +7,6 @@
         <&macro_tap &sl SEL_MODE> \
     )
 
-
 SELECTION_MORPHING(left, LEFT)
 SELECTION_MORPHING(right, RIGHT)
 SELECTION_MORPHING(down, DOWN)
@@ -23,6 +22,5 @@ HT("tap-preferred", sel_lgui_nav, &sel_lgui_shortcut_sel, &to, 135)
 MACRO(sel_lgui_shortcut_sel,
     <&macro_press &mo SHORTCUT_SEL &kp LGUI>,
     <&macro_pause_for_release>,
-    <&macro_release &mo SHORTCUT_SEL &kp LGUI>,
-    <&macro_tap &sl SEL_MODE>
+    <&macro_release &mo SHORTCUT_SEL &kp LGUI>
 )

@@ -94,9 +94,9 @@ sel_mode { bindings = <
 >;};
 
 shortcut_sel { bindings = <
-    &shifted_Q 0 0 &shifted_W 0 0 &shifted_F 0 0 &shifted_P 0 0 &shifted_B 0 0        &shifted_J 0 0 &kp LA(LEFT)   &kp UP            &kp LA(RIGHT) &shifted_SCLN 0 0
-    &shifted_A 0 0 &shifted_R 0 0 &shifted_S 0 0 &shifted_T 0 0 &shifted_G 0 0        &shifted_M 0 0 &kp LS(LEFT)   &kp DOWN          &kp LS(RIGHT) &shifted_O 0 0
-    &shifted_Z 0 0 &hm LSFT X     &shifted_C 0 0 &shifted_D 0 0 &shifted_V 0 0        &shifted_K 0 0 &shifted_H 0 0 &shifted_CMMA 0 0 &hm LSFT DOT  &shifted_FSLH 0 0
+    &shifted_Q 0 0 &shifted_W 0 0 &shifted_F 0 0 &shifted_P 0 0 &shifted_B 0 0        &shifted_J 0 0 &sel_alt_left  &sel_up           &sel_alt_right &shifted_SCLN 0 0
+    &shifted_A 0 0 &shifted_R 0 0 &shifted_S 0 0 &shifted_T 0 0 &shifted_G 0 0        &shifted_M 0 0 &sel_left      &sel_down         &sel_right     &shifted_O 0 0
+    &shifted_Z 0 0 &hm LSFT X     &shifted_C 0 0 &shifted_D 0 0 &shifted_V 0 0        &shifted_K 0 0 &shifted_H 0 0 &shifted_CMMA 0 0 &hm LSFT DOT   &shifted_FSLH 0 0
                                             &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
 >;};
 

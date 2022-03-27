@@ -17,4 +17,5 @@
 - [ ] review combos
 - [ ] auto shift normal should allow for quick tap ms so that I can hold i.e. Cmd+w
 - [ ] qwerty keyboard should have hyper and have some sort of interoperability of system shortcuts.
-- [ ] bug sel mode cmd + letter stays on sel mode layer
+- [x] bug sel mode cmd + letter stays on sel mode layer
+- [ ] bug one shot x allows for two letter
