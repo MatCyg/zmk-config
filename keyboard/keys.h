@@ -44,6 +44,7 @@
 #define _SEARCH      GCA(S)
 #define _NEW_TT      HYPER(N)
 #define _BKMRKS      HYPER(B)
+#define _PROJECTS    HYPER(P)
 #define _LMB         HYPER(T)
 
 

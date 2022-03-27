@@ -27,7 +27,7 @@ compatible = "zmk,combos";
 
 COMBO(esc,        1 2, &esc_nav)
 COMBO(tab,        7 8, &kp TAB)
-COMBO(word,       0 9, &wrt_word)
+COMBO(caps_word,  0 9, &caps_word_alpha)
 
 //layers
 COMBO(nav,        0 4, &to NAV)
