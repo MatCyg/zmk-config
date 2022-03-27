@@ -1,0 +1,1 @@
+- One shot layer leverages &tog because &sl won't allow for shortcuts, i.e. CMD + n 

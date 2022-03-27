@@ -75,8 +75,8 @@ num_app { bindings = <
 alpha_one_shot { bindings = <
     &shifted_os_Q 0 0 &shifted_os_W 0 0  &shifted_os_F 0 0 &shifted_os_P 0 0 &shifted_os_B 0 0        &shifted_os_J 0 0 &shifted_os_L 0 0 &shifted_os_U 0 0    &shifted_os_Y 0 0    &shifted_os_SCLN 0 0
     &shifted_os_A 0 0 &shifted_os_R 0 0  &shifted_os_S 0 0 &shifted_os_T 0 0 &shifted_os_G 0 0        &shifted_os_M 0 0 &shifted_os_N 0 0 &shifted_os_E 0 0    &shifted_os_I 0 0    &shifted_os_O 0 0
-    &shifted_os_Z 0 0 &hm LSFT X         &shifted_os_C 0 0 &shifted_os_D 0 0 &shifted_os_V 0 0        &shifted_os_K 0 0 &shifted_os_H 0 0 &shifted_os_CMMA 0 0 &hm LSFT DOT         &shifted_os_FSLH 0 0
-                                                            &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
+    &shifted_os_Z 0 0 &hm_os_X LSFT 0    &shifted_os_C 0 0 &shifted_os_D 0 0 &shifted_os_V 0 0        &shifted_os_K 0 0 &shifted_os_H 0 0 &shifted_os_CMMA 0 0 &hm_os_DOT LSFT 0    &shifted_os_FSLH 0 0
+                                                          &hm_os_SPC NUM_APP 0 &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
 >;};
 
 shortcut { bindings = <

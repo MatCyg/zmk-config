@@ -1,21 +1,20 @@
 - [x] when selecting with shift, pressing shift + tab doesn't work
 - [x] when selection mode adding cmd + arrow breaks selection
-- [ ] ctrl + g hold doesn't work
-- [ ] one shot layer space
-- [ ] symbol layer `[` doesn't work
-- [ ] double x doesn't produce shifted X
-- [ ] hold paste to paste manager
+- [x] ctrl + g hold doesn't work
+- [x] one shot layer space
+- [x] symbol layer `[` doesn't work
+- [x] double x doesn't produce shifted X
+- [x] hold paste to paste manager
 - [ ] what should be done with sel mode cmd alt left arrow and cmd up arrow?
 - [ ] idea: hold numbers for function keys, once used, function keys on press instead of hold
 - [ ] nav layer cmd + num + number won't send cmd 1
-- [ ] bug with release not propagated via -> macro -> hold-tap -> macro
-- [ ] sym layer space gets stuck in sym layer
+- [x] sym layer space gets stuck in sym layer
 - [ ] alpha command to shortcut layer
 - [ ] sym layer -> after symbol release reapply LALT??
 - [ ] consider caps work space -> _
-- [ ] one shot alpha should not contain home rows
+- [x] one shot alpha should not contain home rows
 - [ ] review combos
-- [ ] auto shift normal should allow for quick tap ms so that I can hold i.e. Cmd+w
+- [x] auto shift normal should allow for quick tap ms so that I can hold i.e. Cmd+w
 - [ ] qwerty keyboard should have hyper and have some sort of interoperability of system shortcuts.
 - [x] bug sel mode cmd + letter stays on sel mode layer
-- [ ] bug one shot x allows for two letter
+- [x] bug one shot x allows for two letter
