@@ -42,15 +42,26 @@
 
 
 #define DUAL_KEY(name, bindingHold, bindingTap) \
-    MACRO(dual_macro_##name, \
+    MACRO(dk_##name, \
         <&macro_tap bindingHold>, \
         <&macro_pause_for_release> \
     ) \
-    HT("tap-preferred", name, &dual_macro_##name, bindingTap, 180)
+    HT("tap-preferred", name, &dk_##name, bindingTap, 180)
 
 #define DUAL_KEY_QT(name, bindingHold, bindingTap) \
-    MACRO(dual_macro_qt_##name, \
+    MACRO(dk_qt_##name, \
         <&macro_tap bindingHold>, \
         <&macro_pause_for_release> \
     ) \
-    HT_QT("tap-preferred", name, &dual_macro_qt_##name, bindingTap, 180, 200)
+    HT_QT("tap-preferred", name, &dk_qt_##name, bindingTap, 180, 200)
+
+#define DUAL_KEY_INVOKED(name, tapOnKeyDown, tapOnHold) \
+    MACRO_TIMED(name, 0, 10, \
+        <&macro_tap tapOnKeyDown>, \
+        <&macro_press &dk_invoked_hold_tap_##name 0 0>, \
+        <&macro_pause_for_release>, \
+        <&macro_release &dk_invoked_hold_tap_##name 0 0> \
+    ) \
+    MACRO(dk_invoked_on_hold_##name, <&macro_tap tapOnHold>) \
+    DUAL_KEY(dk_invoked_hold_tap_##name, &dk_invoked_on_hold_##name, &none)
+

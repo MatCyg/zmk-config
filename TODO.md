@@ -6,7 +6,7 @@
 - [x] double x doesn't produce shifted X
 - [x] hold paste to paste manager
 - [ ] what should be done with sel mode cmd alt left arrow and cmd up arrow?
-- [ ] idea: hold numbers for function keys, once used, function keys on press instead of hold
+- [ ] idea: hold numbers for function keys, once used, function keys on press instead of hold (this would mean sending number on release...)
 - [ ] nav layer cmd + num + number won't send cmd 1
 - [x] sym layer space gets stuck in sym layer
 - [ ] alpha command to shortcut layer

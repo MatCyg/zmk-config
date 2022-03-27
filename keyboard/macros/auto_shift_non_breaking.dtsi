@@ -1,12 +1,5 @@
 #define AUTO_SHIFT_NON_BREAKING(letter) \
-    MACRO_TIMED(shifted_nb_##letter, 0, 10, \
-        <&kp letter>, \
-        <&macro_press &shifted_nb_hold_##letter 0 0>, \
-        <&macro_pause_for_release>, \
-        <&macro_release &shifted_nb_hold_##letter 0 0> \
-    ) \
-    MACRO(shifted_nb_uppercase_##letter, <&kp BSPC &kp LS(letter)>) \
-    DUAL_KEY(shifted_nb_hold_##letter, &shifted_nb_uppercase_##letter, &none)
+    DUAL_KEY_INVOKED(shifted_nb_##letter, &kp letter, &kp BSPC &kp LS(letter))
 
 
 AUTO_SHIFT_NON_BREAKING(A)
