@@ -50,7 +50,7 @@ MACRO(ihm_shift_lbkt,
 HT("tap-preferred", hold_ihm_shift_lbkt, &hold_shift_release_to_nav, &sym_LBKT, 180)
 
 MACRO(hold_shift_release_to_nav,
-    <&macro_tap &to ALPHA_ONE_SHOT>, //TODO this is wrong layer to switch to
+    <&macro_tap &to SHORTCUT>,
     <&macro_press &kp LSFT>,
     <&macro_pause_for_release>,
     <&macro_release &kp LSFT>,
