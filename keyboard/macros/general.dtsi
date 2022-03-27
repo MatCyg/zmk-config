@@ -10,3 +10,5 @@ DUAL_KEY(dual_frwd, &kp _GO_FRWD, &kp)
 MACRO(ss_clip_nav, <&kp _SS_CLPBRD &to NAV>)
 MACRO(ss_tool_nav, <&kp _SS_TOOL &to NAV>)
 DUAL_KEY(dual_ss_tool, &ss_tool_nav, &ss_clip_nav)
+
+DUAL_KEY(dual_focus_url, &kp _UNFOCUS_URL, &kp)
