@@ -1,0 +1,5 @@
+// Cmd+(Shift)+F to turn on alpha
+MOD_MORPH(morphed_f, &kp F, &find_alpha, MOD_LGUI)
+MOD_MORPH(morphed_hold_f, &kp LS(F), &find_alpha, MOD_LGUI)
+MACRO(find_alpha, <&to ALPHA &kp LG(F)>)
+MACRO(find_alpha_hold, <&to ALPHA &kp LG(LS(F))>)

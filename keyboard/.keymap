@@ -49,6 +49,7 @@ behaviors {
     #include "macros/auto_shift_uppercase_one_shot.dtsi"
     #include "macros/emoji_layer.dtsi"
     #include "macros/general.dtsi"
+    #include "macros/morphed_keys.dtsi"
     #include "macros/num_app_layer.dtsi"
     #include "macros/open_application_layer.dtsi"
     #include "macros/selection_mode.dtsi"
