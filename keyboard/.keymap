@@ -143,9 +143,9 @@ adjust { bindings = <
 >;};
 
 apps { bindings = <
-    &apps_F1  &apps_F2  &apps_F3  &apps_F4  &apps_F5         &apps_F16    &apps_F17    &apps_F18    &apps_F19    &apps_F20
-    &apps_F6  &apps_F7  &apps_F8  &apps_F9  &apps_F10        &apps_F21    &apps_F22    &apps_F23    &apps_F24    &apps_meh_F1
-    &apps_F11 &apps_F12 &apps_F13 &apps_F14 &apps_F15        &apps_meh_F2 &apps_meh_F3 &apps_meh_F4 &apps_meh_F5 &apps_meh_F6
+    &apps_F1  &apps_F2  &apps_F3  &apps_F4  &apps_F5         &apps_F16    &apps_F17    &apps_F18    &apps_F19     &apps_meh_F1
+    &apps_F6  &apps_F7  &apps_F8  &apps_F9  &apps_F10        &apps_meh_F2 &apps_meh_F3 &apps_meh_F4 &apps_meh_F5  &apps_meh_F6
+    &apps_F11 &apps_F12 &apps_F13 &apps_F14 &apps_F15        &apps_meh_F7 &apps_meh_F8 &apps_meh_F9 &apps_meh_F10 &apps_meh_F11
                                   &to ALPHA &to ALPHA        &none &none
 >;};
 
