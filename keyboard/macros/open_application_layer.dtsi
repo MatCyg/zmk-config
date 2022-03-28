@@ -1,15 +1,12 @@
 #define OPEN_APP(NAME, BINDINGS) \
-    ZMK_MACRO(NAME, \
-        wait-ms = <0>; \
-        tap-ms = <0>; \
-        bindings = <BINDINGS>; \
-    )
+    MACRO(NAME, <BINDINGS>)
 
 #define OPEN_APP_HYPER_KEY(KEY) \
     OPEN_APP(apps_##KEY, &kp HYPER(KEY) &to NAV)
 
 #define OPEN_APP_MEH_KEY(KEY) \
     OPEN_APP(apps_meh_##KEY, &kp MEH(KEY) &to NAV)
+
 
 OPEN_APP_HYPER_KEY(F1)
 OPEN_APP_HYPER_KEY(F2)

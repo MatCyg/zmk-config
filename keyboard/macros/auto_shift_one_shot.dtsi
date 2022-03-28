@@ -1,0 +1,43 @@
+#define AUTO_SHIFT_ONE_SHOT(letter) \
+    MACRO(shifted_os_uppercase_##letter, <&tog ALPHA_ONE_SHOT &kp LS(letter)>) \
+    MACRO(shifted_os_lowercase_##letter, <&tog ALPHA_ONE_SHOT &kp letter>) \
+    DUAL_KEY(shifted_os_##letter, &shifted_os_uppercase_##letter, &shifted_os_lowercase_##letter)
+
+#define AUTO_SHIFT_ONE_SHOT_HOME_ROW(letter, binding, tappingTerm) \
+    HT("tap-preferred", hm_os_##letter, binding, &shifted_os_lowercase_##letter, tappingTerm) \
+    MACRO(shifted_os_lowercase_##letter, <&tog ALPHA_ONE_SHOT &kp letter>)
+
+
+AUTO_SHIFT_ONE_SHOT(A)
+AUTO_SHIFT_ONE_SHOT(B)
+AUTO_SHIFT_ONE_SHOT(C)
+AUTO_SHIFT_ONE_SHOT(D)
+AUTO_SHIFT_ONE_SHOT(E)
+AUTO_SHIFT_ONE_SHOT(F)
+AUTO_SHIFT_ONE_SHOT(G)
+AUTO_SHIFT_ONE_SHOT(H)
+AUTO_SHIFT_ONE_SHOT(I)
+AUTO_SHIFT_ONE_SHOT(J)
+AUTO_SHIFT_ONE_SHOT(K)
+AUTO_SHIFT_ONE_SHOT(L)
+AUTO_SHIFT_ONE_SHOT(M)
+AUTO_SHIFT_ONE_SHOT(N)
+AUTO_SHIFT_ONE_SHOT(O)
+AUTO_SHIFT_ONE_SHOT(P)
+AUTO_SHIFT_ONE_SHOT(Q)
+AUTO_SHIFT_ONE_SHOT(R)
+AUTO_SHIFT_ONE_SHOT(S)
+AUTO_SHIFT_ONE_SHOT(T)
+AUTO_SHIFT_ONE_SHOT(U)
+AUTO_SHIFT_ONE_SHOT(V)
+AUTO_SHIFT_ONE_SHOT(W)
+AUTO_SHIFT_ONE_SHOT(Y)
+AUTO_SHIFT_ONE_SHOT(Z)
+AUTO_SHIFT_ONE_SHOT(SCLN)
+AUTO_SHIFT_ONE_SHOT(CMMA)
+AUTO_SHIFT_ONE_SHOT(FSLH)
+
+
+AUTO_SHIFT_ONE_SHOT_HOME_ROW(X, &kp, 120)
+AUTO_SHIFT_ONE_SHOT_HOME_ROW(DOT, &kp, 120)
+AUTO_SHIFT_ONE_SHOT_HOME_ROW(SPC, &mo, 200)

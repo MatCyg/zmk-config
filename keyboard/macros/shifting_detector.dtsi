@@ -1,0 +1,4 @@
+MACRO(shifting_detector_dot, <&kp DOT &sl SHIFTING_DTCTR>)
+MACRO(spc_to_shifted, <&kp SPC &sl ALPHA_SHIFTED>)
+
+MOD_MORPH(shifting_dot, &shifting_detector_dot, &kp DOT, MOD_LSFT|MOD_RSFT|MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)

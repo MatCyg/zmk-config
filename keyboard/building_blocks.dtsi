@@ -1,0 +1,66 @@
+#define STRINGIFY(s) #s
+
+
+#define MACRO(name,...) \
+	MACRO_TIMED(name, 0, 0, __VA_ARGS__)
+
+#define MACRO_TIMED(name, waitMs, tapMs, ...) \
+    ZMK_MACRO(name, \
+        wait-ms = <waitMs>; \
+        tap-ms = <tapMs>; \
+        bindings = __VA_ARGS__ ; \
+    )
+
+
+#define MOD_MORPH(name, normalTap, morphedTap, morphingMods) \
+    name: name { \
+        label = STRINGIFY(ZM_##name); \
+        compatible = "zmk,behavior-mod-morph"; \
+        #binding-cells = <0>; \
+        bindings = <normalTap>, <morphedTap>; \
+        mods = <(morphingMods)>; \
+    };
+
+
+#define HT(flavor, name, bindingHold, bindingTap, tappingTermMs) \
+    HOLD_TAP_TEMPLATE(flavor, name, bindingHold, bindingTap, tappingTermMs)
+
+#define HT_QT(flavor, name, bindingHold, bindingTap, tappingTermMs, quickTapMs) \
+    HOLD_TAP_TEMPLATE(flavor, name, bindingHold, bindingTap, tappingTermMs, quick-tap-ms = <quickTapMs>;)
+
+#define HOLD_TAP_TEMPLATE(definedFlavor, name, bindingHold, bindingTap, tappingTermMs, ...) \
+	name: name { \
+        label = STRINGIFY(ZM_##name); \
+        compatible = "zmk,behavior-hold-tap"; \
+        #binding-cells = <2>; \
+        tapping-term-ms = <tappingTermMs>; \
+        flavor = definedFlavor; \
+        bindings = <bindingHold>, <bindingTap>; \
+        __VA_ARGS__ \
+    };
+
+
+#define DUAL_KEY(name, bindingHold, bindingTap) \
+    MACRO(dk_##name, \
+        <&macro_tap bindingHold>, \
+        <&macro_pause_for_release> \
+    ) \
+    HT("tap-preferred", name, &dk_##name, bindingTap, 180)
+
+#define DUAL_KEY_QT(name, bindingHold, bindingTap) \
+    MACRO(dk_qt_##name, \
+        <&macro_tap bindingHold>, \
+        <&macro_pause_for_release> \
+    ) \
+    HT_QT("tap-preferred", name, &dk_qt_##name, bindingTap, 180, 200)
+
+#define DUAL_KEY_INVOKED(name, tapOnKeyDown, tapOnHold) \
+    MACRO_TIMED(name, 0, 10, \
+        <&macro_tap tapOnKeyDown>, \
+        <&macro_press &dk_invoked_hold_tap_##name 0 0>, \
+        <&macro_pause_for_release>, \
+        <&macro_release &dk_invoked_hold_tap_##name 0 0> \
+    ) \
+    MACRO(dk_invoked_on_hold_##name, <&macro_tap tapOnHold>) \
+    DUAL_KEY(dk_invoked_hold_tap_##name, &dk_invoked_on_hold_##name, &none)
+
