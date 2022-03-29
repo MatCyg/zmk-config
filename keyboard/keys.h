@@ -28,6 +28,7 @@
 #define _LAST_APP    LG(TAB)
 #define _NEXT_WIN    LG(GRAVE)
 #define _TERM        LC(Q)
+#define _FULL_SCREEN LC(LA(UP))
 
 #define _PREV_TAB    LG(LS(LBKT))
 #define _NEXT_TAB    LG(LS(RBKT))

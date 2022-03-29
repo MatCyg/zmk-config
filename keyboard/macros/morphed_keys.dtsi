@@ -3,3 +3,7 @@ MOD_MORPH(morphed_f, &kp F, &find_alpha, MOD_LGUI)
 MOD_MORPH(morphed_hold_f, &kp LS(F), &find_alpha, MOD_LGUI)
 MACRO(find_alpha, <&to ALPHA &kp LG(F)>)
 MACRO(find_alpha_hold, <&to ALPHA &kp LG(LS(F))>)
+
+
+MOD_MORPH(morphed_term, &kp _TERM, &kp _FULL_SCREEN, MOD_LSFT)
+//TODO: ignore MOD_LSFT

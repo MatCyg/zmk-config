@@ -13,10 +13,10 @@
 - [x] automatic shifting after dot space
 - [x] nav layer cmd + num + number won't send cmd 1
 - [x] alpha command to shortcut layer
+- [x] review combos
 - [ ] what should be done with sel mode cmd alt left arrow and cmd up arrow?
 - [ ] idea: hold numbers for function keys, once used, function keys on press instead of hold (this would mean sending number on release...)
 - [ ] sym layer -> after symbol release reapply LALT??
 - [ ] consider caps work space -> _
-- [ ] review combos
 - [ ] qwerty keyboard should have hyper and have some sort of interoperability of system shortcuts.
 - [ ] issue with num_app layer in selection mode
