@@ -43,3 +43,26 @@ MACRO(sht_with_gui,
     <&macro_release &mo SHORTCUT &kp LGUI>
 )
 
+
+
+sl_ignore_mods_long: sl_ignore_mods_long {
+    compatible = "zmk,behavior-sticky-key";
+    label = "sl_ignore_mods_long";
+    #binding-cells = <1>;
+    release-after-ms = <60000>;
+    bindings = <&mo>;
+    ignore-modifiers;
+    quick-release;
+};
+
+sl_ignore_mods_quick: sl_ignore_mods_quick {
+    compatible = "zmk,behavior-sticky-key";
+    label = "sl_ignore_mods_quick";
+    #binding-cells = <1>;
+    release-after-ms = <2000>;
+    bindings = <&mo>;
+    ignore-modifiers;
+    quick-release;
+};
+
+// sl timer for paste, alt shift  letter how to

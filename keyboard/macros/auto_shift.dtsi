@@ -1,12 +1,6 @@
-#define AUTO_SHIFT(letter) AUTO_SHIFT_DEF(##letter, &kp letter, &kp LS(letter))
+#define AUTO_SHIFT(letter) AUTO_SHIFT_DEF(##letter, &kp LS(letter), &kp)
 
-#define AUTO_SHIFT_DEF(suffix, onTap, onHold) \
-    MACRO(shifted_lowercase_##suffix, \
-        <&macro_press onTap>, \
-        <&macro_pause_for_release>, \
-        <&macro_release onTap> \
-    ) \
-    DUAL_KEY_QT(shifted_##suffix, onHold, &shifted_lowercase_##suffix)
+#define AUTO_SHIFT_DEF(suffix, onHold, onTap) DUAL_KEY_QT(shifted_##suffix, onHold, onTap)
 
 
 AUTO_SHIFT(A)
@@ -14,7 +8,7 @@ AUTO_SHIFT(B)
 AUTO_SHIFT(C)
 AUTO_SHIFT(D)
 AUTO_SHIFT(E)
-AUTO_SHIFT_DEF(F, &morphed_f, &find_alpha_hold)
+AUTO_SHIFT_DEF(F, &find_alpha_hold, &morphed_f)
 AUTO_SHIFT(G)
 AUTO_SHIFT(H)
 AUTO_SHIFT(I)

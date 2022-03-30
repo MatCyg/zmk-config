@@ -16,3 +16,6 @@ DUAL_KEY(dual_focus_url, &kp _UNFOCUS_URL, &kp)
 DUAL_KEY(dual_prj_bkmrks, &projects_alpha, &bkmrks_alpha)
 MACRO(projects_alpha, <&kp _PROJECTS &to ALPHA>)
 MACRO(bkmrks_alpha, <&kp _BKMRKS &to ALPHA>)
+
+// this macro exists so that selection layer is turned off. If used directly it stays on.
+MACRO(os_alpha, <&sl_ignore_mods_quick ALPHA_AUTO_SHIFTED>)

@@ -4,7 +4,7 @@
         <&macro_press &kp LS(key)>, \
         <&macro_pause_for_release>, \
         <&macro_release &kp LS(key)>, \
-        <&macro_tap &sl_ignore_modifiers SEL_MODE> \
+        <&macro_tap &sl_ignore_mods_long SEL_MODE> \
     )
 
 SELECTION_MORPHING(left, LEFT)
@@ -24,12 +24,3 @@ MACRO(sel_lgui_shortcut_sel,
     <&macro_pause_for_release>,
     <&macro_release &mo SHORTCUT &kp LGUI>
 )
-
-sl_ignore_modifiers: sl_ignore_modifiers {
-    compatible = "zmk,behavior-sticky-key";
-    label = "sl_ignore_modifiers";
-    #binding-cells = <1>;
-    release-after-ms = <60000>;
-    bindings = <&mo>;
-    ignore-modifiers;
-};
