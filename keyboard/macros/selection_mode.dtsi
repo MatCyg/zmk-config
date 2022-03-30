@@ -4,7 +4,7 @@
         <&macro_press &kp LS(key)>, \
         <&macro_pause_for_release>, \
         <&macro_release &kp LS(key)>, \
-        <&macro_tap &sl SEL_MODE> \
+        <&macro_tap &sl_ignore_modifiers SEL_MODE> \
     )
 
 SELECTION_MORPHING(left, LEFT)
@@ -20,7 +20,16 @@ SELECTION_MORPHING(alt_right, LA(RIGHT))
 HT("tap-preferred", sel_lgui_nav, &sel_lgui_shortcut_sel, &to, 135)
 
 MACRO(sel_lgui_shortcut_sel,
-    <&macro_press &mo SHORTCUT_SEL &kp LGUI>,
+    <&macro_press &mo SHORTCUT &kp LGUI>,
     <&macro_pause_for_release>,
-    <&macro_release &mo SHORTCUT_SEL &kp LGUI>
+    <&macro_release &mo SHORTCUT &kp LGUI>
 )
+
+sl_ignore_modifiers: sl_ignore_modifiers {
+    compatible = "zmk,behavior-sticky-key";
+    label = "sl_ignore_modifiers";
+    #binding-cells = <1>;
+    release-after-ms = <60000>;
+    bindings = <&mo>;
+    ignore-modifiers;
+};
