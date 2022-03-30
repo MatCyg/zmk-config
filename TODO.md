@@ -14,12 +14,13 @@
 - [x] nav layer cmd + num + number won't send cmd 1
 - [x] alpha command to shortcut layer
 - [x] review combos
+- [x] retro tap on auto shift non-breaking? it should release tap on next key
+- [x] one shot layer hold f to open find??
+- [x] (Won't do) idea: hold numbers for function keys, once used, function keys on press instead of hold (this would mean sending number on release...)
 - [ ] what should be done with sel mode cmd alt left arrow and cmd up arrow?
-- [ ] idea: hold numbers for function keys, once used, function keys on press instead of hold (this would mean sending number on release...)
 - [ ] sym layer -> after symbol release reapply LALT??
 - [ ] consider caps work space -> _
 - [ ] qwerty keyboard should have hyper and have some sort of interoperability of system shortcuts.
 - [ ] issue with num_app layer in selection mode
 - [ ] ctrl shift down changes to selection layer which it should no
-- [ ] retro tap on auto shift non-breaking? it should release tap on next key 
-- [ ] one shot layer hold f to open find??
+- [ ] review hold taps
