@@ -5,6 +5,7 @@ HT_QT("tap-preferred", hm_to, &mo, &kp, 200, 180)
 HT("tap-preferred", kp_to, &kp, &to, 135)
 
 HT_QT("tap-preferred", hm_dot, &kp, &shifting_dot, 120, 180)
+HT_QT("tap-preferred", hm_shifting_spc, &mo, &shifting_spc, 120, 180)
 
 
 HT("tap-preferred", sht_num_app_spc, &num_app_layer, &space_cmd, 135)

@@ -157,7 +157,7 @@ shifting_detector { bindings = <
     &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans
     &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans
     &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans
-                &spc_to_shifted &trans        &trans &trans
+     &hm_shifting_spc NUM_APP 0 &trans        &trans &trans
 >;};
 
 	};
