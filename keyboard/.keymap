@@ -19,7 +19,7 @@
 #define PASTE_MO                13
 #define SHIFTING_DTCTR          14
 
-&caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE LALT C_STOP_EJECT>; };
+&caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE LALT>; };
 &sl { release-after-ms = <2000>; };
 
 / {
