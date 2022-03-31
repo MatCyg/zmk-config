@@ -17,10 +17,10 @@
 - [x] retro tap on auto shift non-breaking? it should release tap on next key
 - [x] one shot layer hold f to open find??
 - [x] (Won't do) idea: hold numbers for function keys, once used, function keys on press instead of hold (this would mean sending number on release...)
+- [x] ctrl shift down changes to selection layer which it should no
 - [ ] what should be done with sel mode cmd alt left arrow and cmd up arrow?
 - [ ] sym layer -> after symbol release reapply LALT??
 - [ ] consider caps work space -> _
 - [ ] qwerty keyboard should have hyper and have some sort of interoperability of system shortcuts.
 - [ ] issue with num_app layer in selection mode
-- [ ] ctrl shift down changes to selection layer which it should no
 - [ ] review hold taps
