@@ -14,11 +14,11 @@ MACRO(space_cmd_alpha, <&to ALPHA &kp LG(SPC)>)
 
 HT("tap-preferred", num_app_to, &num_app_layer, &to, 135)
 MACRO(num_app_layer,
+    <&macro_tap &kp C_STOP_EJECT>, //resets selection layer
     <&macro_press &mo NUM_APP>,
     <&macro_pause_for_release>,
     <&macro_release &mo NUM_APP>
 )
-
 
 HT_QT("hold-preferred", sht_with_ctl_kp, &sht_with_ctl, &kp, 120, 180)
 MACRO(sht_with_ctl,
@@ -30,6 +30,7 @@ MACRO(sht_with_ctl,
 
 HT_QT("hold-preferred", symbol_with_alt_kp, &symbol_with_alt, &kp, 120, 180)
 MACRO(symbol_with_alt,
+    <&macro_tap &kp C_STOP_EJECT>, //resets selection layer
     <&macro_press &mo SYMBOL &kp LALT>,
     <&macro_pause_for_release>,
     <&macro_release &mo SYMBOL &kp LALT>
