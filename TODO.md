@@ -24,3 +24,6 @@
 - [x] (Won't do, alt can get stuck) sym layer -> after symbol release reapply LALT??
 - [x] (Not possible right now) consider caps work space -> _
 - [ ] review hold taps
+- [ ] consider tap layer!
+- [ ] sleep combo
+- [ ] CMD shift up should not go to selection mode
