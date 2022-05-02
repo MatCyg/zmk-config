@@ -37,7 +37,7 @@ COMBO(apps,       0 1 2, &to APPS)
 COMBO(emoji,      22 27, &to EMOJI)
 
 
-LAYER_COMBO(FUNCTION, mute,     2 3, &kp K_MUTE)
-LAYER_COMBO(FUNCTION, previous, 4 14, &kp C_PREV)
-
+LAYER_COMBO(FUNCTION, mute,       12 13, &kp K_MUTE)
+LAYER_COMBO(FUNCTION, previous,   2 3, &kp C_PREV)
+LAYER_COMBO(FUNCTION, reset_zoom, 10 11, &kp LG(N0))
 

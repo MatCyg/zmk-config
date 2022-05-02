@@ -59,9 +59,9 @@ behaviors {
 keymap { compatible = "zmk,keymap";
 
 navigation { bindings = <
-    &app_win_switcher &kp _APP3              &kp _APP2              &kp _APP1 &kp _SEARCH              &morphing_pg_up             &morphing_alt_left          &morphing_up   &morphing_alt_right &kp DEL
-    &kp _LAST_APP     &dual_back 0 _PREV_TAB &dual_frwd 0 _NEXT_TAB &kp _LMB  &morphed_term            &morphing_pg_dn             &morphing_left              &morphing_down &morphing_right     &os_alpha
-    &kp _UNDO         &hm LSFT _CUT          &dual_copy 0 _COPY     &os_gui   &dual_paste 0 0          &none             &sl_ignore_mods_long OS_SHT &kp LA(UP)     &hm LSFT LA(DOWN)   &dual_prj_bkmrks 0 0
+    &app_win_switcher &kp _APP3              &kp _APP2              &kp _APP1 &kp _SEARCH              &morphing_pg_up &morphing_alt_left          &morphing_up   &morphing_alt_right &kp DEL
+    &kp _LAST_APP     &dual_back 0 _PREV_TAB &dual_frwd 0 _NEXT_TAB &kp _LMB  &morphed_term            &morphing_pg_dn &morphing_left              &morphing_down &morphing_right     &os_alpha
+    &kp _UNDO         &hm LSFT _CUT          &dual_copy 0 _COPY     &os_gui   &dual_paste 0 0          &none           &sl_ignore_mods_long OS_SHT &kp LA(UP)     &hm LSFT LA(DOWN)   &dual_prj_bkmrks 0 0
                                                             &num_app_to 0 ALPHA &sht_with_gui          &sht_with_ctl_kp 0 RET  &symbol_with_alt_kp 0 BSPC
 >;};
 
@@ -121,19 +121,34 @@ num_app_lower_copy { bindings = <
                                                                                   &kp SPC &kp LGUI        &mt LCTL LC(RET) &mt LALT LA(BSPC)
 >;};
 
+
 function { bindings = <
-    &kp _ZOOM_OUT &kp _ZOOM_IN  &kp C_VOL_DN &kp C_VOL_UP      &kp C_NEXT              &kp HOME   &kp F7 &kp F8 &kp F9 &kp F12
-    &kp K_PWR     &kp _TT_START &kp _TT_SHOW &dual_ss_tool 0 0 &kp C_PLAY_PAUSE        &kp END    &kp F4 &kp F5 &kp F6 &kp F10
-    &kp _LOCK     &mt LSFT X    &kp LALT     &kp LCTL          &none                   &to ADJUST &kp F1 &kp F2 &kp F3 &kp F11
+    &kp _OS_DARK  &kp _OS_LIGHT &kp C_PLAY_PAUSE  &kp C_NEXT   &kp _LOCK             &kp HOME                                                               &kp F7 &kp F8 &kp F9 &kp F12
+    &kp _ZOOM_OUT &kp _ZOOM_IN  &kp C_VOL_DN      &kp C_VOL_UP &none                 &kp END                           &kp F4 &kp F5 &kp F6 &kp F10
+    &kp _TT_START &kp _TT_SHOW  &dual_ss_tool 0 0 &kp LCTL     &kp LALT              &bootloader &kp F1 &kp F2 &kp F3 &kp F11
                                                        &kp LCTL &kp_to LGUI NAV        &mt LCTL RET &mt LALT BSPC
 >;};
 
 adjust { bindings = <
-    &none      &none        &kp _OS_DARK &kp _OS_LIGHT &bootloader           &kp GRAVE &kp INS &kp LBKT  &kp RBKT  &kp BSLH
-    &none      &none        &kp C_BRI_DN &kp C_BRI_UP  &none                 &kp CAPS  &none   &kp MINUS &kp EQUAL &kp SQT
-    &bt BT_CLR &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1  &bt BT_SEL 0          &none     &none   &none     &none     &none
-                                          &to ALPHA   &kp_to LGUI NAV        &mt LCTL RET &mt LALT BSPC
+    &none      &none        &none        &none        &none               &kp GRAVE &kp INS &kp LBKT  &kp RBKT  &kp BSLH
+    &none      &none        &none        &none        &none               &kp CAPS  &none   &kp MINUS &kp EQUAL &kp SQT
+    &bt BT_CLR &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0        &none     &none   &none     &none     &none
+                                       &to ALPHA   &kp_to LGUI NAV        &mt LCTL RET &mt LALT BSPC
 >;};
+
+//function { bindings = <
+//    &kp _ZOOM_OUT &kp _ZOOM_IN  &kp C_VOL_DN &kp C_VOL_UP      &kp C_NEXT              &kp HOME   &kp F7 &kp F8 &kp F9 &kp F12
+//    &kp K_PWR     &kp _TT_START &kp _TT_SHOW &dual_ss_tool 0 0 &kp C_PLAY_PAUSE        &kp END    &kp F4 &kp F5 &kp F6 &kp F10
+//    &kp _LOCK     &mt LSFT X    &kp LALT     &kp LCTL          &none                   &to ADJUST &kp F1 &kp F2 &kp F3 &kp F11
+//                                                       &kp LCTL &kp_to LGUI NAV        &mt LCTL RET &mt LALT BSPC
+//>;};
+//
+//adjust { bindings = <
+//    &none      &none        &kp _OS_DARK &kp _OS_LIGHT &bootloader           &kp GRAVE &kp INS &kp LBKT  &kp RBKT  &kp BSLH
+//    &none      &none        &kp C_BRI_DN &kp C_BRI_UP  &none                 &kp CAPS  &none   &kp MINUS &kp EQUAL &kp SQT
+//    &bt BT_CLR &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1  &bt BT_SEL 0          &none     &none   &none     &none     &none
+//                                          &to ALPHA   &kp_to LGUI NAV        &mt LCTL RET &mt LALT BSPC
+//>;};
 
 apps { bindings = <
     &apps_F1  &apps_F2  &apps_F3  &apps_F4  &apps_F5         &apps_F16    &apps_F17    &apps_F18    &apps_F19     &apps_meh_F1
