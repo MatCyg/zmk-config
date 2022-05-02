@@ -13,14 +13,11 @@
 #define _SS_CLPBRD   LG(LC(LS(N4)))
 #define _SS_TOOL     LG(LS(N5))
 
-
 #define _TT_START    HYPER(H)
 #define _TT_SHOW     HYPER(SCLN)
 
-#define _LAY_BAR     HYPER(BSLH)
 #define _OS_LIGHT    HYPER(LBKT)
 #define _OS_DARK     HYPER(RBKT)
-#define _TOG_DIACT   HYPER(SQT)
 
 #define _APP1        GCA(N1)
 #define _APP2        GCA(N2)
@@ -32,6 +29,8 @@
 
 #define _PREV_TAB    LG(LS(LBKT))
 #define _NEXT_TAB    LG(LS(RBKT))
+//#define _PREV_TAB    LG(LA(LEFT))
+//#define _NEXT_TAB    LG(LA(RIGHT))
 #define _GO_BACK     LG(LBKT)
 #define _GO_FRWD     LG(RBKT)
 

@@ -1,0 +1,48 @@
+#define OS_SHT_DEF(letter) \
+    MACRO(os_sht_##letter, <&kp GCS(letter)>)
+
+
+OS_SHT_DEF(A)
+OS_SHT_DEF(B)
+OS_SHT_DEF(C)
+OS_SHT_DEF(D)
+OS_SHT_DEF(E)
+OS_SHT_DEF(F)
+OS_SHT_DEF(G)
+OS_SHT_DEF(H)
+OS_SHT_DEF(I)
+OS_SHT_DEF(J)
+OS_SHT_DEF(K)
+OS_SHT_DEF(L)
+OS_SHT_DEF(M)
+OS_SHT_DEF(N)
+OS_SHT_DEF(O)
+OS_SHT_DEF(P)
+OS_SHT_DEF(Q)
+OS_SHT_DEF(R)
+OS_SHT_DEF(S)
+OS_SHT_DEF(T)
+OS_SHT_DEF(U)
+OS_SHT_DEF(V)
+OS_SHT_DEF(W)
+OS_SHT_DEF(X)
+OS_SHT_DEF(Y)
+OS_SHT_DEF(Z)
+OS_SHT_DEF(SCLN)
+OS_SHT_DEF(CMMA)
+OS_SHT_DEF(DOT)
+OS_SHT_DEF(FSLH)
+
+
+
+
+
+
+
+HT("tap-preferred", sht_with_gui_to, &sht_with_gui, &to, 135)
+HT_QT("tap-preferred", sht_with_gui_kp, &sht_with_gui, &kp, 135, 180)
+MACRO(os_gui,
+    <&macro_press &sl_ignore_mods_long OS_GUI>,
+    <&macro_pause_for_release>,
+    <&macro_release &sl_ignore_mods_long OS_GUI>
+)

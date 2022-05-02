@@ -7,3 +7,7 @@ MACRO(find_alpha_hold, <&to ALPHA &kp LG(LS(F))>)
 
 MOD_MORPH(morphed_term, &kp _TERM, &kp _FULL_SCREEN, MOD_LSFT)
 //TODO: ignore MOD_LSFT
+
+
+MOD_MORPH(app_win_switcher, &kp LA(TAB), &kp _NEXT_WIN, MOD_LSFT)
+

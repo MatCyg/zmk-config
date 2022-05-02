@@ -27,18 +27,13 @@ compatible = "zmk,combos";
 
 COMBO(esc,        1 2, &esc_nav)
 COMBO(tab,        7 8, &kp TAB)
-COMBO(caps_word1, 0 9, &caps_word_alpha)
-COMBO(caps_word2, 26 27, &caps_word_alpha)
-COMBO(caps_word3, 27 28, &caps_word_alpha)
+COMBO(caps_word,  26 27, &caps_word_alpha)
 COMBO(bootloader, 0 9 20 29, &bootloader)
 
 //layers
 COMBO(nav,        0 4, &to NAV)
-COMBO(alpha,      4 24, &to ALPHA)
 COMBO(function,   0 1, &to FUNCTION)
-COMBO(apps1,      0 1 2, &to APPS)
-COMBO(apps2,      1 8, &to APPS)
-COMBO(symbol,     2 7, &to SYMBOL)
+COMBO(apps,       0 1 2, &to APPS)
 COMBO(emoji,      22 27, &to EMOJI)
 
 

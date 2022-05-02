@@ -1,5 +1,9 @@
 MACRO(caps_word_alpha, <&to ALPHA &caps_word>)
+MACRO(alfred_alpha, <&to ALPHA &kp LG(SPC)>)
 MACRO(esc_nav, <&to NAV &kp ESC>)
+
+DUAL_KEY(dual_copy, &select_copy, &kp)
+MACRO(select_copy, <&kp LG(A) &kp _COPY>)
 
 DUAL_KEY(dual_paste, &kp _CLPBRD_MGR, &paste_macro)
 MACRO(paste_macro, <&kp _PASTE &sl PASTE_MO>)
