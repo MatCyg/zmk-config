@@ -5,7 +5,6 @@
 
 //#define _TT_NEW      HYPER(N)
 
-
 #define _ZOOM_OUT    LG(MINUS)
 #define _ZOOM_IN     LG(EQUAL)
 #define _LOCK        LG(LC(Q))
