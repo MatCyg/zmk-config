@@ -28,7 +28,7 @@ compatible = "zmk,combos";
 COMBO(esc,        1 2, &esc_nav)
 COMBO(tab,        7 8, &kp TAB)
 COMBO(caps_word,  26 27, &caps_word_alpha)
-COMBO(bootloader, 0 9 20 29, &bootloader)
+//COMBO(bootloader, 0 9 20 29, &bootloader)
 
 //layers
 COMBO(nav,        0 4, &to NAV)
