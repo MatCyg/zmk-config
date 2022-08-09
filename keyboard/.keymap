@@ -16,9 +16,8 @@
 #define APPS                    10
 #define EMOJI                   11
 #define PASTE_MO                12
-#define SHIFTING_DTCTR          13
-#define OS_SHT                  14
-#define OS_GUI                  15
+#define OS_SHT                  13
+#define OS_GUI                  14
 
 &caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE LALT>; };
 &sl { release-after-ms = <2000>; };
@@ -52,7 +51,6 @@ behaviors {
     #include "macros/os_sht.dtsi"
     #include "macros/os_gui.dtsi"
     #include "macros/selection_mode.dtsi"
-    #include "macros/shifting_detector.dtsi"
     #include "macros/symbol_layer.dtsi"
 };
 
@@ -66,9 +64,9 @@ navigation { bindings = <
 >;};
 
 alpha { bindings = <
-    &shifted_nb_Q &shifted_nb_W &shifted_nb_F &shifted_nb_P &shifted_nb_B        &shifted_nb_J &shifted_nb_L &shifted_nb_U    &shifted_nb_Y  &shifted_nb_SCLN
-    &shifted_nb_A &shifted_nb_R &shifted_nb_S &shifted_nb_T &shifted_nb_G        &shifted_nb_M &shifted_nb_N &shifted_nb_E    &shifted_nb_I  &shifted_nb_O
-    &shifted_nb_Z &hm LSFT X    &shifted_nb_C &shifted_nb_D &shifted_nb_V        &shifted_nb_K &shifted_nb_H &shifted_nb_CMMA &hm_dot LSFT 0 &shifted_nb_FSLH
+    &shifted_nb_Q &shifted_nb_W &shifted_nb_F &shifted_nb_P &shifted_nb_B        &shifted_nb_J &shifted_nb_L &shifted_nb_U    &shifted_nb_Y &shifted_nb_SCLN
+    &shifted_nb_A &shifted_nb_R &shifted_nb_S &shifted_nb_T &shifted_nb_G        &shifted_nb_M &shifted_nb_N &shifted_nb_E    &shifted_nb_I &shifted_nb_O
+    &shifted_nb_Z &hm LSFT X    &shifted_nb_C &shifted_nb_D &shifted_nb_V        &shifted_nb_K &shifted_nb_H &shifted_nb_CMMA &hm LSFT DOT  &shifted_nb_FSLH
                                 &hm_to NUM_APP SPC &sht_with_gui_to 0 NAV        &sht_with_ctl_kp 0 RET &symbol_with_alt_kp 0 BSPC
 >;};
 
@@ -147,13 +145,6 @@ paste_mo { bindings = <
     &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans
     &trans &trans &trans &trans &kp RET       &trans &trans &trans &trans &trans
                          &trans &trans        &trans &trans
->;};
-
-shifting_detector { bindings = <
-    &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans
-    &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans
-    &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans
-     &hm_shifting_spc NUM_APP 0 &trans        &trans &trans
 >;};
 
 os_sht { bindings = <
