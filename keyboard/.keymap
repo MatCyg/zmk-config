@@ -120,10 +120,10 @@ num_app_lower_copy { bindings = <
 >;};
 
 function { bindings = <
-    &kp _OS_DARK &kp _OS_LIGHT &none        &none &none        &kp HOME    &kp F7 &kp F8 &kp F9 &kp F12
-    &none        &none         &none        &none &none        &kp END     &kp F4 &kp F5 &kp F6 &kp F10
-    &bt BT_CLR &bt BT_SEL 1    &bt BT_SEL 0 &none &none        &bootloader &kp F1 &kp F2 &kp F3 &kp F11
-                               &kp LCTL &kp_to LGUI NAV             &mt LCTL RET &mt LALT BSPC
+    &kp _OS_DARK &kp _OS_LIGHT &none        &none &none              &kp HOME &kp F7 &kp F8 &kp F9 &kp F12
+    &none        &none         &none        &none &none              &kp END  &kp F4 &kp F5 &kp F6 &kp F10
+    &bt BT_CLR &bt BT_SEL 1    &bt BT_SEL 0 &none &bootloader        &none    &kp F1 &kp F2 &kp F3 &kp F11
+                               &kp LCTL &kp_to LGUI NAV              &mt LCTL RET &mt LALT BSPC
 >;};
 
 apps { bindings = <
@@ -159,7 +159,7 @@ os_gui { bindings = <
     &shifted_gui_Q 0 LG(Q) &shifted_gui_W 0 LG(W) &shifted_gui_F 0 0     &shifted_gui_P 0 LG(P) &shifted_gui_B 0 LG(B)        &shifted_gui_J 0 LG(J) &shifted_gui_L 0 LG(L) &shifted_gui_U 0 LG(U)       &shifted_gui_Y 0 LG(Y)     &shifted_gui_SCLN 0 LG(SCLN)
     &shifted_gui_A 0 LG(A) &shifted_gui_R 0 LG(R) &shifted_gui_S 0 LG(S) &shifted_gui_T 0 LG(T) &shifted_gui_G 0 LG(G)        &shifted_gui_M 0 LG(M) &shifted_gui_N 0 LG(N) &shifted_gui_E 0 LG(E)       &shifted_gui_I 0 LG(I)     &shifted_gui_O 0 LG(O)
     &shifted_gui_Z 0 LG(Z) &shifted_gui_X 0 LG(X) &shifted_gui_C 0 LG(C) &shifted_gui_D 0 LG(D) &shifted_gui_V 0 LG(V)        &shifted_gui_K 0 LG(K) &shifted_gui_H 0 LG(H) &shifted_gui_CMMA 0 LG(CMMA) &shifted_gui_DOT 0 LG(DOT) &shifted_gui_FSLH 0 LG(FSLH)
-               &hm_to NUM_APP LG(SPC) &kp_to LGUI NAV        &hm_spc LCTL LG(RET) &hm_spc LALT LG(BSPC)
+                                                                                &hm_to NUM_APP LG(SPC) &kp_to LGUI NAV        &hm_spc LCTL LG(RET) &hm_spc LALT LG(BSPC)
 >;};
 	};
 };
