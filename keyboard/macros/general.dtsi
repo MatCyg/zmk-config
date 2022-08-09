@@ -15,8 +15,6 @@ MACRO(ss_clip_nav, <&kp _SS_CLPBRD &to NAV>)
 MACRO(ss_tool_nav, <&kp _SS_TOOL &to NAV>)
 DUAL_KEY(dual_ss_tool, &ss_tool_nav, &ss_clip_nav)
 
-DUAL_KEY(dual_focus_url, &kp _UNFOCUS_URL, &kp)
-
 DUAL_KEY(dual_prj_bkmrks, &projects_alpha, &bkmrks_alpha)
 MACRO(projects_alpha, <&kp _PROJECTS &to ALPHA>)
 MACRO(bkmrks_alpha, <&kp _BKMRKS &to ALPHA>)

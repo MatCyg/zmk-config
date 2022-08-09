@@ -12,9 +12,6 @@
 #define _SS_CLPBRD   LG(LC(LS(N4)))
 #define _SS_TOOL     LG(LS(N5))
 
-#define _TT_START    HYPER(H)
-#define _TT_SHOW     HYPER(SCLN)
-
 #define _OS_LIGHT    HYPER(LBKT)
 #define _OS_DARK     HYPER(RBKT)
 
@@ -46,7 +43,4 @@
 #define _PROJECTS    HYPER(P)
 #define _LMB         HYPER(T)
 
-
-#define _FOCUS_URL   LG(L)
-#define _UNFOCUS_URL F6
 
