@@ -12,8 +12,8 @@
 #define _SS_CLPBRD   LG(LC(LS(N4)))
 #define _SS_TOOL     LG(LS(N5))
 
-#define _OS_LIGHT    HYPER(LBKT)
-#define _OS_DARK     HYPER(RBKT)
+#define _OS_LIGHT    HYPER(RBKT)
+#define _OS_DARK     HYPER(LBKT)
 
 #define _APP1        GCA(N1)
 #define _APP2        GCA(N2)
