@@ -59,28 +59,28 @@ keymap { compatible = "zmk,keymap";
 navigation { bindings = <
     &kp _APP3         &morphed_term          &kp _APP2              &kp _APP1 &kp _SEARCH            &morphing_pg_up &morphing_alt_left          &morphing_up   &morphing_alt_right &kp DEL
     &app_win_switcher &dual_back 0 _PREV_TAB &dual_frwd 0 _NEXT_TAB &kp _LMB  &kp _LAST_APP          &morphing_pg_dn   &morphing_left              &morphing_down &morphing_right     &os_alpha
-    &kp _UNDO         &hm LSFT _CUT          &dual_copy 0 _COPY     &os_gui   &dual_paste 0 0        &kp _NEXT_WIN     &sl_ignore_mods_long OS_SHT &kp LA(UP)     &hm LSFT LA(DOWN)   &dual_prj_bkmrks 0 0
+    &kp _UNDO         &hm LSFT _CUT          &dual_copy 0 _COPY     &os_gui   &dual_paste 0 0        &kp _NEXT_WIN     &sl_ignore_mods_long OS_SHT &kp LA(UP)     &hm RSFT LA(DOWN)   &dual_prj_bkmrks 0 0
                                                             &num_app_to 0 ALPHA &sht_with_gui        &sht_with_ctl_kp 0 RET  &symbol_with_alt_kp 0 BSPC
 >;};
 
 alpha { bindings = <
     &shifted_nb_Q &shifted_nb_W &shifted_nb_F &shifted_nb_P &shifted_nb_B        &shifted_nb_J &shifted_nb_L &shifted_nb_U    &shifted_nb_Y &shifted_nb_SCLN
     &shifted_nb_A &shifted_nb_R &shifted_nb_S &shifted_nb_T &shifted_nb_G        &shifted_nb_M &shifted_nb_N &shifted_nb_E    &shifted_nb_I &shifted_nb_O
-    &shifted_nb_Z &hm LSFT X    &shifted_nb_C &shifted_nb_D &shifted_nb_V        &shifted_nb_K &shifted_nb_H &shifted_nb_CMMA &hm LSFT DOT  &shifted_nb_FSLH
+    &shifted_nb_Z &hm LSFT X    &shifted_nb_C &shifted_nb_D &shifted_nb_V        &shifted_nb_K &shifted_nb_H &shifted_nb_CMMA &hm RSFT DOT  &shifted_nb_FSLH
                                 &hm_to NUM_APP SPC &sht_with_gui_to 0 NAV        &sht_with_ctl_kp 0 RET &symbol_with_alt_kp 0 BSPC
 >;};
 
 alpha_auto_shift { bindings = <
     &shifted_Q 0 Q &shifted_W 0 W &shifted_F 0 F &shifted_P 0 P &shifted_B 0 B        &shifted_J 0 J &shifted_L 0 L &shifted_U 0 U       &shifted_Y 0 Y &shifted_SCLN 0 SCLN
     &shifted_A 0 A &shifted_R 0 R &shifted_S 0 S &shifted_T 0 T &shifted_G 0 G        &shifted_M 0 M &shifted_N 0 N &shifted_E 0 E       &shifted_I 0 I &shifted_O 0 O
-    &shifted_Z 0 Z &hm LSFT X     &shifted_C 0 C &shifted_D 0 D &shifted_V 0 V        &shifted_K 0 K &shifted_H 0 H &shifted_CMMA 0 CMMA &hm LSFT DOT   &shifted_FSLH 0 FSLH
+    &shifted_Z 0 Z &hm LSFT X     &shifted_C 0 C &shifted_D 0 D &shifted_V 0 V        &shifted_K 0 K &shifted_H 0 H &shifted_CMMA 0 CMMA &hm RSFT DOT   &shifted_FSLH 0 FSLH
                                             &hm_to NUM_APP SPC &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
 >;};
 
 alpha_shifted { bindings = <
     &kp LS(Q) &kp LS(W)      &kp LS(F) &kp LS(P) &kp LS(B)        &kp LS(J) &kp LS(L) &kp LS(U)    &kp LS(Y)        &kp LS(SCLN)
     &kp LS(A) &kp LS(R)      &kp LS(S) &kp LS(T) &kp LS(G)        &kp LS(M) &kp LS(N) &kp LS(E)    &kp LS(I)        &kp LS(O)
-    &kp LS(Z) &hm LSFT LS(X) &kp LS(C) &kp LS(D) &kp LS(V)        &kp LS(K) &kp LS(H) &kp LS(CMMA) &hm LSFT LS(DOT) &kp LS(FSLH)
+    &kp LS(Z) &hm LSFT LS(X) &kp LS(C) &kp LS(D) &kp LS(V)        &kp LS(K) &kp LS(H) &kp LS(CMMA) &hm RSFT LS(DOT) &kp LS(FSLH)
                         &hm_to NUM_APP SPC &hm_to LGUI NAV        &hm_spc LCTL RET &symbol_with_alt_kp 0 BSPC
 >;};
 
@@ -108,7 +108,7 @@ sel_mode { bindings = <
 shortcut { bindings = <
     &shifted_Q 0 Q &shifted_W 0 W &shifted_F 0 F &shifted_P 0 P &shifted_B 0 B        &shifted_J 0 J &trans         &trans               &trans       &shifted_SCLN 0 SCLN
     &shifted_A 0 A &shifted_R 0 R &shifted_S 0 S &shifted_T 0 T &shifted_G 0 G        &shifted_M 0 M &trans         &trans               &trans       &shifted_O 0 O
-    &shifted_Z 0 Z &hm LSFT X     &shifted_C 0 C &shifted_D 0 D &shifted_V 0 V        &shifted_K 0 K &shifted_H 0 H &shifted_CMMA 0 CMMA &hm LSFT DOT &shifted_FSLH 0 FSLH
+    &shifted_Z 0 Z &hm LSFT X     &shifted_C 0 C &shifted_D 0 D &shifted_V 0 V        &shifted_K 0 K &shifted_H 0 H &shifted_CMMA 0 CMMA &hm RSFT DOT &shifted_FSLH 0 FSLH
                                           &sht_num_app_spc 0 0 &kp_to LGUI NAV        &hm_spc LCTL RET &hm_spc LALT BSPC
 >;};
 
