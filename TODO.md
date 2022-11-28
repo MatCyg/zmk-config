@@ -27,3 +27,4 @@
 - [ ] consider tap layer!
 - [ ] sleep combo
 - [ ] CMD shift up should not go to selection mode
+- [ ] Review inconsistency - `dk_sym_TILDE` exists but `dk_num_TILDE` does not
