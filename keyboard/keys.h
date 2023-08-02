@@ -15,6 +15,9 @@
 #define _OS_LIGHT    HYPER(RBKT)
 #define _OS_DARK     HYPER(LBKT)
 
+#define _BRGHT_UP    HYPER(SQT)
+#define _BRGHT_DN    HYPER(SCLN)
+
 #define _APP1        GCA(N1)
 #define _APP2        GCA(N2)
 #define _APP3        GCA(N3)

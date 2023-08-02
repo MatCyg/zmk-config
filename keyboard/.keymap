@@ -120,10 +120,10 @@ num_app_lower_copy { bindings = <
 >;};
 
 function { bindings = <
-    &kp _OS_DARK &kp _OS_LIGHT &none        &none &none              &kp HOME &kp F7 &kp F8 &kp F9 &kp F12
-    &none        &none         &none        &none &none              &kp END  &kp F4 &kp F5 &kp F6 &kp F10
-    &bt BT_CLR &bt BT_SEL 1    &bt BT_SEL 0 &none &bootloader        &none    &kp F1 &kp F2 &kp F3 &kp F11
-                               &kp LCTL &kp_to LGUI NAV              &mt LCTL RET &mt LALT BSPC
+    &kp _OS_DARK &kp _OS_LIGHT &kp _BRGHT_DN &kp _BRGHT_UP &none              &kp HOME &kp F7 &kp F8 &kp F9 &kp F12
+    &none        &none         &none         &none         &none              &kp END  &kp F4 &kp F5 &kp F6 &kp F10
+    &bt BT_CLR &bt BT_SEL 1    &bt BT_SEL 0  &none         &bootloader        &none    &kp F1 &kp F2 &kp F3 &kp F11
+                               &kp LCTL &kp_to LGUI NAV                       &mt LCTL RET &mt LALT BSPC
 >;};
 
 apps { bindings = <
