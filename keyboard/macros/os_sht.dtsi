@@ -42,8 +42,6 @@ OS_SHT_DEF(BSLH)
 
 
 
-HT("tap-preferred", sht_with_gui_to, &sht_with_gui, &to, 135)
-HT_QT("tap-preferred", sht_with_gui_kp, &sht_with_gui, &kp, 135, 180)
 MACRO(os_gui,
     <&macro_press &sl_ignore_mods_long OS_GUI>,
     <&macro_pause_for_release>,
